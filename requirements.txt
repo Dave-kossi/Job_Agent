@@ -1,0 +1,6 @@
+groq
+streamlit
+pandas
+requests
+jobspy
+python-dotenv
