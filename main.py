@@ -1,11 +1,9 @@
 import os
 import json
-import time
-import schedule
 import pandas as pd
 
 from src.parser import lire_cv_pdf, lire_portfolio_html
-from src.github_parser import lire_profil_github  # 👈 Ajout du module GitHub
+from src.github_parser import lire_profil_github
 from src.scraper import collecter_offres
 from src.company_scraper import collecter_offres_grands_groupes
 from src.agent import analyser_et_rediger
@@ -67,7 +65,7 @@ def execution_job():
     # Lecture des données candidat
     cv_texte = lire_cv_pdf("data/cv.pdf")
     portfolio_texte = lire_portfolio_html("data/portfolio.html")
-    github_texte = lire_profil_github("https://github.com/Dave-kossi")  # 👈 Remplace par ton pseudo GitHub
+    github_texte = lire_profil_github("https://github.com/Dave-kossi")
     
     historique = charger_historique()
     ids_connus = [item['id'] for item in historique]
@@ -77,7 +75,7 @@ def execution_job():
     
     if offres.empty:
         print("❌ Aucune offre trouvée lors de ce passage.")
-        print("💤 [AGENT] Passage en attente du prochain créneau.")
+        print("🏁 [AGENT] Fin de l'exécution.")
         return
 
     print(f"📊 {len(offres)} offres uniques à analyser au total.\n")
@@ -101,7 +99,6 @@ def execution_job():
             'description': str(row.get('description', ''))
         }
         
-        # 👈 Envoi de github_texte au LLM
         analyse = analyser_et_rediger(offre_dict, cv_texte, portfolio_texte, github_texte)
         
         if analyse and analyse.get('score_adequation', 0) >= 70:
@@ -122,20 +119,11 @@ def execution_job():
         ids_connus.append(job_id)
 
     sauvegarder_historique(historique)
-    print("\n💤 [AGENT] Passage en attente du prochain créneau.")
+    print("\n✅ [AGENT] Enregistrement terminé avec succès !")
 
 # ==========================================
-# 4. PLANIFICATION AUTOMATISÉE
+# 4. EXÉCUTION DE L'AGENT
 # ==========================================
-schedule.every().day.at("08:30").do(execution_job)
-schedule.every().day.at("12:30").do(execution_job)
-schedule.every().day.at("15:30").do(execution_job)
-schedule.every().day.at("18:30").do(execution_job)
-
 if __name__ == "__main__":
-    print("🤖 Agent Autonome démarré ! Lancement immédiat du 1er check...")
-    execution_job()  # Exécution au démarrage
-    
-    while True:
-        schedule.run_pending()
-        time.sleep(60)
+    print("🤖 Agent Autonome démarré !")
+    execution_job()
