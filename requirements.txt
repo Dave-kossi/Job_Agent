@@ -1,7 +1,22 @@
-groq
-streamlit
-pandas
+# Lecture et extraction de fichiers (PDF, HTML)
+pypdf
+pdfplumber
+pypdf2
+beautifulsoup4
+
+# Scraping & Recherche d'offres
+python-jobspy
 requests
-jobspy
+urllib3
+
+# IA, Modèles & Analyse (Groq, OpenAI)
+groq
+openai
+
+# Automatisation & Gestion d'environnement
 python-dotenv
 schedule
+
+# Interface Web & Dashboard
+streamlit
+pandas
