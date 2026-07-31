@@ -1367,5 +1367,41 @@
       ],
       "lettre_motivation": "\n   Je me permets de postuler pour le poste de Research Scientist / Engineer Intern chez UMA, car je suis convaincu que mes compétences et mon expérience dans le domaine de la recherche et du développement en intelligence artificielle correspondent parfaitement aux besoins de votre entreprise.\n\n   En tant qu'étudiant en Master 2 Ingénierie Mathématique & Data Science à l'Université de Haute-Alsace, j'ai développé des compétences solides en analyse de données, en Machine Learning et en modélisation statistique. J'ai également travaillé sur plusieurs projets personnels, notamment le projet VentiRE-RAG, qui consiste à concevoir un moteur RAG hybride multi-segments pour automatiser l'analyse de conformité des systèmes de ventilation.\n\n   Mes compétences en recherche sont étayées par mon expérience avec les outils de recherche tels que Streamlit, LlamaIndex et Cohere Rerank. J'ai également une bonne connaissance des langages de programmation tels que Python et Jupyter Notebook. Mon projet VentiRE-RAG sur GitHub démontre ma capacité à concevoir des solutions d'analyse de données et de Machine Learning pour répondre à des problématiques métiers.\n\n   En tant que Data Scientist Junior & AI Engineer, j'ai travaillé sur plusieurs projets, notamment l'analyse décisionnelle de la transition énergétique en Europe, la détection de fraude bancaire et le scoring de risque. J'ai également développé des compétences en modélisation statistique et en systèmes RAG/LLM.\n\n   Je suis convaincu que mes compétences et mon expérience seraient un atout pour votre équipe de recherche et développement. Je suis impatient de discuter de mes qualifications et de la manière dont je peux contribuer à la réussite de votre entreprise.\n\n   Je vous remercie de l'attention que vous porterez à ma candidature. Je suis à votre disposition pour discuter de mes qualifications et de la manière dont je peux contribuer à la réussite de votre entreprise.\n\n   Cordialement,\n   Kossi Noumagno"
     }
+  },
+  {
+    "id": "https://fr.indeed.com/viewjob?jk=eb07479705d217a7",
+    "title": "Stage - Data Analyst F/H",
+    "company": "SGD PHARMA",
+    "url": "https://fr.indeed.com/viewjob?jk=eb07479705d217a7",
+    "date_ajout": "2026-07-31T15:39:08.984990",
+    "analyse": {
+      "score_adequation": 85,
+      "besoin_cle_entreprise": "Développer des modèles d'analyse de données et d'intelligence artificielle en Python pour améliorer la performance industrielle",
+      "preuve_technique_citee": "Projet VentiRE-RAG sur GitHub",
+      "points_forts": [
+        "Compétences en Python, Data Science et Machine Learning",
+        "Expérience dans l'analyse de données et la conception de modèles d'intelligence artificielle",
+        "Capacité à travailler de manière autonome et en équipe"
+      ],
+      "lettre_motivation": "\n   Je me permets de vous contacter pour exprimer mon intérêt pour le stage de Data Analyst au sein de SGD Pharma. En tant qu'étudiant en Master 2 Ingénierie Mathématique et Data Science, je suis convaincu que mes compétences et mes expériences me permettent de contribuer de manière significative à votre équipe.\n\n   Tout d'abord, je suis attiré par la mission de SGD Pharma, qui consiste à développer des solutions innovantes pour l'emballage pharmaceutique en verre. Je suis impressionné par l'engagement de l'entreprise en faveur de l'excellence et de la satisfaction client. En tant que futur data analyst, je suis convaincu que mes compétences en analyse de données et en intelligence artificielle pourraient aider à améliorer la performance industrielle de l'entreprise.\n\n   En ce qui concerne mes compétences, je possède une solide formation en mathématiques et en informatique, avec une spécialisation en Data Science et Machine Learning. J'ai développé des compétences en Python, Pandas, NumPy, Plotly, Streamlit, SciPy, Clustering, Time Series et Data Visualisation. J'ai également une expérience dans l'analyse de données et la conception de modèles d'intelligence artificielle, notamment dans le cadre de mes projets personnels, tels que VentiRE-RAG et EU_energy_consomption.\n\n   Le projet VentiRE-RAG, que j'ai développé sur GitHub, est un exemple concret de mes compétences en intelligence artificielle et en analyse de données. Ce projet consiste à concevoir un moteur RAG hybride multi-segments pour automatiser l'analyse de conformité des systèmes de ventilation. J'ai utilisé des technologies telles que LlamaIndex, FastEmbed et Streamlit pour développer ce projet. Je suis convaincu que mes compétences et mon expérience dans ce domaine pourraient être utiles pour développer des solutions innovantes pour SGD Pharma.\n\n   En outre, je suis une personne autonome et rigoureuse, avec une capacité à travailler en équipe et à communiquer de manière efficace. Je suis convaincu que mes compétences et mon expérience me permettent de contribuer de manière significative à l'équipe de SGD Pharma.\n\n   En conclusion, je suis convaincu que ce stage de Data Analyst au sein de SGD Pharma serait une opportunité idéale pour moi de mettre en pratique mes compétences et mes connaissances en Data Science et Machine Learning. Je suis impatient de discuter de ma candidature et de mes compétences avec vous. Je vous remercie de l'attention que vous porterez à ma demande.\n\n   Cordialement,\n   Kossi Noumagno"
+    }
+  },
+  {
+    "id": "https://fr.indeed.com/viewjob?jk=fd39409edd012c9e",
+    "title": "Data Scientist / Ingénieur en Recherche Opérationnelle Senior F/H",
+    "company": "Air France",
+    "url": "https://fr.indeed.com/viewjob?jk=fd39409edd012c9e",
+    "date_ajout": "2026-07-31T15:39:14.071378",
+    "analyse": {
+      "score_adequation": 70,
+      "besoin_cle_entreprise": "Data Science et Recherche Opérationnelle pour la transformation numérique dans le secteur aérien",
+      "preuve_technique_citee": "Projet VentiRE-RAG sur GitHub",
+      "points_forts": [
+        "Compétences en Data Science et Machine Learning",
+        "Expérience avec des projets d'analyse décisionnelle et de détection de fraude",
+        "Connaissance de l'IA générative et des systèmes RAG/LLM"
+      ],
+      "lettre_motivation": "Je me permets de postuler pour le poste de Data Scientist / Ingénieur en Recherche Opérationnelle Senior chez Air France, car je suis convaincu que mes compétences et mon expérience dans le domaine de la Data Science et de la Recherche Opérationnelle pourraient être un atout pour votre équipe. Avec une formation en Ingénierie Mathématique et Data Science, j'ai développé des compétences solides en analyse de données, Machine Learning et modélisation statistique. Mes projets personnels, tels que VentiRE-RAG, démontrent ma capacité à concevoir des solutions innovantes pour répondre à des problématiques métiers complexes. Je suis particulièrement intéressé par l'opportunité de travailler dans le secteur aérien, où la transformation numérique et l'adoption de technologies de pointe sont cruciales pour améliorer les opérations et la prise de décision. En tant que Data Scientist, je suis convaincu que je pourrais apporter une valeur ajoutée à votre équipe en développant des produits de Science des Données Avancée et en appliquant des techniques d'Apprentissage Automatique pour améliorer les processus métiers. Je suis également à l'aise avec les concepts de MLOps et de Développement de produits de Science des Données Avancée, ce qui me permettrait de collaborer efficacement avec les équipes métiers pour définir et développer des solutions adaptées à leurs besoins. En outre, je suis convaincu que mes compétences en leadership et en gestion de projet pourraient être utiles pour diriger des projets stratégiques complexes et à fort impact, et pour influencer les décisions stratégiques de l'entreprise. Je joins à ma candidature mon CV et mon portfolio, qui présentent plus en détail mes compétences et mes expériences. Je serais ravi de discuter plus en détail de ma candidature et de mes qualifications avec vous. Je vous remercie de l'attention que vous porterez à ma candidature et je reste à votre disposition pour tout complément d'information. Cordialement, Kossi Noumagno"
+    }
   }
 ]
