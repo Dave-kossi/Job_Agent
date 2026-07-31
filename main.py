@@ -10,7 +10,7 @@ from src.company_scraper import collecter_offres_grands_groupes
 from src.agent import analyser_et_rediger
 
 CHEMIN_HISTORIQUE = "data/historique.json"
-JOURS_RETENTION_MAX = 4  # Supprime automatiquement les offres > 4 jours
+JOURS_RETENTION_MAX =  2 # Supprime automatiquement les offres > 4 jours
 
 # ==========================================
 # 1. GESTION ET PURGE DE L'HISTORIQUE (JSON)
@@ -90,7 +90,7 @@ def tout_rassembler() -> pd.DataFrame:
 # 3. WORKFLOW PRINCIPAL DE L'AGENT
 # ==========================================
 def execution_job():
-    print("\n🚀 [AGENT] Démarrage du scan d'offres...")
+    print("\n [AGENT] Démarrage du scan d'offres...")
     
     # Reading candidate background
     cv_texte = lire_cv_pdf("data/cv.pdf")
