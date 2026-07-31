@@ -65,7 +65,7 @@ def execution_job():
     # Lecture des données candidat
     cv_texte = lire_cv_pdf("data/cv.pdf")
     portfolio_texte = lire_portfolio_html("data/portfolio.html")
-    github_texte = lire_profil_github("https://github.com/Dave-kossi")
+    github_texte = lire_profil_github("Dave-kossi")
     
     historique = charger_historique()
     ids_connus = [item['id'] for item in historique]
