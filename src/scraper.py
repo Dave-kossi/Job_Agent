@@ -111,7 +111,7 @@ def collecter_offres(recherche=None, localisation=None, limites=5) -> pd.DataFra
                     search_term=term,
                     location=city,
                     results_wanted=limites,
-                    hours_old=24,
+                    hours_old=72,
                     country_indeed='France'
                 )
                 if not jobs.empty:
