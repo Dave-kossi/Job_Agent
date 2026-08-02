@@ -13,6 +13,34 @@ CHEMIN_HISTORIQUE = "data/historique.json"
 JOURS_RETENTION_MAX = 2  # Conserve uniquement les offres des 2 derniers jours
 
 # ==========================================
+# FILTRES STRICTS : DATA SCIENCE / ML / IA
+# ==========================================
+MOTS_CLES_DOMAINE = [
+    "data science", "data scientist", "machine learning", "ml", 
+    "deep learning", "intelligence artificielle", "ia", "ai",
+    "nlp", "computer vision", "llm", "generative ai", "data engineer"
+]
+
+MOTS_CLES_CONTRAT = ["stage", "intern", "internship"]
+
+
+def est_stage_data_valide(titre: str, description: str) -> bool:
+    """
+    Vérifie rigoureusement que l'offre concerne un STAGE 
+    dans le domaine de la Data Science, du ML ou de l'IA.
+    """
+    texte = f"{titre} {description}".lower()
+    
+    # 1. Doit obligatoirement mentionner un contrat de type Stage/Internship
+    est_stage = any(mot in texte for mot in MOTS_CLES_CONTRAT)
+    
+    # 2. Doit concerner les thématiques ciblées (Data Science / ML / IA)
+    est_data_ml_ia = any(mot in texte for mot in MOTS_CLES_DOMAINE)
+    
+    return est_stage and est_data_ml_ia
+
+
+# ==========================================
 # 1. GESTION ET PURGE DE L'HISTORIQUE (JSON)
 # ==========================================
 def charger_et_nettoyer_historique(jours_max: int = JOURS_RETENTION_MAX) -> list:
@@ -29,7 +57,6 @@ def charger_et_nettoyer_historique(jours_max: int = JOURS_RETENTION_MAX) -> list
         offres_purgees = 0
 
         for item in historique:
-            # Récupération de la date d'ajout ou attribution de la date actuelle
             date_ajout_str = item.get("date_ajout")
             if date_ajout_str:
                 try:
@@ -39,7 +66,7 @@ def charger_et_nettoyer_historique(jours_max: int = JOURS_RETENTION_MAX) -> list
             else:
                 date_ajout = datetime.now()
 
-            # Conservation des offres récentes uniquement
+            # Conservation des offres récentes uniquement (<= 2 jours)
             if date_ajout >= limite_date:
                 historique_filtre.append(item)
             else:
@@ -54,78 +81,92 @@ def charger_et_nettoyer_historique(jours_max: int = JOURS_RETENTION_MAX) -> list
         print(f"⚠️ Erreur lors du chargement de l'historique : {e}")
         return []
 
+
 def sauvegarder_historique(historique: list):
     """Sauvegarde la liste des offres dans le fichier JSON."""
     os.makedirs(os.path.dirname(CHEMIN_HISTORIQUE), exist_ok=True)
     with open(CHEMIN_HISTORIQUE, "w", encoding="utf-8") as f:
         json.dump(historique, f, ensure_ascii=False, indent=2)
 
+
 # ==========================================
-# 2. COLLECTE MULTI-SOURCES
+# 2. COLLECTE MULTI-SOURCES & PRÉ-FILTRAGE
 # ==========================================
 def tout_rassembler() -> pd.DataFrame:
-    """Rassemble et fusionne les offres de toutes les sources avec marquage de provenance."""
-    print("\n🔄 Collecte globale des opportunités en cours...")
+    """
+    Rassemble les offres de toutes les sources (JobSpy, WTTJ, Stage.fr, Grands Groupes dont Eiffage)
+    et filtre exclusivement les stages Data Science / ML / IA.
+    """
+    print("\n🔄 Collecte globale des opportunités (Data Science, ML & IA)...")
     
-    # A. Agrégateurs (LinkedIn, Indeed, Glassdoor, Google Jobs)
+    # A. Agrégateurs (JobSpy + Welcome to the Jungle + Stage.fr)
     df_general = collecter_offres(limites=5)
     
-    # B. API directes des Grands Groupes (Thales, Airbus, EDF, SG, BNP)
-    offres_entreprises = collecter_offres_grands_groupes(mot_cle="Data Stage", limite=5)
+    # B. Grands Groupes (Airbus, Thales, SG, BNP Paribas, Eiffage)
+    offres_entreprises = collecter_offres_grands_groupes(mot_cle="Stage Data Science", limite=5)
     df_entreprises = pd.DataFrame(offres_entreprises)
-    if not df_entreprises.empty and 'site' not in df_entreprises.columns:
-        df_entreprises['site'] = "Grands Groupes"
     
     # C. Fusion & Dédoublonnage
-    liste_df = [df for df in [df_general, df_entreprises] if not df.empty]
+    liste_df = [df for df in [df_general, df_entreprises] if isinstance(df, pd.DataFrame) and not df.empty]
     
-    if liste_df:
-        df_final = pd.concat(liste_df, ignore_index=True)
-        # Élimination des lignes sans URL ou doublons sur l'URL
-        df_final = df_final.dropna(subset=['job_url'])
-        df_final = df_final.drop_duplicates(subset=['job_url'], keep='first')
-        return df_final
-    
-    return pd.DataFrame()
+    if not liste_df:
+        return pd.DataFrame()
+
+    df_brut = pd.concat(liste_df, ignore_index=True)
+    df_brut = df_brut.dropna(subset=['job_url'])
+    df_brut = df_brut.drop_duplicates(subset=['job_url'], keep='first')
+
+    # D. Filtre strict de pré-qualification Data Science / ML / IA
+    offres_filtrees = []
+    for _, row in df_brut.iterrows():
+        titre = str(row.get('title', ''))
+        desc = str(row.get('description', ''))
+        
+        if est_stage_data_valide(titre, desc):
+            offres_filtrees.append(row)
+            
+    print(f"🔍 {len(df_brut)} offres scannées au total ➔ {len(offres_filtrees)} stages Data/ML/IA validés.")
+    return pd.DataFrame(offres_filtrees)
+
 
 # ==========================================
 # 3. WORKFLOW PRINCIPAL DE L'AGENT
 # ==========================================
 def execution_job():
-    print("\n🚀 [AGENT] Démarrage du scan d'offres...")
+    print("\n🚀 [AGENT DATA SCIENCE / ML / IA] Démarrage du scan d'offres...")
     
     # Lecture du profil candidat
     cv_texte = lire_cv_pdf("data/cv.pdf")
     portfolio_texte = lire_portfolio_html("data/portfolio.html")
     github_texte = lire_profil_github("Dave-kossi")
     
-    # Charge et filtre l'historique (< 2 jours)
+    # Charge et purge l'historique (< 2 jours)
     historique = charger_et_nettoyer_historique(JOURS_RETENTION_MAX)
     ids_connus = [item['id'] for item in historique]
 
-    # Collecte des opportunités
+    # Collecte des opportunités ciblées
     offres = tout_rassembler()
     
     if offres.empty:
-        print("❌ Aucune offre trouvée lors de ce passage.")
+        print("❌ Aucune nouvelle offre de stage Data/ML/IA trouvée lors de ce passage.")
         sauvegarder_historique(historique)
         print("🏁 [AGENT] Fin de l'exécution.")
         return
 
-    print(f"📊 {len(offres)} offres uniques collectées à analyser.\n")
+    print(f"📊 {len(offres)} stages en Data/ML/IA à évaluer par l'IA...\n")
     
     # Analyse LLM par offre
     for _, row in offres.iterrows():
         job_id = str(row.get('job_url', ''))
         
-        # Filtre anti-doublons
+        # Filtre anti-doublons (déjà traitées ou déjà en base)
         if not job_id or job_id in ids_connus:
             continue
             
         entreprise = row.get('company', 'Inconnue')
         titre = row.get('title', 'Sans titre')
         
-        # Extraction propre de la source (LinkedIn, Indeed, Grands Groupes, etc.)
+        # Provenance exacte (Eiffage, Stage.fr, WTTJ, LinkedIn, etc.)
         raw_site = row.get('site', 'Autre')
         source_plateforme = str(raw_site).capitalize() if raw_site else "Autre"
         
@@ -145,26 +186,27 @@ def execution_job():
                 "title": titre,
                 "company": entreprise,
                 "url": job_id,
-                "source": source_plateforme,  # Provenance enregistrée pour Streamlit
-                "date_ajout": datetime.now().isoformat(),  # Date précise
+                "source": source_plateforme,        # Enregistré pour les filtres Streamlit
+                "date_ajout": datetime.now().isoformat(),  # Date ISO pour la purge 2 jours
                 "analyse": analyse
             }
             historique.append(resultat)
-            print(f"  └─ ✅ Offre retenue ! (Match : {analyse['score_adequation']}%)")
+            print(f"  └─ ✅ Stage retenu ! (Match : {analyse['score_adequation']}%)")
         else:
             score = analyse.get('score_adequation', 0) if analyse else 0
-            print(f"  └─ ❌ Offre écartée (Match : {score}%)")
+            print(f"  └─ ❌ Stage écarté (Match : {score}%)")
         
-        # Enregistrement de l'ID traité pour la session courante
+        # Marquage pour éviter les répétitions dans le même run
         ids_connus.append(job_id)
 
-    # Sauvegarde finale avec l'historique nettoyé et complété
+    # Sauvegarde finale du fichier JSON
     sauvegarder_historique(historique)
     print("\n✅ [AGENT] Traitement et sauvegarde réussis !")
+
 
 # ==========================================
 # 4. EXÉCUTION EN POINT D'ENTRÉE
 # ==========================================
 if __name__ == "__main__":
-    print("🤖 Agent Autonome démarré !")
+    print("🤖 Agent Autonome (Focus Stages Data Science / ML / IA) démarré !")
     execution_job()
