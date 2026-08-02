@@ -12,7 +12,7 @@ st.set_page_config(
 )
 
 # ==========================================
-# FONCTIONS DE GESTION DU STOCKAGE
+# FONCTIONS DE GESTION DES DONNÉES
 # ==========================================
 def charger_historique() -> list:
     if os.path.exists(CHEMIN_HISTORIQUE):
@@ -29,120 +29,150 @@ def sauvegarder_historique(data: list):
         json.dump(data, f, ensure_ascii=False, indent=2)
 
 # ==========================================
-# INTERFACE PRINCIPALE STREAMLIT
+# CHARGEMENT & FILTRES
 # ==========================================
-st.title("💼 Job Agent AI — Tableau de bord")
-st.markdown("Suivi en temps réel des offres d'emploi qualifiées par l'Agent IA.")
+offres_brutes = charger_historique()
 
-# Onglets principaux
-tab_offres, tab_gestion = st.tabs(["🎯 Offres Qualifiées", "⚙️ Gestion & Nettoyage"])
+st.title("💼 Job Agent AI — Tableau de bord")
+st.markdown("Explore et gère tes opportunités qualifiées par l'IA.")
+
+# --- BARRE DE FILTRES ET TRI (Haut de page) ---
+with st.container():
+    col_search, col_source, col_sort = st.columns([2, 1, 1])
+
+    # 1. Recherche par mot-clé
+    search_query = col_search.text_input(
+        "🔍 Rechercher (Entreprise, Titre, Compétence...)", 
+        placeholder="Ex: Sephora, Python, NLP..."
+    )
+
+    # 2. Filtre par provenance / source
+    sources_disponibles = ["Toutes"] + sorted(list(set([o.get("source", "Inconnue") for o in offres_brutes])))
+    selected_source = col_source.selectbox("🌐 Provenance", sources_disponibles)
+
+    # 3. Tri
+    sort_option = col_sort.selectbox(
+        "🔀 Trier par", 
+        ["Plus récents d'abord", "Plus anciens d'abord", "Meilleur score IA"]
+    )
+
+# --- APPLICATION DES FILTRES ---
+offres_filtrees = offres_brutes.copy()
+
+# Filtre Recherche
+if search_query:
+    q = search_query.lower()
+    offres_filtrees = [
+        o for o in offres_filtrees 
+        if q in o.get("title", "").lower() 
+        or q in o.get("company", "").lower()
+        or q in str(o.get("analyse", {})).lower()
+    ]
+
+# Filtre Source
+if selected_source != "Toutes":
+    offres_filtrees = [o for o in offres_filtrees if o.get("source", "Inconnue") == selected_source]
+
+# Tri
+if sort_option == "Plus récents d'abord":
+    offres_filtrees.sort(key=lambda x: x.get("date_ajout", ""), reverse=True)
+elif sort_option == "Plus anciens d'abord":
+    offres_filtrees.sort(key=lambda x: x.get("date_ajout", ""), reverse=False)
+elif sort_option == "Meilleur score IA":
+    offres_filtrees.sort(key=lambda x: x.get("analyse", {}).get("score_adequation", 0), reverse=True)
+
+st.divider()
+
+# ==========================================
+# ONGLETS DE NAVIGATION
+# ==========================================
+tab_offres, tab_sources, tab_gestion = st.tabs([
+    f"🎯 Offres Qualifiées ({len(offres_filtrees)})", 
+    "📊 Provenance & Stats", 
+    "⚙️ Gestion & Nettoyage"
+])
 
 # ------------------------------------------
-# ONGLET 1 : LES OFFRES
+# ONGLET 1 : LES OFFRES FILTRÉES
 # ------------------------------------------
 with tab_offres:
-    offres = charger_historique()
-
-    if not offres:
-        st.info("Aucune offre retenue pour le moment. L'agent effectuera sa prochaine analyse sous peu.")
+    if not offres_filtrees:
+        st.info("Aucune offre ne correspond à tes critères de recherche.")
     else:
-        st.subheader(f"📋 {len(offres)} opportunité(s) active(s)")
-        
-        for item in offres:
+        for item in offres_filtrees:
             analyse = item.get("analyse", {})
             score = analyse.get("score_adequation", 0)
-            date_ajout_raw = item.get("date_ajout", "")
-            
-            # Formatage de la date d'affichage
-            if date_ajout_raw:
+            source = item.get("source", "Source inconnue")
+            date_raw = item.get("date_ajout", "")
+
+            # Calcul du temps écoulé (ex: "Il y a 2h" ou date précise)
+            if date_raw:
                 try:
-                    date_affichee = datetime.fromisoformat(date_ajout_raw).strftime("%d/%m/%Y à %H:%H")
+                    dt = datetime.fromisoformat(date_raw)
+                    date_affichee = dt.strftime("%d/%m/%Y à %H:%M")
                 except ValueError:
-                    date_affichee = "Inconnue"
+                    date_affichee = "Date inconnue"
             else:
-                date_affichee = "Inconnue"
+                date_affichee = "Date inconnue"
 
-            # Badge de couleur selon le score
-            couleur_score = "🟢" if score >= 80 else "🟠"
+            badge_score = "🟢" if score >= 85 else "🟠"
 
-            with st.expander(f"{couleur_score} **{item.get('title')}** — {item.get('company')} (Score : {score}%)"):
-                col_meta1, col_meta2 = st.columns(2)
-                col_meta1.caption(f"🗓️ Ajoutée le : **{date_affichee}**")
-                col_meta2.markdown(f"🔗 [Consulter l'annonce officielle]({item.get('url')})")
+            with st.expander(f"{badge_score} **{item.get('title')}** — {item.get('company')} | {score}% Match ({source})"):
+                c1, c2, c3 = st.columns(3)
+                c1.caption(f"📅 Ajoutée le : **{date_affichee}**")
+                c2.caption(f"🌐 Provenance : **{source}**")
+                c3.markdown(f"🔗 [Consulter l'offre]({item.get('url')})")
 
                 st.markdown("---")
 
-                # Points forts et besoin entreprise
-                col_info1, col_info2 = st.columns(2)
-                with col_info1:
-                    st.markdown("**🎯 Besoin clé de l'entreprise :**")
-                    st.write(analyse.get("besoin_cle_entreprise", "Non spécifié"))
-                    st.markdown("**📌 Preuve technique sélectionnée :**")
-                    st.write(analyse.get("preuve_technique_citee", "Non spécifiée"))
+                col_b1, col_b2 = st.columns(2)
+                with col_b1:
+                    st.markdown("**🎯 Besoin clé :**")
+                    st.write(analyse.get("besoin_cle_entreprise", "Non précisé"))
+                    st.markdown("**📌 Preuve technique :**")
+                    st.write(analyse.get("preuve_technique_citee", "Non précisée"))
 
-                with col_info2:
-                    st.markdown("**💪 Points forts identifiés :**")
-                    points = analyse.get("points_forts", [])
-                    if isinstance(points, list):
-                        for pt in points:
-                            st.write(f"- {pt}")
+                with col_b2:
+                    st.markdown("**💪 Points forts :**")
+                    pts = analyse.get("points_forts", [])
+                    if isinstance(pts, list):
+                        for p in pts:
+                            st.write(f"- {p}")
                     else:
-                        st.write(points)
+                        st.write(pts)
 
                 st.markdown("---")
                 st.markdown("### ✉️ Lettre de motivation générée")
-                st.info(analyse.get("lettre_motivation", "Aucune lettre générée."))
+                st.info(analyse.get("lettre_motivation", "Lettre non disponible."))
 
 # ------------------------------------------
-# ONGLET 2 : CENTRE DE PURGE & DE GESTION
+# ONGLET 2 : STATISTIQUES & PROVENANCE
+# ------------------------------------------
+with tab_sources:
+    st.header("📊 Répartition par Provenance")
+    if offres_brutes:
+        # Compteur par source
+        counts = {}
+        for o in offres_brutes:
+            s = o.get("source", "Autre")
+            counts[s] = counts.get(s, 0) + 1
+        
+        cols = st.columns(len(counts))
+        for idx, (src_name, count) in enumerate(counts.items()):
+            cols[idx].metric(f"Offres {src_name}", count)
+    else:
+        st.write("Pas de données disponibles.")
+
+# ------------------------------------------
+# ONGLET 3 : CENTRE DE PURGE
 # ------------------------------------------
 with tab_gestion:
-    st.header("⚙️ Gestion de l'historique")
-    st.write("L'agent purge automatiquement les annonces datant de **plus de 4 jours**. Vous pouvez également effectuer une maintenance manuelle ci-dessous.")
-
-    offres = charger_historique()
-    limite_4_jours = datetime.now() - timedelta(days=4)
-
-    offres_recentes = []
-    offres_obsoletes = []
-
-    for item in offres:
-        date_str = item.get("date_ajout")
-        if date_str:
-            try:
-                date_dt = datetime.fromisoformat(date_str)
-                if date_dt < limite_4_jours:
-                    offres_obsoletes.append(item)
-                else:
-                    offres_recentes.append(item)
-            except ValueError:
-                offres_recentes.append(item)
-        else:
-            offres_recentes.append(item)
-
-    # Indicateurs de performance
-    m1, m2, m3 = st.columns(3)
-    m1.metric("Total offres en mémoire", len(offres))
-    m2.metric("Offres récentes (≤ 4 jours)", len(offres_recentes))
-    m3.metric("Offres périmées (> 4 jours)", len(offres_obsoletes))
-
-    st.markdown("---")
-
-    # Boutons d'action
-    col_act1, col_act2 = st.columns(2)
-
-    with col_act1:
-        st.subheader("🧹 Nettoyage ciblé")
-        if st.button("Purger les offres de +4 jours", type="primary", use_container_width=True):
-            sauvegarder_historique(offres_recentes)
-            st.success(f"Nettoyage effectué : {len(offres_obsoletes)} offre(s) supprimée(s).")
-            st.rerun()
-
-    with col_act2:
-        st.subheader("⚠️ Réinitialisation complète")
-        with st.popover("Effacer TOUTES les offres"):
-            st.warning("Cette action supprimera la totalité de vos offres enregistrées.")
-            if st.button("Confirmer la suppression totale", use_container_width=True):
-                sauvegarder_historique([])
-                st.success("L'historique a été entièrement effacé.")
-                st.rerun()
+    st.header("⚙️ Nettoyage de l'historique")
+    st.write("Les offres datant de plus de **2 jours** sont purgées automatiquement à chaque passage.")
+    
+    if st.button("🧹 Purger les offres obsolètes maintenant", type="primary"):
+        limite = datetime.now() - timedelta(days=2)
+        recentes = [o for o in offres_brutes if datetime.fromisoformat(o.get("date_ajout", datetime.now().isoformat())) >= limite]
+        sauvegarder_historique(recentes)
+        st.success("Nettoyage manuel effectué !")
+        st.rerun()
