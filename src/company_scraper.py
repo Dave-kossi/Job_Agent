@@ -6,9 +6,59 @@ HEADERS = {
     "Accept": "application/json, text/plain, */*"
 }
 
-def collecter_offres_grands_groupes(mot_cle="Data Stage", limite=5) -> list:
+KEYWORDS_DATA = [
+    "Stage Data Science",
+    "Stage Machine Learning",
+    "Stage Intelligence Artificielle",
+    "Stage AI",
+    "Stage Data Engineer"
+]
+
+
+# ==========================================
+# 1. SCRAPER SPÉCIFIQUE EIFFAGE
+# ==========================================
+def collecter_offres_eiffage(limite: int = 5) -> list:
     """
-    Interroge directement les endpoints carrières publics des grands groupes industriels et bancaires.
+    Collecte les offres de stage en Data Science / ML / IA directement depuis le portail Eiffage.
+    """
+    offres_eiffage = []
+    print("🔍 Check Eiffage Carrières...")
+
+    url_api = "https://job.eiffage.com/api/jobs"
+
+    for kw in KEYWORDS_DATA:
+        params = {
+            "keyword": kw,
+            "limit": limite,
+            "type": "Stage"
+        }
+        try:
+            res = requests.get(url_api, params=params, headers=HEADERS, timeout=10)
+            if res.status_code == 200:
+                data = res.json()
+                for item in data.get("jobs", []):
+                    offres_eiffage.append({
+                        "site": "Eiffage Careers",
+                        "company": "Eiffage",
+                        "title": item.get("title", "Offre sans titre"),
+                        "location": item.get("location", "France"),
+                        "description": item.get("description", f"Stage chez Eiffage : {item.get('title')}"),
+                        "job_url": item.get("url", "")
+                    })
+        except Exception as e:
+            print(f"⚠️ Erreur Eiffage pour '{kw}' : {e}")
+
+    return offres_eiffage
+
+
+# ==========================================
+# 2. COLLECTE GLOBALE DES GRANDS GROUPES
+# ==========================================
+def collecter_offres_grands_groupes(mot_cle="Stage Data Science", limite=5) -> list:
+    """
+    Interroge directement les endpoints carrières publics des grands groupes industriels et bancaires :
+    Airbus, Thales, Société Générale, BNP Paribas et Eiffage.
     """
     offres_totales = []
 
@@ -84,5 +134,9 @@ def collecter_offres_grands_groupes(mot_cle="Data Stage", limite=5) -> list:
                 })
     except Exception as e:
         print(f"⚠️ Erreur BNP Paribas : {e}")
+
+    # 5. EIFFAGE (Nouveau)
+    offres_eiffage = collecter_offres_eiffage(limite=limite)
+    offres_totales.extend(offres_eiffage)
 
     return offres_totales
