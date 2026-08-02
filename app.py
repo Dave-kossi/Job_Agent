@@ -84,8 +84,8 @@ st.divider()
 # ONGLETS DE L'APPLICATION
 # ==========================================
 tab_offres, tab_sources, tab_gestion = st.tabs([
-    f"🎯 Offres Qualifiées ({len(offres_filtrees)})", 
-    "📊 Provenance & Stats", 
+    f"Offres Qualifiées ({len(offres_filtrees)})", 
+    "Provenance & Stats", 
     "⚙️ Gestion & Purge"
 ])
 
@@ -123,9 +123,9 @@ with tab_offres:
 
                 col_b1, col_b2 = st.columns(2)
                 with col_b1:
-                    st.markdown("**🎯 Besoin clé :**")
+                    st.markdown("**Besoin clé :**")
                     st.write(analyse.get("besoin_cle_entreprise", "Non précisé"))
-                    st.markdown("**📌 Preuve technique :**")
+                    st.markdown("**Preuve technique :**")
                     st.write(analyse.get("preuve_technique_citee", "Non précisée"))
 
                 with col_b2:
@@ -152,7 +152,7 @@ with tab_offres:
 # ONGLET 2 : STATISTIQUES DE PROVENANCE
 # ------------------------------------------
 with tab_sources:
-    st.header("📊 Statistiques par plateforme")
+    st.header("Statistiques par plateforme")
     if offres_brutes:
         counts = {}
         for o in offres_brutes:
