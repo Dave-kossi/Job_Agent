@@ -1911,5 +1911,24 @@
       ],
       "lettre_motivation": "Je me permets de vous adresser ma candidature pour le poste d'AI Engineer, Multimodal Systems chez Razer, car je suis convaincu que mes compétences et mon expérience dans le domaine de l'intelligence artificielle et des systèmes multimodaux pourraient être un atout pour votre équipe. En tant qu'étudiant en Master 2 Ingénierie Mathématique & Data Science à l'Université de Haute-Alsace, j'ai développé des compétences solides en analyse de données, en machine learning et en modélisation statistique. J'ai également travaillé sur plusieurs projets personnels, notamment le projet VentiRE-RAG, qui est un assistant RAG intelligent et local spécialisé dans l'analyse croisée de la réglementation RE2020 et des protocoles de contrôle de la ventilation. Ce projet a été développé avec LlamaIndex, FastEmbed et Streamlit, et a permis d'automatiser l'analyse de conformité multi-réglementaire et d'éliminer les risques d'erreur d'interprétation des débits. J'ai également travaillé sur d'autres projets, tels que la détection de fraude bancaire, le scoring de risque et la transition énergétique, qui ont nécessité l'utilisation de compétences en intelligence artificielle et en systèmes multimodaux. En tant qu'AI Engineer, je suis convaincu que je pourrais apporter une valeur ajoutée à votre équipe en développant des systèmes intelligents pour améliorer l'expérience utilisateur. Je suis particulièrement intéressé par l'utilisation de l'intelligence artificielle pour améliorer la performance et la fiabilité des systèmes, et je suis convaincu que mes compétences et mon expérience pourraient être un atout pour votre équipe. Je joins à ma candidature mon CV et mon portfolio, qui présentent plus en détail mes compétences et mon expérience. Je serais ravi de discuter plus en détail de ma candidature et de mes compétences, et je vous remercie de l'attention que vous porterez à ma demande. Je suis disponible pour un entretien à votre convenance, et je vous remercie de votre temps et de votre considération."
     }
+  },
+  {
+    "id": "https://www.linkedin.com/jobs/view/4447510079",
+    "title": "Senior - Data Scientist & AI Consultant",
+    "company": "Sia",
+    "url": "https://www.linkedin.com/jobs/view/4447510079",
+    "source": "Linkedin",
+    "date_ajout": "2026-08-02T08:56:12.985956",
+    "analyse": {
+      "score_adequation": 80,
+      "besoin_cle_entreprise": "Recherche d'un Data Scientist & AI Consultant pour le conseil en intelligence artificielle et science des données",
+      "preuve_technique_citee": "Projet VentiRE-RAG",
+      "points_forts": [
+        "Compétences en Data Science et Machine Learning",
+        "Expérience dans le développement de systèmes RAG/LLM et modélisation statistique",
+        "Capacité à transformer des données complexes en décisions fiables"
+      ],
+      "lettre_motivation": "Je me permets de vous adresser ma candidature pour le poste de Data Scientist & AI Consultant au sein de votre entreprise de conseil en intelligence artificielle et science des données. En tant qu'étudiant en Master 2 Ingénierie Mathématique & Data Science à l'Université de Haute-Alsace, je suis convaincu que mes compétences et mon expérience dans le domaine de la Data Science et du Machine Learning pourraient être un atout pour votre équipe. \n\n   En tant que Data Scientist, j'ai développé des compétences solides en analyse de données, en modélisation statistique et en développement de systèmes d'intelligence artificielle. Mon expérience dans le développement de systèmes RAG/LLM et de modélisation statistique m'a permis de comprendre l'importance de la précision et de la fiabilité dans les résultats. \n\n   J'ai travaillé sur plusieurs projets qui ont mis en œuvre ces compétences, notamment le projet VentiRE-RAG, qui a consisté à développer un moteur RAG hybride multi-segments pour automatiser l'analyse de conformité des systèmes de ventilation. Ce projet a non seulement amélioré mon expertise en matière de développement de systèmes d'intelligence artificielle mais a également démontré mon capacité à résoudre des problèmes complexes et à fournir des résultats précis. \n\n   En outre, mon expérience dans le développement de systèmes de détection de fraude bancaire et de scoring de risque m'a permis de comprendre l'importance de la sécurité et de la fiabilité dans les systèmes financiers. J'ai également travaillé sur des projets de segmentation RFM e-commerce et de projections énergie 2050, qui ont mis en œuvre mes compétences en analyse de données et en modélisation statistique. \n\n   Je suis convaincu que mes compétences et mon expérience pourraient être un atout pour votre équipe et je suis impatient de discuter de ma candidature avec vous. Je suis disponible pour un entretien et je vous remercie de l'attention que vous porterez à ma candidature. \n\n   Cordialement, \n   Kossi Noumagno"
+    }
   }
 ]
