@@ -1369,42 +1369,6 @@
     }
   },
   {
-    "id": "https://fr.indeed.com/viewjob?jk=eb07479705d217a7",
-    "title": "Stage - Data Analyst F/H",
-    "company": "SGD PHARMA",
-    "url": "https://fr.indeed.com/viewjob?jk=eb07479705d217a7",
-    "date_ajout": "2026-07-31T15:39:08.984990",
-    "analyse": {
-      "score_adequation": 85,
-      "besoin_cle_entreprise": "Développer des modèles d'analyse de données et d'intelligence artificielle en Python pour améliorer la performance industrielle",
-      "preuve_technique_citee": "Projet VentiRE-RAG sur GitHub",
-      "points_forts": [
-        "Compétences en Python, Data Science et Machine Learning",
-        "Expérience dans l'analyse de données et la conception de modèles d'intelligence artificielle",
-        "Capacité à travailler de manière autonome et en équipe"
-      ],
-      "lettre_motivation": "\n   Je me permets de vous contacter pour exprimer mon intérêt pour le stage de Data Analyst au sein de SGD Pharma. En tant qu'étudiant en Master 2 Ingénierie Mathématique et Data Science, je suis convaincu que mes compétences et mes expériences me permettent de contribuer de manière significative à votre équipe.\n\n   Tout d'abord, je suis attiré par la mission de SGD Pharma, qui consiste à développer des solutions innovantes pour l'emballage pharmaceutique en verre. Je suis impressionné par l'engagement de l'entreprise en faveur de l'excellence et de la satisfaction client. En tant que futur data analyst, je suis convaincu que mes compétences en analyse de données et en intelligence artificielle pourraient aider à améliorer la performance industrielle de l'entreprise.\n\n   En ce qui concerne mes compétences, je possède une solide formation en mathématiques et en informatique, avec une spécialisation en Data Science et Machine Learning. J'ai développé des compétences en Python, Pandas, NumPy, Plotly, Streamlit, SciPy, Clustering, Time Series et Data Visualisation. J'ai également une expérience dans l'analyse de données et la conception de modèles d'intelligence artificielle, notamment dans le cadre de mes projets personnels, tels que VentiRE-RAG et EU_energy_consomption.\n\n   Le projet VentiRE-RAG, que j'ai développé sur GitHub, est un exemple concret de mes compétences en intelligence artificielle et en analyse de données. Ce projet consiste à concevoir un moteur RAG hybride multi-segments pour automatiser l'analyse de conformité des systèmes de ventilation. J'ai utilisé des technologies telles que LlamaIndex, FastEmbed et Streamlit pour développer ce projet. Je suis convaincu que mes compétences et mon expérience dans ce domaine pourraient être utiles pour développer des solutions innovantes pour SGD Pharma.\n\n   En outre, je suis une personne autonome et rigoureuse, avec une capacité à travailler en équipe et à communiquer de manière efficace. Je suis convaincu que mes compétences et mon expérience me permettent de contribuer de manière significative à l'équipe de SGD Pharma.\n\n   En conclusion, je suis convaincu que ce stage de Data Analyst au sein de SGD Pharma serait une opportunité idéale pour moi de mettre en pratique mes compétences et mes connaissances en Data Science et Machine Learning. Je suis impatient de discuter de ma candidature et de mes compétences avec vous. Je vous remercie de l'attention que vous porterez à ma demande.\n\n   Cordialement,\n   Kossi Noumagno"
-    }
-  },
-  {
-    "id": "https://fr.indeed.com/viewjob?jk=fd39409edd012c9e",
-    "title": "Data Scientist / Ingénieur en Recherche Opérationnelle Senior F/H",
-    "company": "Air France",
-    "url": "https://fr.indeed.com/viewjob?jk=fd39409edd012c9e",
-    "date_ajout": "2026-07-31T15:39:14.071378",
-    "analyse": {
-      "score_adequation": 70,
-      "besoin_cle_entreprise": "Data Science et Recherche Opérationnelle pour la transformation numérique dans le secteur aérien",
-      "preuve_technique_citee": "Projet VentiRE-RAG sur GitHub",
-      "points_forts": [
-        "Compétences en Data Science et Machine Learning",
-        "Expérience avec des projets d'analyse décisionnelle et de détection de fraude",
-        "Connaissance de l'IA générative et des systèmes RAG/LLM"
-      ],
-      "lettre_motivation": "Je me permets de postuler pour le poste de Data Scientist / Ingénieur en Recherche Opérationnelle Senior chez Air France, car je suis convaincu que mes compétences et mon expérience dans le domaine de la Data Science et de la Recherche Opérationnelle pourraient être un atout pour votre équipe. Avec une formation en Ingénierie Mathématique et Data Science, j'ai développé des compétences solides en analyse de données, Machine Learning et modélisation statistique. Mes projets personnels, tels que VentiRE-RAG, démontrent ma capacité à concevoir des solutions innovantes pour répondre à des problématiques métiers complexes. Je suis particulièrement intéressé par l'opportunité de travailler dans le secteur aérien, où la transformation numérique et l'adoption de technologies de pointe sont cruciales pour améliorer les opérations et la prise de décision. En tant que Data Scientist, je suis convaincu que je pourrais apporter une valeur ajoutée à votre équipe en développant des produits de Science des Données Avancée et en appliquant des techniques d'Apprentissage Automatique pour améliorer les processus métiers. Je suis également à l'aise avec les concepts de MLOps et de Développement de produits de Science des Données Avancée, ce qui me permettrait de collaborer efficacement avec les équipes métiers pour définir et développer des solutions adaptées à leurs besoins. En outre, je suis convaincu que mes compétences en leadership et en gestion de projet pourraient être utiles pour diriger des projets stratégiques complexes et à fort impact, et pour influencer les décisions stratégiques de l'entreprise. Je joins à ma candidature mon CV et mon portfolio, qui présentent plus en détail mes compétences et mes expériences. Je serais ravi de discuter plus en détail de ma candidature et de mes qualifications avec vous. Je vous remercie de l'attention que vous porterez à ma candidature et je reste à votre disposition pour tout complément d'information. Cordialement, Kossi Noumagno"
-    }
-  },
-  {
     "id": "https://fr.indeed.com/viewjob?jk=900a4caf2ba93522",
     "title": "Senior Consultant.e – Data Scientist (H/F)",
     "company": "Wavestone",
@@ -2003,6 +1967,25 @@
         "Expérience avec des projets d'analyse décisionnelle et de détection de fraude"
       ],
       "lettre_motivation": "\n   Je me permets de vous adresser ma candidature pour le poste de Data Engineer au sein d'AEROCONTACT, dans le cadre de la Synergie Toulouse Tertiaire. En tant qu'étudiant en Master 2 Ingénierie Mathématique et Data Science, je suis convaincu que mes compétences et mon expérience seront un atout pour votre équipe.\n\n   Le secteur aéronautique est un domaine en constante évolution, où l'innovation et la technologie jouent un rôle clé. Je suis particulièrement attiré par l'idée de contribuer à l'amélioration de la Synergie Toulouse Tertiaire, en mettant mes compétences en Data Science et Machine Learning au service d'AEROCONTACT.\n\n   En tant que Data Engineer, je suis conscient de l'importance de la gestion de projet et du travail en équipe. J'ai déjà eu l'occasion de travailler sur des projets complexes, tels que le projet VentiRE-RAG, où j'ai développé un moteur RAG hybride pour automatiser l'analyse de conformité des systèmes de ventilation. Ce projet m'a permis de développer mes compétences en Python, LlamaIndex, Mistral et Streamlit, et de comprendre l'importance de la collaboration et de la communication au sein d'une équipe.\n\n   Je suis également convaincu que mes compétences en analyse décisionnelle et en détection de fraude seront un atout pour AEROCONTACT. J'ai travaillé sur plusieurs projets, tels que le projet d'analyse décisionnelle de la transition énergétique en Europe, où j'ai utilisé des outils tels que Python, Pandas, NumPy et Plotly pour analyser les données et évaluer les performances des pays.\n\n   Enfin, je suis convaincu que mon autonomie et ma capacité à travailler de manière indépendante seront un atout pour AEROCONTACT. J'ai déjà démontré ma capacité à gérer des projets complexes et à travailler de manière autonome, tout en étant capable de collaborer avec les membres de l'équipe.\n\n   Je suis impatient de discuter de ma candidature et de mes compétences avec vous. Je suis convaincu que je serais un atout pour l'équipe d'AEROCONTACT et que je pourrais contribuer à l'amélioration de la Synergie Toulouse Tertiaire.\n\n   Je vous remercie de l'attention que vous porterez à ma candidature. Je suis à votre disposition pour tout complément d'information ou pour discuter de ma candidature.\n\n   Cordialement,\n   Kossi NOUMAGNO"
+    }
+  },
+  {
+    "id": "https://fr.indeed.com/viewjob?jk=eb07479705d217a7",
+    "title": "Stage - Data Analyst F/H",
+    "company": "SGD PHARMA",
+    "url": "https://fr.indeed.com/viewjob?jk=eb07479705d217a7",
+    "source": "Indeed",
+    "date_ajout": "2026-08-02T17:33:53.389055",
+    "analyse": {
+      "score_adequation": 85,
+      "besoin_cle_entreprise": "Développement de solutions innovantes pour l'emballage en verre dans l'industrie pharmaceutique",
+      "preuve_technique_citee": "Projet VentiRE-RAG",
+      "points_forts": [
+        "Compétences en Data Science et Machine Learning",
+        "Expérience avec Python et les bibliothèques associées",
+        "Capacité à concevoir des solutions d'analyse de données et d'intelligence artificielle"
+      ],
+      "lettre_motivation": "Je me permets de vous adresser ma candidature pour le stage de Data Analyst au sein de votre équipe IT Groupe à SGD Pharma. En tant qu'étudiant en Master 2 Ingénierie Mathématique et Data Science, je suis convaincu que mes compétences et mon expérience dans le domaine de la science des données et de l'intelligence artificielle pourraient être un atout pour votre équipe. Je suis particulièrement attiré par l'opportunité de contribuer au développement de la plateforme de données industrielles et d'appliquer mes connaissances en Intelligence Artificielle et Machine Learning pour améliorer la performance industrielle du Groupe. Je suis impressionné par l'engagement de SGD Pharma en faveur de l'innovation et de la qualité, et je suis convaincu que mon esprit d'analyse, mon autonomie et ma rigueur pourraient être des atouts pour votre équipe. J'ai développé plusieurs projets en analyse décisionnelle, détection de fraude et IA générative, notamment le projet VentiRE-RAG, qui a consisté à concevoir un moteur RAG hybride multi-segments pour automatiser l'analyse de conformité des systèmes de ventilation. J'ai également travaillé sur des projets de détection de fraude bancaire et de scoring de risque, qui ont nécessité l'utilisation de techniques de Machine Learning et de modélisation statistique. Je suis convaincu que mes compétences et mon expérience pourraient être un atout pour votre équipe, et je suis impatient de discuter de ma candidature avec vous. Je vous remercie de l'attention que vous porterez à ma candidature, et je suis à votre disposition pour toute information complémentaire. Cordialement, Kossi NOUMAGNO"
     }
   }
 ]
