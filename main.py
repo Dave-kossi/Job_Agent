@@ -10,7 +10,7 @@ from src.company_scraper import collecter_offres_grands_groupes
 from src.agent import analyser_et_rediger
 
 CHEMIN_HISTORIQUE = "data/historique.json"
-JOURS_RETENTION_MAX =  2 # Supprime automatiquement les offres > 4 jours
+JOURS_RETENTION_MAX = 2  # Conserve uniquement les offres des 2 derniers jours
 
 # ==========================================
 # 1. GESTION ET PURGE DE L'HISTORIQUE (JSON)
@@ -29,7 +29,7 @@ def charger_et_nettoyer_historique(jours_max: int = JOURS_RETENTION_MAX) -> list
         offres_purgees = 0
 
         for item in historique:
-            # Récupération de la date d'ajout ou attribution de la date du jour par défaut
+            # Récupération de la date d'ajout ou attribution de la date actuelle
             date_ajout_str = item.get("date_ajout")
             if date_ajout_str:
                 try:
@@ -39,7 +39,7 @@ def charger_et_nettoyer_historique(jours_max: int = JOURS_RETENTION_MAX) -> list
             else:
                 date_ajout = datetime.now()
 
-            # Conservation uniquement si l'offre a moins de 4 jours
+            # Conservation des offres récentes uniquement
             if date_ajout >= limite_date:
                 historique_filtre.append(item)
             else:
@@ -64,7 +64,7 @@ def sauvegarder_historique(historique: list):
 # 2. COLLECTE MULTI-SOURCES
 # ==========================================
 def tout_rassembler() -> pd.DataFrame:
-    """Rassemble et fusionne les offres de toutes les sources."""
+    """Rassemble et fusionne les offres de toutes les sources avec marquage de provenance."""
     print("\n🔄 Collecte globale des opportunités en cours...")
     
     # A. Agrégateurs (LinkedIn, Indeed, Glassdoor, Google Jobs)
@@ -73,6 +73,8 @@ def tout_rassembler() -> pd.DataFrame:
     # B. API directes des Grands Groupes (Thales, Airbus, EDF, SG, BNP)
     offres_entreprises = collecter_offres_grands_groupes(mot_cle="Data Stage", limite=5)
     df_entreprises = pd.DataFrame(offres_entreprises)
+    if not df_entreprises.empty and 'site' not in df_entreprises.columns:
+        df_entreprises['site'] = "Grands Groupes"
     
     # C. Fusion & Dédoublonnage
     liste_df = [df for df in [df_general, df_entreprises] if not df.empty]
@@ -90,14 +92,14 @@ def tout_rassembler() -> pd.DataFrame:
 # 3. WORKFLOW PRINCIPAL DE L'AGENT
 # ==========================================
 def execution_job():
-    print("\n [AGENT] Démarrage du scan d'offres...")
+    print("\n🚀 [AGENT] Démarrage du scan d'offres...")
     
-    # Reading candidate background
+    # Lecture du profil candidat
     cv_texte = lire_cv_pdf("data/cv.pdf")
     portfolio_texte = lire_portfolio_html("data/portfolio.html")
     github_texte = lire_profil_github("Dave-kossi")
     
-    # Charge et filtre l'historique (< 4 jours)
+    # Charge et filtre l'historique (< 2 jours)
     historique = charger_et_nettoyer_historique(JOURS_RETENTION_MAX)
     ids_connus = [item['id'] for item in historique]
 
@@ -123,7 +125,11 @@ def execution_job():
         entreprise = row.get('company', 'Inconnue')
         titre = row.get('title', 'Sans titre')
         
-        print(f"⚡ Analyse IA : '{titre}' chez {entreprise}...")
+        # Extraction propre de la source (LinkedIn, Indeed, Grands Groupes, etc.)
+        raw_site = row.get('site', 'Autre')
+        source_plateforme = str(raw_site).capitalize() if raw_site else "Autre"
+        
+        print(f"⚡ Analyse IA : '{titre}' chez {entreprise} (Source: {source_plateforme})...")
         
         offre_dict = {
             'company': entreprise,
@@ -139,7 +145,8 @@ def execution_job():
                 "title": titre,
                 "company": entreprise,
                 "url": job_id,
-                "date_ajout": datetime.now().isoformat(),  # Horodatage précis
+                "source": source_plateforme,  # Provenance enregistrée pour Streamlit
+                "date_ajout": datetime.now().isoformat(),  # Date précise
                 "analyse": analyse
             }
             historique.append(resultat)
