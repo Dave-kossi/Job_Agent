@@ -1369,41 +1369,6 @@
     }
   },
   {
-    "id": "https://www.linkedin.com/jobs/view/4445507032",
-    "title": "Stage de fin d'études - Consultant·e Machine Learning & AI Engineer (H/F)",
-    "company": "Wavestone",
-    "url": "https://www.linkedin.com/jobs/view/4445507032",
-    "date_ajout": "2026-08-01T17:32:46.358091",
-    "analyse": {
-      "score_adequation": 85,
-      "besoin_cle_entreprise": "Développement de solutions d'analyse de données et de Machine Learning pour répondre à des problématiques métiers",
-      "preuve_technique_citee": "Projet VentiRE-RAG",
-      "points_forts": [
-        "Compétences en Machine Learning et AI Engineer",
-        "Expérience dans le développement de solutions d'analyse de données et de Machine Learning",
-        "Capacité à concevoir des outils d’intelligence décisionnelle pour analyser des données complexes"
-      ],
-      "lettre_motivation": "Je me permets de vous adresser ma candidature pour le stage de fin d'études - Consultant·e Machine Learning & AI Engineer chez Wavestone. En tant qu'étudiant en Master 2 Ingénierie Mathématique & Data Science à l'Université de Haute-Alsace, je suis convaincu que mes compétences et mon expérience dans le domaine de la science des données et du Machine Learning seraient un atout pour votre équipe. \n   \n   Avec une formation solide en mathématiques et en informatique, j'ai développé des compétences en Machine Learning et en analyse de données, que j'ai appliquées dans plusieurs projets personnels et scolaires. Mon projet VentiRE-RAG, par exemple, a consisté à concevoir un moteur RAG hybride multi-segments pour automatiser l'analyse de conformité des systèmes de ventilation. Ce projet a nécessité la mise en œuvre de compétences en Python, LlamaIndex, Mistral et Streamlit, et a abouti à une automatisation de l'analyse de conformité multi-réglementaire et à l'élimination des risques d'erreur d'interprétation des débits. \n   \n   En tant que Data Scientist Junior & AI Engineer, j'ai également travaillé sur d'autres projets, tels que l'analyse décisionnelle de la transition énergétique en Europe, la détection de fraude bancaire et le scoring de risque. Ces projets m'ont permis de développer mes compétences en analyse de données, en Machine Learning et en modélisation statistique. \n   \n   Je suis particulièrement attiré par l'opportunité de travailler chez Wavestone, car votre entreprise est reconnue pour son expertise en consulting en technologie et innovation. Je suis convaincu que mon profil et mes compétences seraient un excellent ajout à votre équipe et que je pourrais contribuer à des projets passionnants et stimulants. \n   \n   Je suis disponible pour commencer mon stage à partir de mars 2027 et je suis prêt à mettre en œuvre mes compétences et mon expérience pour contribuer au succès de vos projets. Je vous remercie de l'attention que vous porterez à ma candidature et je suis impatient de discuter de cette opportunité avec vous. \n   \n   Cordialement, Kossi Noumagno"
-    }
-  },
-  {
-    "id": "https://www.linkedin.com/jobs/view/4447108826",
-    "title": "Data Scientists Experts en Intelligence Artificielle F/H",
-    "company": "Framatome",
-    "url": "https://www.linkedin.com/jobs/view/4447108826",
-    "date_ajout": "2026-08-01T17:32:48.748436",
-    "analyse": {
-      "score_adequation": 80,
-      "besoin_cle_entreprise": "Data Scientists experts en Intelligence Artificielle pour l'analyse de données et le développement de modèles dans le contexte de l'énergie nucléaire",
-      "preuve_technique_citee": "Projet VentiRE-RAG",
-      "points_forts": [
-        "Compétences en Data Science et Intelligence Artificielle",
-        "Expérience dans l'analyse de données et le développement de modèles pour la transition énergétique"
-      ],
-      "lettre_motivation": "Je me permets de postuler pour le poste de Data Scientists Experts en Intelligence Artificielle chez Framatome, car je suis convaincu que mes compétences et mon expérience dans le domaine de la Data Science et de l'Intelligence Artificielle pourraient être un atout pour votre équipe. En tant qu'étudiant en Master 2 Ingénierie Mathématique et Data Science à l'Université de Haute-Alsace, j'ai développé des compétences solides en analyse de données, en Machine Learning et en modélisation statistique. Mon projet VentiRE-RAG, qui vise à concevoir un moteur RAG hybride pour automatiser l'analyse de conformité des systèmes de ventilation, est un exemple concret de mon expertise dans le domaine de l'Intelligence Artificielle. J'ai également travaillé sur d'autres projets, tels que l'analyse décisionnelle de la transition énergétique en Europe, qui m'ont permis de développer mes compétences en analyse de données et en visualisation de données. Je suis convaincu que mes compétences et mon expérience pourraient être un atout pour votre équipe et je suis impatient de discuter de mes qualifications plus en détail. Je suis disponible pour un stage de six mois à partir de mars 2027 et je suis prêt à mettre mes compétences au service de Framatome pour contribuer à l'innovation et à l'excellence dans le domaine de l'énergie nucléaire. Je vous remercie de l'attention que vous porterez à ma candidature et je suis à votre disposition pour toute information complémentaire."
-    }
-  },
-  {
     "id": "https://www.linkedin.com/jobs/view/4445572778",
     "title": "Data Scientist – IA, Machine Learning & Business Intelligence",
     "company": "SoTalent",
@@ -1923,6 +1888,25 @@
         "Expérience dans le développement de modèles de mesure de l'efficacité marketing"
       ],
       "lettre_motivation": "Je me permets de postuler pour le poste de Data Scientist au sein de l'équipe Data & IA de Kering, car je suis convaincu que mes compétences en analyse de données et en Machine Learning pourraient être un atout pour votre équipe. En tant qu'étudiant en Master 2 Ingénierie Mathématique & Data Science, j'ai développé des compétences solides en analyse de données et en Machine Learning, que j'ai appliquées dans plusieurs projets personnels, notamment dans le projet VentiRE-RAG, où j'ai conçu un moteur RAG hybride multi-segments pour automatiser l'analyse de conformité des systèmes de ventilation. Ce projet m'a permis de développer mes compétences en analyse de données et en Machine Learning, et je suis convaincu que ces compétences pourraient être utiles pour développer des modèles de mesure de l'efficacité marketing pour Kering. En outre, j'ai également travaillé sur d'autres projets, tels que l'analyse décisionnelle de la transition énergétique en Europe, où j'ai conçu un outil d'intelligence décisionnelle pour analyser la transition énergétique en Europe et évaluer la performance des pays. J'ai également développé des compétences en Python, Pandas, NumPy, Plotly, Streamlit, SciPy, Clustering, Time Series et Data Visualisation. Je suis convaincu que mes compétences et mon expérience pourraient être un atout pour votre équipe, et je suis impatient de discuter de ce poste plus en détail. Je suis disponible pour un entretien et je vous remercie de l'attention que vous porterez à ma candidature. Cordialement, Kossi Noumagno"
+    }
+  },
+  {
+    "id": "https://fr.indeed.com/viewjob?jk=68b746c060fb715a",
+    "title": "Data scientist-e / Data ingénieur-e",
+    "company": "Sécurité sociale",
+    "url": "https://fr.indeed.com/viewjob?jk=68b746c060fb715a",
+    "source": "Indeed",
+    "date_ajout": "2026-08-03T18:18:29.815706",
+    "analyse": {
+      "score_adequation": 85,
+      "besoin_cle_entreprise": "Data Scientist pour la transformation digitale et l'Intelligence Artificielle Générative",
+      "preuve_technique_citee": "Projet VentiRE-RAG sur GitHub",
+      "points_forts": [
+        "Compétences en Data Science et Machine Learning",
+        "Expérience avec les outils de Data Science tels que Python, Pandas, NumPy, Plotly, Streamlit",
+        "Connaissance de l'Intelligence Artificielle Générative et des modèles RAG"
+      ],
+      "lettre_motivation": "Je me permets de postuler pour le poste de Data Scientist au sein de votre équipe, car je suis convaincu que mes compétences et expériences en Data Science et Intelligence Artificielle Générative pourraient être un atout pour votre organisation. En tant qu'étudiant en Master 2 Ingénierie Mathématique et Data Science, j'ai développé des compétences solides en analyse de données, Machine Learning et modélisation statistique. Mes projets personnels, tels que VentiRE-RAG, ont démontré mon aptitude à concevoir et développer des solutions d'IA générative innovantes pour répondre à des problématiques métiers spécifiques. Je suis particulièrement attiré par l'opportunité de contribuer à la transformation digitale de l'Urssaf et de travailler sur des projets qui ont un impact positif sur le service public. Je suis convaincu que mes compétences en Data Science, combinées à mon expérience avec les outils de Data Science et mon intérêt pour l'Intelligence Artificielle Générative, me permettent de répondre aux besoins de votre équipe. Je suis impatient de discuter de ma candidature et de mes qualifications avec vous. Je vous remercie de l'attention que vous porterez à ma demande. Cordialement, Kossi Noumagno."
     }
   }
 ]
