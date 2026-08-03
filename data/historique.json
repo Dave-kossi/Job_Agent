@@ -1369,24 +1369,6 @@
     }
   },
   {
-    "id": "https://www.linkedin.com/jobs/view/4445514056",
-    "title": "Data Scientist (F/H) en alternance",
-    "company": "Carrefour",
-    "url": "https://www.linkedin.com/jobs/view/4445514056",
-    "date_ajout": "2026-08-01T11:44:15.035306",
-    "analyse": {
-      "score_adequation": 85,
-      "besoin_cle_entreprise": "Analyse de données et développement de solutions Data Science pour améliorer les processus de distribution et de commerce de détail chez Carrefour",
-      "preuve_technique_citee": "Projet Europa Énergie sur GitHub, utilisant Python, Pandas, NumPy, Plotly, Streamlit, SciPy pour l'analyse décisionnelle de la transition énergétique en Europe",
-      "points_forts": [
-        "Compétences solides en Data Science et Machine Learning",
-        "Expérience dans le développement de solutions d'analyse de données et de modèles prédictifs",
-        "Capacité à travailler de manière autonome et à gérer des projets complexes"
-      ],
-      "lettre_motivation": "Je me permets de vous adresser ma candidature pour le poste de Data Scientist en alternance chez Carrefour, car je suis convaincu que mes compétences et mon expérience dans le domaine de la Data Science et du Machine Learning pourraient apporter une valeur ajoutée significative à votre équipe. En tant qu'étudiant en Master 2 Ingénierie Mathématique et Data Science à l'Université de Haute-Alsace, j'ai développé une solide formation en mathématiques et en informatique, ainsi qu'une expérience pratique dans le développement de solutions d'analyse de données et de modèles prédictifs. Mon projet Europa Énergie, disponible sur mon profil GitHub, est un exemple concret de mon travail. Ce projet consiste à concevoir un outil d'intelligence décisionnelle pour analyser la transition énergétique en Europe, en utilisant des données ouvertes et des techniques de clustering et de visualisation de données. J'ai également travaillé sur d'autres projets, tels que la détection de fraude bancaire et le scoring de risque, qui ont nécessité l'utilisation de techniques de Machine Learning et de modélisation statistique. En tant que Data Scientist, je suis convaincu que je pourrais apporter une contribution significative à l'amélioration des processus de distribution et de commerce de détail chez Carrefour, en utilisant mes compétences en analyse de données et en développement de modèles prédictifs. Je suis particulièrement attiré par l'idée de travailler dans un environnement en Alternance, qui me permettrait de mettre en pratique mes connaissances théoriques et de développer mes compétences professionnelles. Je suis convaincu que mon autonomie, ma capacité à gérer des projets complexes et mon esprit d'équipe seraient des atouts pour votre équipe. Je suis impatient de discuter de ma candidature et de mes qualifications avec vous. Je vous remercie de l'attention que vous porterez à ma candidature et je reste à votre disposition pour tout complément d'information. Cordialement, Kossi Noumagno"
-    }
-  },
-  {
     "id": "https://fr.indeed.com/viewjob?jk=ed95f6c4124ab59c",
     "title": "Data Scientist",
     "company": "VISIAN",
@@ -1941,6 +1923,24 @@
         "Capacité à travailler de manière autonome et en équipe"
       ],
       "lettre_motivation": "Je me permets de postuler pour le stage de fin d'études de Consultant·e Machine Learning & AI Engineer au sein de votre cabinet de conseil international, Wavestone. En tant qu'étudiant en Master 2 Ingénierie Mathématique & Data Science, je suis convaincu que mes compétences et mon expérience dans le domaine du Machine Learning et de l'Intelligence Artificielle seraient un atout pour votre équipe. \n   Mon intérêt pour le domaine de la Data Science et de l'Intelligence Artificielle m'a poussé à développer plusieurs projets personnels, notamment le projet VentiRE-RAG, qui vise à concevoir un moteur RAG hybride multi-segments pour automatiser l'analyse de conformité des systèmes de ventilation. Ce projet a nécessité l'utilisation de technologies telles que LlamaIndex, FastEmbed et Streamlit, et a démontré mon capacité à travailler de manière autonome et à relever les défis techniques.\n   En tant que futur consultant, je suis convaincu que mes compétences en analyse de données, en développement de modèles de Machine Learning et en Intelligence Artificielle seraient un atout pour accompagner les clients de Wavestone dans leurs transformations stratégiques. Je suis également convaincu que mon esprit d'équipe, ma curiosité et ma détermination seraient des atouts pour travailler en équipe et relever les défis du métier de consultant.\n   Je suis particulièrement attiré par la mission de Wavestone, qui consiste à accompagner les grandes transformations stratégiques en utilisant l'Intelligence Artificielle et le Machine Learning. Je suis convaincu que mon expérience et mes compétences seraient un atout pour contribuer à cette mission et pour aider les clients de Wavestone à atteindre leurs objectifs.\n   Je joins à ma candidature mon CV, mon portfolio et les liens vers mes projets sur GitHub. Je serais ravi de discuter de ma candidature et de mes compétences avec vous. Je vous remercie de l'attention que vous porterez à ma candidature. Cordialement, Kossi NOUMAGNO"
+    }
+  },
+  {
+    "id": "https://www.linkedin.com/jobs/view/4429654380",
+    "title": "Stage Gestion documentaire & Pilotage digital H/F",
+    "company": "Fives",
+    "url": "https://www.linkedin.com/jobs/view/4429654380",
+    "source": "Linkedin",
+    "date_ajout": "2026-08-03T13:26:29.616418",
+    "analyse": {
+      "score_adequation": 80,
+      "besoin_cle_entreprise": "Gestion documentaire et pilotage digital pour l'optimisation des processus et la digitalisation des activités",
+      "preuve_technique_citee": "Projet VentiRE-RAG",
+      "points_forts": [
+        "Compétences en gestion documentaire et pilotage digital",
+        "Expérience dans l'analyse de données et le développement de solutions d'intelligence artificielle"
+      ],
+      "lettre_motivation": "\n   Je me permets de vous adresser ma candidature pour le stage de gestion documentaire et pilotage digital chez Fives, car je suis convaincu que mes compétences et mon expérience dans l'analyse de données et le développement de solutions d'intelligence artificielle pourraient être un atout pour votre équipe.\n\n   En tant qu'étudiant en Master 2 Ingénierie Mathématique et Data Science, j'ai développé des compétences solides en gestion documentaire et pilotage digital, notamment à travers mes projets de recherche et de développement de solutions d'analyse de données et d'intelligence artificielle. Je suis convaincu que mes compétences pourraient être utiles pour optimiser les processus et digitaliser les activités de Fives.\n\n   J'ai notamment développé un projet de conception d'un outil d’intelligence décisionnelle pour analyser la transition énergétique en Europe, en utilisant des données ouvertes et des techniques de clustering et de visualisation de données. Ce projet a permis de simuler des scénarios prospectifs à horizon 2050 et d'évaluer la performance des pays en termes de renouvelables, d'intensité carbone et de vitesse de transition.\n\n   De plus, j'ai travaillé sur un projet de développement d'un assistant RAG intelligent et local pour l'analyse croisée de la réglementation RE2020 et des protocoles de contrôle de la ventilation, en utilisant des techniques de traitement automatique des langues et de machine learning. Ce projet a permis d'automatiser l'analyse de conformité multi-réglementaire et d'éliminer les risques d'erreur d'interprétation des débits, renforçant ainsi la fiabilité des audits techniques et l'efficacité opérationnelle.\n\n   Je suis convaincu que mes compétences et mon expérience pourraient être un atout pour Fives, et je suis impatient de discuter de ma candidature avec vous. Je suis disponible pour commencer le stage à partir de mars 2027 et je suis prêt à travailler de manière autonome et en équipe pour atteindre les objectifs fixés.\n\n   Je vous remercie de l'attention que vous porterez à ma candidature. Je suis à votre disposition pour discuter de mes qualifications et de mes expériences, et je vous souhaite une bonne journée.\n\n   Cordialement,\n   Kossi Noumagno"
     }
   }
 ]
