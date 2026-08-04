@@ -1,20 +1,24 @@
 import os
 import re
 import time
-import json
 import random
 import pandas as pd
-from datetime import datetime, timedelta
+from datetime import datetime
 
 from src.parser import lire_cv_pdf, lire_portfolio_html
 from src.github_parser import lire_profil_github
 from src.scraper import collecter_offres
 from src.company_scraper import collecter_offres_grands_groupes, MOTS_CLES_PAR_DEFAUT
 from src.agent import analyser_et_rediger
+from src.historique import (
+    charger_historique,
+    sauvegarder_historique,
+    purger_historique,
+    JOURS_RETENTION_MAX,
+)
 
-CHEMIN_HISTORIQUE = "data/historique.json"
-JOURS_RETENTION_MAX = 2  # Conserve uniquement les offres des 2 derniers jours
 SEUIL_SCORE_MIN = 70
+CHEMIN_REJETS = "data/offres_rejetees.json"
 
 # ==========================================
 # FILTRES : STAGE OU ALTERNANCE en Data Science / Analytics / ML / LLM / AI Engineering
@@ -52,82 +56,36 @@ def est_stage_data_valide(titre: str, description: str) -> bool:
 
 
 # ==========================================
-# 1. GESTION ET PURGE DE L'HISTORIQUE (JSON)
+# OFFRES REJETÉES — évite de re-payer un appel Groq
+# pour une offre déjà scorée sous le seuil lors d'un run précédent
 # ==========================================
-def charger_et_nettoyer_historique(jours_max: int = JOURS_RETENTION_MAX) -> list:
-    """Charge l'historique et purge automatiquement les offres de plus de X jours."""
-    if not os.path.exists(CHEMIN_HISTORIQUE):
-        return []
-
-    try:
-        with open(CHEMIN_HISTORIQUE, "r", encoding="utf-8") as f:
-            historique = json.load(f)
-
-        limite_date = datetime.now() - timedelta(days=jours_max)
-        historique_filtre = []
-        offres_purgees = 0
-
-        for item in historique:
-            date_ajout_str = item.get("date_ajout")
-            if date_ajout_str:
-                try:
-                    date_ajout = datetime.fromisoformat(date_ajout_str)
-                except (ValueError, TypeError):
-                    date_ajout = datetime.now()
-            else:
-                date_ajout = datetime.now()
-
-            if date_ajout >= limite_date:
-                historique_filtre.append(item)
-            else:
-                offres_purgees += 1
-
-        if offres_purgees > 0:
-            print(f"🧹 Purge automatique : {offres_purgees} offre(s) de plus de {jours_max} jours supprimée(s).")
-
-        return historique_filtre
-
-    except Exception as e:
-        print(f"⚠️ Erreur lors du chargement de l'historique : {e}")
-        return []
-
-
-def sauvegarder_historique(historique: list):
-    os.makedirs(os.path.dirname(CHEMIN_HISTORIQUE), exist_ok=True)
-    with open(CHEMIN_HISTORIQUE, "w", encoding="utf-8") as f:
-        json.dump(historique, f, ensure_ascii=False, indent=2)
-
-
-# ==========================================
-# 2. OFFRES REJETÉES — évite de re-payer un appel Groq
-#    pour une offre déjà scorée sous le seuil
-# ==========================================
-CHEMIN_REJETS = "data/offres_rejetees.json"
-
-
-def charger_ids_rejetes() -> set:
-    if not os.path.exists(CHEMIN_REJETS):
+def charger_ids_rejetes(chemin: str = CHEMIN_REJETS) -> set:
+    if not os.path.exists(chemin):
         return set()
     try:
-        with open(CHEMIN_REJETS, "r", encoding="utf-8") as f:
+        import json
+        with open(chemin, "r", encoding="utf-8") as f:
             return set(json.load(f))
-    except Exception:
+    except Exception as e:
+        print(f"⚠️ Erreur lors du chargement des rejets : {e}")
         return set()
 
 
-def sauvegarder_ids_rejetes(ids: set):
-    os.makedirs(os.path.dirname(CHEMIN_REJETS), exist_ok=True)
-    with open(CHEMIN_REJETS, "w", encoding="utf-8") as f:
+def sauvegarder_ids_rejetes(ids: set, chemin: str = CHEMIN_REJETS):
+    import json
+    os.makedirs(os.path.dirname(chemin), exist_ok=True)
+    with open(chemin, "w", encoding="utf-8") as f:
         json.dump(list(ids), f, ensure_ascii=False, indent=2)
 
 
 # ==========================================
-# 3. COLLECTE MULTI-SOURCES & PRÉ-FILTRAGE
+# COLLECTE MULTI-SOURCES & PRÉ-FILTRAGE
 # ==========================================
 def tout_rassembler() -> pd.DataFrame:
     """
-    Rassemble les offres de toutes les sources et filtre exclusivement
-    les stages/alternances Data Science / Analytics / ML / LLM / AI Engineering.
+    Rassemble les offres de toutes les sources (JobSpy, WTTJ, Stage.fr,
+    Grands Groupes) et filtre exclusivement les stages/alternances
+    Data Science / Analytics / ML / LLM / AI Engineering.
     """
     print("\n🔄 Collecte globale des opportunités (Data Science, Analytics, ML, LLM & AI Engineering)...")
 
@@ -158,7 +116,7 @@ def tout_rassembler() -> pd.DataFrame:
 
 
 # ==========================================
-# 4. WORKFLOW PRINCIPAL DE L'AGENT
+# WORKFLOW PRINCIPAL DE L'AGENT
 # ==========================================
 def execution_job():
     print("\n🚀 [AGENT DATA SCIENCE / ANALYTICS / ML / LLM / AI ENGINEERING] Démarrage du scan d'offres...")
@@ -167,7 +125,7 @@ def execution_job():
     portfolio_texte = lire_portfolio_html("data/portfolio.html")
     github_texte = lire_profil_github("Dave-kossi")
 
-    historique = charger_et_nettoyer_historique(JOURS_RETENTION_MAX)
+    historique = purger_historique(JOURS_RETENTION_MAX)
     ids_connus = {item['id'] for item in historique if item.get('id')}
     ids_rejetes = charger_ids_rejetes()
 
@@ -230,7 +188,7 @@ def execution_job():
 
 
 # ==========================================
-# 5. EXÉCUTION EN POINT D'ENTRÉE
+# EXÉCUTION EN POINT D'ENTRÉE
 # ==========================================
 if __name__ == "__main__":
     print("🤖 Agent Autonome (Stage / Alternance — Data Science, Analytics, ML, LLM, AI Engineering) démarré !")
