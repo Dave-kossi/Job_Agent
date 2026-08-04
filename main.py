@@ -1,43 +1,54 @@
 import os
+import re
+import time
 import json
+import random
 import pandas as pd
 from datetime import datetime, timedelta
 
 from src.parser import lire_cv_pdf, lire_portfolio_html
 from src.github_parser import lire_profil_github
 from src.scraper import collecter_offres
-from src.company_scraper import collecter_offres_grands_groupes
+from src.company_scraper import collecter_offres_grands_groupes, MOTS_CLES_PAR_DEFAUT
 from src.agent import analyser_et_rediger
 
 CHEMIN_HISTORIQUE = "data/historique.json"
 JOURS_RETENTION_MAX = 2  # Conserve uniquement les offres des 2 derniers jours
+SEUIL_SCORE_MIN = 70
 
 # ==========================================
-# FILTRES STRICTS : DATA SCIENCE / ML / IA
+# FILTRES : STAGE OU ALTERNANCE en Data Science / Analytics / ML / LLM / AI Engineering
 # ==========================================
 MOTS_CLES_DOMAINE = [
-    "data science", "data scientist", "machine learning", "ml", 
-    "deep learning", "intelligence artificielle", "ia", "ai",
-    "nlp", "computer vision", "llm", "generative ai", "data engineer"
+    "data science", "data scientist", "data analyst", "data analytics", "analytics",
+    "machine learning", "deep learning",
+    "intelligence artificielle", "ia", "ai", "ai engineer", "ai engineering",
+    "nlp", "computer vision", "llm", "large language model",
+    "generative ai", "ia generative", "genai",
+    "data engineer", "data engineering",
+    "mlops", "ml engineer", "ml engineering",
 ]
 
-MOTS_CLES_CONTRAT = ["stage", "intern", "internship"]
+MOTS_CLES_CONTRAT = [
+    "stage", "stagiaire", "intern", "internship",
+    "alternance", "alternant", "apprentissage", "apprenti",
+    "contrat de professionnalisation", "contrat d'apprentissage",
+]
+
+
+def _contient_mot(mots: list, texte: str) -> bool:
+    """Matching à limites de mots — évite les faux positifs du type
+    'ml' dans 'html' ou 'ai' dans 'portail'."""
+    return any(re.search(rf"\b{re.escape(mot)}\b", texte) for mot in mots)
 
 
 def est_stage_data_valide(titre: str, description: str) -> bool:
-    """
-    Vérifie rigoureusement que l'offre concerne un STAGE 
-    dans le domaine de la Data Science, du ML ou de l'IA.
-    """
+    """Vérifie que l'offre est un stage OU une alternance dans
+    Data Science / Analytics / ML / LLM / AI Engineering."""
     texte = f"{titre} {description}".lower()
-    
-    # 1. Doit obligatoirement mentionner un contrat de type Stage/Internship
-    est_stage = any(mot in texte for mot in MOTS_CLES_CONTRAT)
-    
-    # 2. Doit concerner les thématiques ciblées (Data Science / ML / IA)
-    est_data_ml_ia = any(mot in texte for mot in MOTS_CLES_DOMAINE)
-    
-    return est_stage and est_data_ml_ia
+    est_stage_ou_alternance = _contient_mot(MOTS_CLES_CONTRAT, texte)
+    est_domaine_cible = _contient_mot(MOTS_CLES_DOMAINE, texte)
+    return est_stage_ou_alternance and est_domaine_cible
 
 
 # ==========================================
@@ -61,12 +72,11 @@ def charger_et_nettoyer_historique(jours_max: int = JOURS_RETENTION_MAX) -> list
             if date_ajout_str:
                 try:
                     date_ajout = datetime.fromisoformat(date_ajout_str)
-                except ValueError:
+                except (ValueError, TypeError):
                     date_ajout = datetime.now()
             else:
                 date_ajout = datetime.now()
 
-            # Conservation des offres récentes uniquement (<= 2 jours)
             if date_ajout >= limite_date:
                 historique_filtre.append(item)
             else:
@@ -83,130 +93,145 @@ def charger_et_nettoyer_historique(jours_max: int = JOURS_RETENTION_MAX) -> list
 
 
 def sauvegarder_historique(historique: list):
-    """Sauvegarde la liste des offres dans le fichier JSON."""
     os.makedirs(os.path.dirname(CHEMIN_HISTORIQUE), exist_ok=True)
     with open(CHEMIN_HISTORIQUE, "w", encoding="utf-8") as f:
         json.dump(historique, f, ensure_ascii=False, indent=2)
 
 
 # ==========================================
-# 2. COLLECTE MULTI-SOURCES & PRÉ-FILTRAGE
+# 2. OFFRES REJETÉES — évite de re-payer un appel Groq
+#    pour une offre déjà scorée sous le seuil
+# ==========================================
+CHEMIN_REJETS = "data/offres_rejetees.json"
+
+
+def charger_ids_rejetes() -> set:
+    if not os.path.exists(CHEMIN_REJETS):
+        return set()
+    try:
+        with open(CHEMIN_REJETS, "r", encoding="utf-8") as f:
+            return set(json.load(f))
+    except Exception:
+        return set()
+
+
+def sauvegarder_ids_rejetes(ids: set):
+    os.makedirs(os.path.dirname(CHEMIN_REJETS), exist_ok=True)
+    with open(CHEMIN_REJETS, "w", encoding="utf-8") as f:
+        json.dump(list(ids), f, ensure_ascii=False, indent=2)
+
+
+# ==========================================
+# 3. COLLECTE MULTI-SOURCES & PRÉ-FILTRAGE
 # ==========================================
 def tout_rassembler() -> pd.DataFrame:
     """
-    Rassemble les offres de toutes les sources (JobSpy, WTTJ, Stage.fr, Grands Groupes dont Eiffage)
-    et filtre exclusivement les stages Data Science / ML / IA.
+    Rassemble les offres de toutes les sources et filtre exclusivement
+    les stages/alternances Data Science / Analytics / ML / LLM / AI Engineering.
     """
-    print("\n🔄 Collecte globale des opportunités (Data Science, ML & IA)...")
-    
-    # A. Agrégateurs (JobSpy + Welcome to the Jungle + Stage.fr)
+    print("\n🔄 Collecte globale des opportunités (Data Science, Analytics, ML, LLM & AI Engineering)...")
+
     df_general = collecter_offres(limites=5)
-    
-    # B. Grands Groupes (Airbus, Thales, SG, BNP Paribas, Eiffage)
-    offres_entreprises = collecter_offres_grands_groupes(mot_cle="Stage Data Science", limite=5)
+
+    offres_entreprises = collecter_offres_grands_groupes(mots_cles=MOTS_CLES_PAR_DEFAUT, limite=5)
     df_entreprises = pd.DataFrame(offres_entreprises)
-    
-    # C. Fusion & Dédoublonnage
+
     liste_df = [df for df in [df_general, df_entreprises] if isinstance(df, pd.DataFrame) and not df.empty]
-    
+
     if not liste_df:
         return pd.DataFrame()
 
     df_brut = pd.concat(liste_df, ignore_index=True)
-    df_brut = df_brut.dropna(subset=['job_url'])
+    df_brut = df_brut[df_brut["job_url"].astype(str) != ""]
     df_brut = df_brut.drop_duplicates(subset=['job_url'], keep='first')
 
-    # D. Filtre strict de pré-qualification Data Science / ML / IA
     offres_filtrees = []
     for _, row in df_brut.iterrows():
         titre = str(row.get('title', ''))
         desc = str(row.get('description', ''))
-        
+
         if est_stage_data_valide(titre, desc):
             offres_filtrees.append(row)
-            
-    print(f"🔍 {len(df_brut)} offres scannées au total ➔ {len(offres_filtrees)} stages Data/ML/IA validés.")
+
+    print(f"🔍 {len(df_brut)} offres scannées au total ➔ {len(offres_filtrees)} stages/alternances Data/ML/IA validés.")
     return pd.DataFrame(offres_filtrees)
 
 
 # ==========================================
-# 3. WORKFLOW PRINCIPAL DE L'AGENT
+# 4. WORKFLOW PRINCIPAL DE L'AGENT
 # ==========================================
 def execution_job():
-    print("\n🚀 [AGENT DATA SCIENCE / ML / IA] Démarrage du scan d'offres...")
-    
-    # Lecture du profil candidat
+    print("\n🚀 [AGENT DATA SCIENCE / ANALYTICS / ML / LLM / AI ENGINEERING] Démarrage du scan d'offres...")
+
     cv_texte = lire_cv_pdf("data/cv.pdf")
     portfolio_texte = lire_portfolio_html("data/portfolio.html")
     github_texte = lire_profil_github("Dave-kossi")
-    
-    # Charge et purge l'historique (< 2 jours)
-    historique = charger_et_nettoyer_historique(JOURS_RETENTION_MAX)
-    ids_connus = [item['id'] for item in historique]
 
-    # Collecte des opportunités ciblées
+    historique = charger_et_nettoyer_historique(JOURS_RETENTION_MAX)
+    ids_connus = {item['id'] for item in historique if item.get('id')}
+    ids_rejetes = charger_ids_rejetes()
+
     offres = tout_rassembler()
-    
+
     if offres.empty:
-        print("❌ Aucune nouvelle offre de stage Data/ML/IA trouvée lors de ce passage.")
+        print("❌ Aucune nouvelle offre de stage/alternance Data/ML/IA trouvée lors de ce passage.")
         sauvegarder_historique(historique)
         print("🏁 [AGENT] Fin de l'exécution.")
         return
 
-    print(f"📊 {len(offres)} stages en Data/ML/IA à évaluer par l'IA...\n")
-    
-    # Analyse LLM par offre
+    print(f"📊 {len(offres)} offres à évaluer par l'IA...\n")
+
     for _, row in offres.iterrows():
         job_id = str(row.get('job_url', ''))
-        
-        # Filtre anti-doublons (déjà traitées ou déjà en base)
-        if not job_id or job_id in ids_connus:
+
+        # Ignore : déjà en base, déjà rejetée dans un run précédent, ou déjà traitée dans ce run
+        if not job_id or job_id in ids_connus or job_id in ids_rejetes:
             continue
-            
+
         entreprise = row.get('company', 'Inconnue')
         titre = row.get('title', 'Sans titre')
-        
-        # Provenance exacte (Eiffage, Stage.fr, WTTJ, LinkedIn, etc.)
         raw_site = row.get('site', 'Autre')
         source_plateforme = str(raw_site).capitalize() if raw_site else "Autre"
-        
+
         print(f"⚡ Analyse IA : '{titre}' chez {entreprise} (Source: {source_plateforme})...")
-        
+
         offre_dict = {
             'company': entreprise,
             'title': titre,
             'description': str(row.get('description', ''))
         }
-        
+
         analyse = analyser_et_rediger(offre_dict, cv_texte, portfolio_texte, github_texte)
-        
-        if analyse and analyse.get('score_adequation', 0) >= 70:
+        score = analyse.get('score_adequation', 0) if analyse else 0
+
+        if analyse and score >= SEUIL_SCORE_MIN:
             resultat = {
                 "id": job_id,
                 "title": titre,
                 "company": entreprise,
                 "url": job_id,
-                "source": source_plateforme,        # Enregistré pour les filtres Streamlit
-                "date_ajout": datetime.now().isoformat(),  # Date ISO pour la purge 2 jours
+                "source": source_plateforme,
+                "date_ajout": datetime.now().isoformat(),
                 "analyse": analyse
             }
             historique.append(resultat)
-            print(f"  └─ ✅ Stage retenu ! (Match : {analyse['score_adequation']}%)")
+            ids_connus.add(job_id)
+            print(f"  └─ ✅ Offre retenue ! (Match : {score}%)")
         else:
-            score = analyse.get('score_adequation', 0) if analyse else 0
-            print(f"  └─ ❌ Stage écarté (Match : {score}%)")
-        
-        # Marquage pour éviter les répétitions dans le même run
-        ids_connus.append(job_id)
+            ids_rejetes.add(job_id)
+            print(f"  └─ ❌ Offre écartée (Match : {score}%)")
 
-    # Sauvegarde finale du fichier JSON
+        # Évite de marteler l'API Groq sans pause si beaucoup d'offres passent le pré-filtre
+        time.sleep(random.uniform(1, 2))
+
     sauvegarder_historique(historique)
+    sauvegarder_ids_rejetes(ids_rejetes)
     print("\n✅ [AGENT] Traitement et sauvegarde réussis !")
 
 
 # ==========================================
-# 4. EXÉCUTION EN POINT D'ENTRÉE
+# 5. EXÉCUTION EN POINT D'ENTRÉE
 # ==========================================
 if __name__ == "__main__":
-    print("🤖 Agent Autonome (Focus Stages Data Science / ML / IA) démarré !")
+    print("🤖 Agent Autonome (Stage / Alternance — Data Science, Analytics, ML, LLM, AI Engineering) démarré !")
     execution_job()
