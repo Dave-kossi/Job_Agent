@@ -1,5 +1,6 @@
 # src/agent.py
 import json
+import time
 import os
 from groq import Groq
 
@@ -7,6 +8,36 @@ client = Groq(api_key=os.getenv("GROQ_API_KEY"))
 
 MODEL_REDACTION = "llama-3.3-70b-versatile"
 MODEL_LEGER = "llama-3.1-8b-instant"
+
+SCORE_REGENERATION_SEUIL = 6
+MAX_RETRIES_API = 2
+
+
+def _appel_groq(messages: list, model: str, temperature: float, max_tokens: int,
+                 json_mode: bool = True):
+    """Centralise l'appel Groq avec retry simple sur erreurs transitoires
+    (rate limit, timeout réseau) — évite de perdre une offre à cause
+    d'un 429 ponctuel."""
+    kwargs = {
+        "messages": messages,
+        "model": model,
+        "temperature": temperature,
+        "max_tokens": max_tokens,
+    }
+    if json_mode:
+        kwargs["response_format"] = {"type": "json_object"}
+
+    derniere_erreur = None
+    for tentative in range(1, MAX_RETRIES_API + 1):
+        try:
+            return client.chat.completions.create(**kwargs)
+        except Exception as e:
+            derniere_erreur = e
+            print(f"⚠️ Erreur Groq (tentative {tentative}/{MAX_RETRIES_API}) : {e}")
+            if tentative < MAX_RETRIES_API:
+                time.sleep(2 * tentative)  # backoff simple : 2s puis 4s
+
+    raise derniere_erreur
 
 
 def _extraire_besoins(offre: dict) -> dict:
@@ -23,45 +54,101 @@ def _extraire_besoins(offre: dict) -> dict:
     DESCRIPTION : {offre.get('description', '')[:3000]}
     """
     try:
-        r = client.chat.completions.create(
+        r = _appel_groq(
             messages=[{"role": "user", "content": prompt}],
             model=MODEL_REDACTION,
             temperature=0.2,
             max_tokens=500,
-            response_format={"type": "json_object"}
         )
-        return json.loads(r.choices[0].message.content)
+        resultat = json.loads(r.choices[0].message.content)
     except Exception as e:
         print(f"⚠️ Erreur extraction besoins : {e}")
-        return {
-            "besoins_explicites": [], "besoins_implicites": [],
-            "contexte_entreprise": "", "mots_cles_a_reprendre": []
-        }
+        resultat = {}
+
+    # Validation défensive — évite de propager des clés manquantes/mal typées
+    # dans le reste du pipeline (agent.py comme le juge en dépendent).
+    return {
+        "besoins_explicites": resultat.get("besoins_explicites") or [],
+        "besoins_implicites": resultat.get("besoins_implicites") or [],
+        "contexte_entreprise": resultat.get("contexte_entreprise") or "",
+        "mots_cles_a_reprendre": resultat.get("mots_cles_a_reprendre") or [],
+    }
 
 
-def _critiquer_lettre(lettre: str, besoins: dict) -> int:
-    """Étape 3 : score de 0 à 10 pour juger si la lettre est ancrée ou générique."""
+def _critiquer_lettre(lettre: str, besoins: dict, preuve_citee: str,
+                       cv_texte: str, github_texte: str) -> dict:
+    """Étape 3 : juge la lettre sur DEUX axes —
+    1) spécificité (ancrée dans le besoin réel de l'entreprise, pas générique)
+    2) véracité (la preuve technique citée existe bien dans le CV/GitHub fourni)
+    Retourne un score 0-10 + une justification courte, utilisée ensuite
+    pour guider une éventuelle regénération de façon ciblée."""
     if not lettre:
-        return 0
+        return {"score": 0, "justification": "Lettre vide."}
+
     prompt = f"""
-    Note de 0 à 10 à quel point cette lettre répond PRÉCISÉMENT à ces besoins :
-    {besoins.get('besoins_explicites', [])}
-    (10 = ancrée dans des faits concrets du candidat + besoin réel de l'entreprise,
-     0 = générique, interchangeable avec n'importe quelle autre entreprise).
-    Réponds UNIQUEMENT avec le chiffre, rien d'autre.
-    LETTRE : {lettre[:3000]}
+    Tu es un relecteur exigeant. Évalue cette lettre de motivation sur deux critères :
+
+    1) SPÉCIFICITÉ : répond-elle précisément à ces besoins de l'entreprise ?
+       {besoins.get('besoins_explicites', [])}
+       (générique = interchangeable avec n'importe quelle autre entreprise)
+
+    2) VÉRACITÉ : la preuve technique citée ("{preuve_citee}") est-elle bien
+       vérifiable dans les documents du candidat ci-dessous ? Si la lettre
+       affirme un résultat ou un projet qui n'apparaît PAS dans ces extraits,
+       signale-le explicitement dans ta justification.
+
+    [EXTRAIT CV] : {cv_texte[:1000]}
+    [EXTRAIT GITHUB] : {github_texte[:1000]}
+
+    LETTRE À ÉVALUER : {lettre[:3000]}
+
+    Réponds UNIQUEMENT en JSON strict :
+    {{
+      "score": <entier de 0 à 10>,
+      "justification": "1 phrase courte : pourquoi ce score, et quel besoin explicite n'est pas couvert ou quelle preuve semble non vérifiable, le cas échéant"
+    }}
     """
     try:
-        r = client.chat.completions.create(
+        r = _appel_groq(
             messages=[{"role": "user", "content": prompt}],
             model=MODEL_LEGER,
             temperature=0,
-            max_tokens=5
+            max_tokens=120,
         )
-        return int(r.choices[0].message.content.strip())
+        resultat = json.loads(r.choices[0].message.content)
+        score = int(resultat.get("score", 10))
+        justification = str(resultat.get("justification", ""))
+        return {"score": score, "justification": justification}
     except Exception as e:
         print(f"⚠️ Erreur critique lettre : {e}")
-        return 10  # en cas d'échec du scoring, on ne bloque pas le pipeline
+        # En cas d'échec du juge, on ne bloque pas le pipeline —
+        # score neutre haut pour ne pas forcer une regénération inutile.
+        return {"score": 10, "justification": "Juge indisponible — score par défaut."}
+
+
+def _valider_resultat(resultat: dict) -> dict:
+    """Garantit que toutes les clés attendues en aval (main.py, app.py)
+    sont présentes avec le bon type, même si le LLM a omis un champ."""
+    if not isinstance(resultat, dict):
+        resultat = {}
+
+    score = resultat.get("score_adequation", 0)
+    try:
+        score = int(score)
+    except (ValueError, TypeError):
+        score = 0
+
+    points_forts = resultat.get("points_forts", [])
+    if not isinstance(points_forts, list):
+        points_forts = [str(points_forts)] if points_forts else []
+
+    return {
+        "score_adequation": score,
+        "besoin_cle_entreprise": str(resultat.get("besoin_cle_entreprise", "") or ""),
+        "preuve_technique_citee": str(resultat.get("preuve_technique_citee", "") or ""),
+        "points_forts": points_forts,
+        "lettre_motivation": str(resultat.get("lettre_motivation", "") or ""),
+    }
 
 
 def analyser_et_rediger(offre: dict, cv_texte: str, portfolio_texte: str, github_texte: str) -> dict:
@@ -88,7 +175,7 @@ def analyser_et_rediger(offre: dict, cv_texte: str, portfolio_texte: str, github
     }}
 
     CONSIGNES STRICTES POUR LA LETTRE ("lettre_motivation") :
-    - COMPLÈTE (350 à 650 mots), pas une synthèse.
+    - COMPLÈTE (350 à 650 mots), structurée en 4 paragraphes distincts.
     - Structure obligatoire : 1) Accroche liée au contexte entreprise réel (pas générique)
       2) Compétences en lien direct avec les besoins explicites listés ci-dessus
       3) Preuve technique concrète : pour CHAQUE besoin explicite, cherche la correspondance
@@ -117,33 +204,55 @@ def analyser_et_rediger(offre: dict, cv_texte: str, portfolio_texte: str, github
     """
 
     try:
-        response = client.chat.completions.create(
+        response = _appel_groq(
             messages=[
                 {"role": "system", "content": system_prompt},
-                {"role": "user", "content": user_prompt}
+                {"role": "user", "content": user_prompt},
             ],
             model=MODEL_REDACTION,
             temperature=0.3,
             max_tokens=1500,
-            response_format={"type": "json_object"}
         )
-        resultat = json.loads(response.choices[0].message.content)
+        resultat = _valider_resultat(json.loads(response.choices[0].message.content))
 
-        # Étape 3 : auto-critique + une seule tentative de regénération si trop générique
-        score_qualite = _critiquer_lettre(resultat.get("lettre_motivation", ""), besoins)
-        if score_qualite < 6:
-            print(f"  ⚠️ Lettre jugée trop générique (score {score_qualite}/10) — regénération...")
-            response = client.chat.completions.create(
+        # Étape 3 : auto-critique (spécificité + véracité) + une seule
+        # regénération, guidée par la justification du juge.
+        critique = _critiquer_lettre(
+            resultat.get("lettre_motivation", ""),
+            besoins,
+            resultat.get("preuve_technique_citee", ""),
+            cv_texte,
+            github_texte,
+        )
+
+        if critique["score"] < SCORE_REGENERATION_SEUIL:
+            print(f"  ⚠️ Lettre jugée insuffisante (score {critique['score']}/10 — {critique['justification']}) — regénération...")
+
+            system_prompt_v2 = system_prompt + f"""
+
+            ATTENTION : la version précédente a été jugée insuffisante par un relecteur.
+            Motif précis à corriger : {critique['justification']}
+            Corrige spécifiquement ce point — ne te contente pas de reformuler,
+            comble le manque identifié ou remplace la preuve non vérifiable par
+            une correspondance réelle trouvée dans [CV]/[PORTFOLIO]/[GITHUB].
+            """
+
+            response = _appel_groq(
                 messages=[
-                    {"role": "system", "content": system_prompt + "\nATTENTION : la version précédente était jugée trop générique. Sois plus concret et plus spécifique à CETTE entreprise et CE besoin."},
-                    {"role": "user", "content": user_prompt}
+                    {"role": "system", "content": system_prompt_v2},
+                    {"role": "user", "content": user_prompt},
                 ],
                 model=MODEL_REDACTION,
                 temperature=0.5,
                 max_tokens=1500,
-                response_format={"type": "json_object"}
             )
-            resultat = json.loads(response.choices[0].message.content)
+            resultat = _valider_resultat(json.loads(response.choices[0].message.content))
+
+        # Vérification post-hoc de la longueur — les LLM comptent mal les mots,
+        # on log un écart plutôt que de faire une confiance aveugle à la consigne.
+        nb_mots = len(resultat["lettre_motivation"].split())
+        if nb_mots and not (300 <= nb_mots <= 700):
+            print(f"⚠️ Longueur de lettre hors bornes attendues : {nb_mots} mots.")
 
         return resultat
 
