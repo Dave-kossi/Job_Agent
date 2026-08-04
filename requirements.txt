@@ -1,24 +1,18 @@
 # Lecture et extraction de fichiers (PDF, HTML)
-pypdf
-pdfplumber
-pypdf2
-beautifulsoup4
+pypdf>=4.0,<6.0
+beautifulsoup4>=4.12,<5.0
 
 # Scraping & Recherche d'offres
-python-jobspy
-requests
-urllib3
+python-jobspy>=1.1,<2.0
+requests>=2.31,<3.0
+urllib3>=2.0,<3.0
 
-# IA, Modèles & Analyse (Groq, OpenAI)
-groq
-openai
+# IA, Modèles & Analyse
+groq>=0.11,<1.0
 
 # Automatisation & Gestion d'environnement
-python-dotenv
-schedule
+python-dotenv>=1.0,<2.0
 
 # Interface Web & Dashboard
-streamlit
-pandas
-# Timing 
-datetime 
+streamlit>=1.35,<2.0
+pandas>=2.0,<3.0
