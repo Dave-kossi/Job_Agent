@@ -9,12 +9,12 @@ client = Groq(api_key=os.getenv("GROQ_API_KEY"))
 MODEL_REDACTION = "llama-3.3-70b-versatile"
 MODEL_LEGER = "llama-3.1-8b-instant"
 
-SCORE_REGENERATION_SEUIL = 6
+SCORE_REGENERATION_SEUIL = 7
 MAX_RETRIES_API = 2
 
 
 def _appel_groq(messages: list, model: str, temperature: float, max_tokens: int, json_mode: bool = True):
-    """Centralise l'appel Groq avec retry simple sur erreurs transitoires (rate limit, timeout)."""
+    """Centralise l'appel à l'API Groq avec gestion des erreurs et retries."""
     kwargs = {
         "messages": messages,
         "model": model,
@@ -37,60 +37,48 @@ def _appel_groq(messages: list, model: str, temperature: float, max_tokens: int,
     raise derniere_erreur
 
 
-def _extraire_besoins(offre: dict) -> dict:
-    """Étape 1 : Isoler ce que l'entreprise cherche vraiment."""
-    prompt = f"""
-    Analyse cette offre d'emploi et réponds UNIQUEMENT en JSON strict :
-    {{
-      "besoins_explicites": ["compétence/techno/outil demandé 1", "..."],
-      "besoins_implicites": ["ce que l'entreprise cherche sans le dire explicitement"],
-      "contexte_entreprise": "secteur, enjeu business ou mission déductible du texte",
-      "mots_cles_a_reprendre": ["3 à 5 termes EXACTS du texte à réutiliser"]
-    }}
-    OFFRE : {offre.get('title')} chez {offre.get('company')}
-    DESCRIPTION : {offre.get('description', '')[:3000]}
+def _extraire_et_matcher(offre: dict, cv_texte: str, portfolio_texte: str, github_texte: str) -> dict:
     """
-    try:
-        r = _appel_groq(
-            messages=[{"role": "user", "content": prompt}],
-            model=MODEL_LEGER,
-            temperature=0.2,
-            max_tokens=500,
-        )
-        resultat = json.loads(r.choices[0].message.content)
-    except Exception as e:
-        print(f"⚠️ Erreur extraction besoins : {e}")
-        resultat = {}
-
-    return {
-        "besoins_explicites": resultat.get("besoins_explicites") or [],
-        "besoins_implicites": resultat.get("besoins_implicites") or [],
-        "contexte_entreprise": resultat.get("contexte_entreprise") or "",
-        "mots_cles_a_reprendre": resultat.get("mots_cles_a_reprendre") or [],
-    }
-
-
-def _evaluer_adequation(offre: dict, cv_texte: str, portfolio_texte: str, github_texte: str, besoins: dict) -> dict:
-    """Étape 2A : Évaluer l'adéquation et extraire les points forts au format JSON."""
+    Étape 1 & 2 : Analyse dynamiquement l'offre et sélectionne
+    les projets/compétences les plus pertinents dans le dossier du candidat.
+    """
     prompt = f"""
-    Tu es un Senior Data Manager & Recruteur Technique.
-    Évalue l'adéquation du candidat avec l'offre d'emploi.
+    Tu es un Expert Recruteur et Data Scientist.
+    Analyse l'offre d'emploi ci-dessous et effectue un matching dynamique avec le profil du candidat.
 
-    BESOINS DE L'ENTREPRISE :
-    - Explicites : {besoins.get('besoins_explicites')}
-    - Implicites : {besoins.get('besoins_implicites')}
+    OFFRE D'EMPLOI :
+    Titre : {offre.get('title')}
+    Entreprise : {offre.get('company')}
+    Description : {offre.get('description', '')[:3500]}
 
-    DOSSIER CANDIDAT :
-    [CV] : {cv_texte[:2000]}
-    [PORTFOLIO] : {portfolio_texte[:1200]}
-    [GITHUB] : {github_texte[:1500]}
+    DOSSIER COMPLET DU CANDIDAT :
+    [CV] : {cv_texte[:2500]}
+    [PORTFOLIO] : {portfolio_texte[:1500]}
+    [GITHUB] : {github_texte[:2000]}
 
-    Réponds UNIQUEMENT en JSON strict :
+    TÂCHES :
+    1. Identifie le secteur et l'enjeu principal de l'entreprise (ex: détection de fraude, optimisation RAG, Computer Vision, etc.).
+    2. Sélectionne les 2 PROJETS du candidat les plus pertinents par rapport à cet enjeu.
+    3. Extrais les compétences techniques et le vocabulaire métier exacts à réutiliser dans la lettre.
+
+    Réponds UNIQUEMENT sous forme de JSON strict :
     {{
+      "secteur_enjeu": "Description en une phrase de l'enjeu principal de l'offre",
+      "mots_cles_metier": ["mot1", "mot2", "mot3", "mot4"],
+      "projets_selectionnes": [
+        {{
+          "nom": "Nom du projet 1",
+          "technos_cles": "Technos/méthodes utilisées dans ce projet",
+          "pourquoi_pertinent": "Pourquoi ce projet prouve que le candidat peut réussir sur ce poste"
+        }},
+        {{
+          "nom": "Nom du projet 2",
+          "technos_cles": "Technos/méthodes utilisées dans ce projet",
+          "pourquoi_pertinent": "Pourquoi ce projet prouve que le candidat peut réussir sur ce poste"
+        }}
+      ],
       "score_adequation": 85,
-      "besoin_cle_entreprise": "Court résumé de la priorité absolue de l'entreprise",
-      "preuve_technique_citee": "Nom précis du projet GitHub ou de la réalisation la plus pertinente",
-      "points_forts": ["Point fort 1 aligné avec le besoin", "Point fort 2 avec preuve concrète"]
+      "points_forts": ["Point fort 1", "Point fort 2"]
     }}
     """
     try:
@@ -98,52 +86,61 @@ def _evaluer_adequation(offre: dict, cv_texte: str, portfolio_texte: str, github
             messages=[{"role": "user", "content": prompt}],
             model=MODEL_LEGER,
             temperature=0.2,
-            max_tokens=600,
+            max_tokens=800,
         )
         return json.loads(r.choices[0].message.content)
     except Exception as e:
-        print(f"⚠️ Erreur évaluation adéquation : {e}")
+        print(f"⚠️ Erreur extraction & matching : {e}")
         return {
+            "secteur_enjeu": "Analyse d'offre non disponible",
+            "mots_cles_metier": [],
+            "projets_selectionnes": [],
             "score_adequation": 50,
-            "besoin_cle_entreprise": "Analyse indisponible",
-            "preuve_technique_citee": "",
             "points_forts": []
         }
 
 
-def _rediger_lettre_texte(offre: dict, cv_texte: str, portfolio_texte: str, github_texte: str, besoins: dict, analyse: dict, retour_critique: str = None) -> str:
-    """Étape 2B : Rédiger la lettre en texte brut (pas de JSON) pour garantir une longueur suffisante."""
-    
-    system_prompt = f"""
-    Tu es un candidat expérimenté rédigant une LETTRE DE MOTIVATION SUR MESURE, PERCUTANTE ET STRUCTURÉE.
-    
-    CONSIGNES DE RÉDACTION STRICTES :
-    - Longueur : 350 à 550 mots répartis en 4 PARAGRAPHES DISTINCTS avec des sauts de ligne purs entre eux.
-    - Style : Professionnel, direct, "Je", axé sur les faits et preuves concrètes.
-    
-    STRUCTURE OBLIGATOIRE :
-    1. PARAGRAPHE 1 (Accroche) : Lien direct avec le contexte et les enjeux de {offre.get('company')}.
-    2. PARAGRAPHE 2 (Compétences clés) : Réponses aux besoins explicites : {besoins.get('besoins_explicites')}.
-    3. PARAGRAPHE 3 (Preuves & Projets) : Développe en détail la réalisation '{analyse.get('preuve_technique_citee')}' issue du CV/GitHub avec résultats/chiffres.
-    4. PARAGRAPHE 4 (Conclusion) : Proposition d'échange, disponibilité et formule de politesse.
+def _rediger_lettre_adaptee(offre: dict, cv_texte: str, analyse_matching: dict, retour_critique: str = None) -> str:
+    """
+    Étape 3 : Rédige la lettre de motivation sur mesure en intégrant
+    dynamiquement les projets et le vocabulaire identifiés lors du matching.
+    """
+    projets_str = ""
+    for p in analyse_matching.get("projets_selectionnes", []):
+        projets_str += f"• {p.get('nom')} : {p.get('technos_cles')} — {p.get('pourquoi_pertinent')}\n"
 
-    INTERDICTIONS STRICTES :
-    - N'écris PAS dans un objet JSON. Rédige directement le texte de la lettre.
-    - Pas de formules génériques ("candidat idéal", "passionné depuis toujours", "dynamique").
-    - N'invente AUCUN projet absent des documents fournis.
+    system_prompt = f"""
+    Tu es un candidat de niveau Master 2 Data Science / IA rédigant une LETTRE DE MOTIVATION SUR MESURE, PERCUTANTE ET EXTRÊMEMENT TECHNIQUE.
+
+    ENTREPRISE CIBLE : {offre.get('company')}
+    INTITULÉ DU POSTE : {offre.get('title')}
+    ENJEU PRINCIPAL IDENTIFIÉ : {analyse_matching.get('secteur_enjeu')}
+    MOTS CLÉS DU SECTEUR À INTÉGRER : {', '.join(analyse_matching.get('mots_cles_metier', []))}
+
+    PROJETS SPÉCIFIQUES À VALORISER (ISSUS DU MATCHING) :
+    {projets_str}
+
+    CONSIGNES ET STRUCTURE DE RÉDACTION :
+    1. Objet : Mentionner clairement l'intitulé du poste et la durée (ex: stage 6 mois).
+    2. Accroche : Faire un lien direct entre le parcours du candidat et l'enjeu précis de l'entreprise.
+    3. Corps (Preuves & Projets) : Utiliser OBLIGATOIREMENT une liste à puces (•) pour détailler les 2 projets sélectionnés ci-dessus, avec leurs caractéristiques techniques (architectures, algorithmes, métriques, outils).
+    4. Projection Métier : Expliquer comment ces réalisations répondent concrètement aux défis décrits dans l'offre.
+    5. Conclusion : Demande d'entretien directe et formule de politesse soignée.
+
+    REGLES STRICTES DE STYLE (ANTI-RÉPÉTITION & ANTI-PHRASES CREUSES) :
+    - INTERDIT d'utiliser des formules génériques : "je suis convaincu que", "un atout pour votre équipe", "excellent candidat", "passionné depuis toujours", "dynamique et motivé".
+    - Chaque paragraphe doit apporter une preuve ou un élément factuel.
+    - Ton : Professionnel, orienté ingénierie et résultats.
     """
 
     if retour_critique:
-        system_prompt += f"\n\n⚠️ ATTENTION : La version précédente manque de précision. Corrige spécifiquement ceci : {retour_critique}"
+        system_prompt += f"\n\n⚠️ REVISION REQUISE : La version précédente comporte des faiblesses. Corrige impérativement : {retour_critique}"
 
     user_prompt = f"""
-    OFFRE : {offre.get('title')} chez {offre.get('company')}
-    DESCRIPTION : {offre.get('description', '')[:3000]}
+    DESCRIPTION COMPLETE DE L'OFFRE :
+    {offre.get('description', '')[:3000]}
 
-    DOSSIER CANDIDAT :
-    [CV] : {cv_texte[:2000]}
-    [PORTFOLIO] : {portfolio_texte[:1200]}
-    [GITHUB] : {github_texte[:1500]}
+    Rédige la lettre complète en texte pur.
     """
 
     r = _appel_groq(
@@ -152,31 +149,34 @@ def _rediger_lettre_texte(offre: dict, cv_texte: str, portfolio_texte: str, gith
             {"role": "user", "content": user_prompt}
         ],
         model=MODEL_REDACTION,
-        temperature=0.4,
+        temperature=0.3,
         max_tokens=2500,
-        json_mode=False  # Relecture fluide en texte pur
+        json_mode=False
     )
     return r.choices[0].message.content.strip()
 
 
-def _critiquer_lettre(lettre: str, besoins: dict, preuve_citee: str, cv_texte: str, github_texte: str) -> dict:
-    """Étape 3 : Évaluation qualité (spécificité et véracité)."""
+def _critiquer_lettre(lettre: str, offre: dict, analyse_matching: dict) -> dict:
+    """Étape 4 : Vérification de la lettre (absence de phrases creuses et adaptation à l'offre)."""
     if not lettre:
         return {"score": 0, "justification": "Lettre vide."}
 
     prompt = f"""
-    Évalue cette lettre de motivation sur deux critères :
-    1) SPÉCIFICITÉ : Répond-elle à ces besoins ? {besoins.get('besoins_explicites', [])}
-    2) VÉRACITÉ : La preuve "{preuve_citee}" existe-t-elle dans le CV/GitHub ?
+    Tu es un réviseur de candidatures ultra-strict.
+    Évalue cette lettre de motivation destinée à l'offre '{offre.get('title')}' chez '{offre.get('company')}'.
 
-    [EXTRAIT CV] : {cv_texte[:1000]}
-    [EXTRAIT GITHUB] : {github_texte[:1000]}
-    LETTRE : {lettre[:3000]}
+    CRITÈRES D'ÉVALUATION :
+    1. Prescriptions anti-phrases creuses : Contient-elle des expressions bannies comme "je suis convaincu", "atout pour votre équipe", "excellent candidat" ? (Si oui -> Baisse la note).
+    2. Adaptation : Les projets cités et le vocabulaire correspondent-ils bien à cette offre spécifique ?
+    3. Présence des puces techniques : La lettre utilise-t-elle des puces claires pour exposer les réalisations ?
+
+    LETTRE À ÉVALUER :
+    {lettre[:3000]}
 
     Réponds UNIQUEMENT en JSON strict :
     {{
-      "score": <entier de 0 à 10>,
-      "justification": "1 phrase explicative"
+      "score": <note sur 10>,
+      "justification": "Explication courte si la note est inférieure à 8"
     }}
     """
     try:
@@ -184,44 +184,43 @@ def _critiquer_lettre(lettre: str, besoins: dict, preuve_citee: str, cv_texte: s
             messages=[{"role": "user", "content": prompt}],
             model=MODEL_LEGER,
             temperature=0,
-            max_tokens=150,
+            max_tokens=200,
         )
         res = json.loads(r.choices[0].message.content)
         return {"score": int(res.get("score", 10)), "justification": str(res.get("justification", ""))}
     except Exception as e:
         print(f"⚠️ Erreur critique lettre : {e}")
-        return {"score": 10, "justification": "Juge indisponible."}
+        return {"score": 10, "justification": "Contrôle indisponible"}
 
 
 def analyser_et_rediger(offre: dict, cv_texte: str, portfolio_texte: str, github_texte: str) -> dict:
-    """Pipeline principal de l'agent."""
+    """Pipeline principal de l'agent adapteur d'offres."""
     try:
-        # 1. Extraction des besoins
-        besoins = _extraire_besoins(offre)
+        print(f"🔍 Analyse et matching pour l'offre : {offre.get('title')} chez {offre.get('company')}...")
+        
+        # 1. Matching intelligent entre l'offre et le profil
+        matching = _extraire_et_matcher(offre, cv_texte, portfolio_texte, github_texte)
 
-        # 2. Évaluation de l'adéquation (JSON)
-        analyse = _evaluer_adequation(offre, cv_texte, portfolio_texte, github_texte, besoins)
+        # 2. Rédaction adaptée
+        lettre = _rediger_lettre_adaptee(offre, cv_texte, matching)
 
-        # 3. Rédaction de la lettre (Texte brut complet)
-        lettre = _rediger_lettre_texte(offre, cv_texte, portfolio_texte, github_texte, besoins, analyse)
-
-        # 4. Auto-critique et regénération si nécessaire
-        critique = _critiquer_lettre(lettre, besoins, analyse.get("preuve_technique_citee", ""), cv_texte, github_texte)
+        # 3. Contrôle qualité / Critique
+        critique = _critiquer_lettre(lettre, offre, matching)
 
         if critique["score"] < SCORE_REGENERATION_SEUIL:
-            print(f"  ⚠️ Lettre jugée insuffisante ({critique['score']}/10 : {critique['justification']}) — régénération...")
-            lettre = _rediger_lettre_texte(
-                offre, cv_texte, portfolio_texte, github_texte, besoins, analyse, retour_critique=critique["justification"]
+            print(f"  ⚠️ Lettre ajustée ({critique['score']}/10 : {critique['justification']}) — régénération...")
+            lettre = _rediger_lettre_adaptee(
+                offre, cv_texte, matching, retour_critique=critique["justification"]
             )
 
         nb_mots = len(lettre.split())
-        print(f"✅ Lettre générée avec succès ({nb_mots} mots).")
+        print(f"✅ Lettre adaptée générée ({nb_mots} mots).")
 
         return {
-            "score_adequation": int(analyse.get("score_adequation", 0)),
-            "besoin_cle_entreprise": str(analyse.get("besoin_cle_entreprise", "")),
-            "preuve_technique_citee": str(analyse.get("preuve_technique_citee", "")),
-            "points_forts": analyse.get("points_forts", []),
+            "score_adequation": int(matching.get("score_adequation", 0)),
+            "besoin_cle_entreprise": str(matching.get("secteur_enjeu", "")),
+            "preuve_technique_citee": ", ".join([p.get("nom", "") for p in matching.get("projets_selectionnes", [])]),
+            "points_forts": matching.get("points_forts", []),
             "lettre_motivation": lettre
         }
 
