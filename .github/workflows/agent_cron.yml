@@ -1,4 +1,5 @@
 name: Job Agent Automation
+
 on:
   schedule:
     - cron: '30 6,10,13,16 * * *'
@@ -39,7 +40,15 @@ jobs:
         run: |
           git config --global user.name 'Job-Agent-Bot'
           git config --global user.email 'bot@github.com'
-          git pull --rebase
+          
+          # 1. On indexe les fichiers générés dans data/
           git add data/
+          
+          # 2. On valide les changements localement s'il y en a
           git commit -m "Auto-update des offres [skip ci]" || exit 0
+          
+          # 3. On réaligne avec la branche distante APRÈS le commit (arbre de travail propre)
+          git pull --rebase origin main
+          
+          # 4. On pousse le commit
           git push
