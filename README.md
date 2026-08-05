@@ -206,4 +206,4 @@ Pour contribuer : fork le repo, crée une branche, ouvre une pull request avec u
 
 ## Licence
 
-À définir par le mainteneur du projet.
+
