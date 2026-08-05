@@ -1369,24 +1369,6 @@
     }
   },
   {
-    "id": "https://fr.indeed.com/viewjob?jk=e4bb6f97de8f4f35",
-    "title": "KERING Data Scientist",
-    "company": "Kering",
-    "url": "https://fr.indeed.com/viewjob?jk=e4bb6f97de8f4f35",
-    "source": "Indeed",
-    "date_ajout": "2026-08-03T16:04:46.510008",
-    "analyse": {
-      "score_adequation": 75,
-      "besoin_cle_entreprise": "Développer des capacités de mesure de l'efficacité marketing du Groupe, notamment autour du Marketing Mix Modeling (MMM) et des autres leviers d'analyse de la performance marketing",
-      "preuve_technique_citee": "Projet VentiRE-RAG sur GitHub",
-      "points_forts": [
-        "Compétences en analyse de données et en Machine Learning",
-        "Expérience dans le développement de modèles de mesure de l'efficacité marketing"
-      ],
-      "lettre_motivation": "Je me permets de postuler pour le poste de Data Scientist au sein de l'équipe Data & IA de Kering, car je suis convaincu que mes compétences en analyse de données et en Machine Learning pourraient être un atout pour votre équipe. En tant qu'étudiant en Master 2 Ingénierie Mathématique & Data Science, j'ai développé des compétences solides en analyse de données et en Machine Learning, que j'ai appliquées dans plusieurs projets personnels, notamment dans le projet VentiRE-RAG, où j'ai conçu un moteur RAG hybride multi-segments pour automatiser l'analyse de conformité des systèmes de ventilation. Ce projet m'a permis de développer mes compétences en analyse de données et en Machine Learning, et je suis convaincu que ces compétences pourraient être utiles pour développer des modèles de mesure de l'efficacité marketing pour Kering. En outre, j'ai également travaillé sur d'autres projets, tels que l'analyse décisionnelle de la transition énergétique en Europe, où j'ai conçu un outil d'intelligence décisionnelle pour analyser la transition énergétique en Europe et évaluer la performance des pays. J'ai également développé des compétences en Python, Pandas, NumPy, Plotly, Streamlit, SciPy, Clustering, Time Series et Data Visualisation. Je suis convaincu que mes compétences et mon expérience pourraient être un atout pour votre équipe, et je suis impatient de discuter de ce poste plus en détail. Je suis disponible pour un entretien et je vous remercie de l'attention que vous porterez à ma candidature. Cordialement, Kossi Noumagno"
-    }
-  },
-  {
     "id": "https://fr.indeed.com/viewjob?jk=68b746c060fb715a",
     "title": "Data scientist-e / Data ingénieur-e",
     "company": "Sécurité sociale",
@@ -1770,6 +1752,25 @@
         "Capacité à résoudre des problèmes complexes"
       ],
       "lettre_motivation": "Je me permets de vous adresser ma candidature pour le stage AMOA / Recette & Test - Projet Intelligence Artificielle chez Groupe SII, car je suis convaincu que mes compétences et expériences en Data Science et Machine Learning seront un atout pour votre équipe. En tant qu'étudiant en Master 2 Ingénierie Mathématique & Data Science à l'Université de Haute-Alsace, j'ai développé une solide formation en analyse de données et en intelligence artificielle, ce qui me permet de comprendre les enjeux et les défis liés à l'application de l'IA dans le domaine de l'énergie et de la finance. Je suis particulièrement attiré par ce stage car il me permettra de mettre en pratique mes connaissances et mes compétences pour contribuer à la réussite de votre projet.\n\n\nMes compétences clés incluent la maîtrise de langages de programmation tels que Python, ainsi que l'utilisation de bibliothèques et d'outils spécialisés comme Pandas, NumPy, Plotly, Streamlit, SciPy et LlamaIndex. J'ai également une bonne connaissance des techniques de Machine Learning, notamment le clustering, la détection de fraude et la modélisation statistique. De plus, j'ai développé des compétences en analyse décisionnelle, en détection de fraude et en IA générative, ce qui me permet de répondre aux besoins explicites de votre projet. Je suis convaincu que mes compétences et expériences seront un atout pour votre équipe et que je pourrai apporter une contribution significative à la réussite de votre projet.\n\n\nUn de mes projets les plus représentatifs de mes compétences est VentiRE-RAG, un assistant RAG intelligent et local spécialisé dans l'analyse croisée de la réglementation RE2020 et des protocoles de contrôle de la ventilation. Ce projet a été développé avec LlamaIndex, FastEmbed et Streamlit, et a pour objectif de concevoir un moteur RAG hybride multi-segments pour automatiser l'analyse de conformité des systèmes de ventilation. Les résultats de ce projet ont été très satisfaisants, avec une automatisation de l'analyse de conformité multi-réglementaire et une élimination des risques d'erreur d'interprétation des débits, renforçant ainsi la fiabilité des audits techniques et l'efficacité opérationnelle. Ce projet démontre ma capacité à développer des solutions innovantes et efficaces pour répondre à des problématiques complexes, et je suis convaincu que mes compétences et expériences seront un atout pour votre équipe.\n\n\nJe suis très enthousiaste à l'idée de discuter de ma candidature et de mes compétences avec vous. Je suis disponible pour un entretien et je suis prêt à fournir tous les documents nécessaires pour soutenir ma candidature. Je vous remercie de l'attention que vous porterez à ma candidature et je suis impatient de la possibilité de travailler avec vous. Je vous souhaite une excellente journée et je reste à votre disposition pour tout complément d'information. Cordialement, Kossi Noumagno."
+    }
+  },
+  {
+    "id": "https://www.linkedin.com/jobs/view/4449476490",
+    "title": "stage 6 mois – ingénierie logicielle native IA",
+    "company": "Sanofi",
+    "url": "https://www.linkedin.com/jobs/view/4449476490",
+    "source": "Linkedin",
+    "date_ajout": "2026-08-05T18:20:20.398165",
+    "analyse": {
+      "score_adequation": 92,
+      "besoin_cle_entreprise": "Ingénierie logicielle native IA pour répondre à des problématiques métiers dans le domaine de la santé (Sanofi)",
+      "preuve_technique_citee": "Analyse décisionnelle de la transition énergétique en Europe, VentiRE-RAG",
+      "points_forts": [
+        "Expérience en Machine Learning et Data Science",
+        "Connaissance de Python et de ses bibliothèques",
+        "Capacité à concevoir des outils d'intelligence décisionnelle"
+      ],
+      "lettre_motivation": "Objet : Candidature pour le stage 6 mois – ingénierie logicielle native IA chez Sanofi\n\nEn tant que futur expert en Data Science et IA, je suis particulièrement attiré par les défis que Sanofi rencontre dans le domaine de la santé, où l'ingénierie logicielle native IA peut jouer un rôle clé pour répondre à des problématiques métiers complexes. Mon parcours académique et mes expériences professionnelles m'ont permis de développer des compétences solides en Machine Learning, Data Science et Analyse décisionnelle, qui sont essentielles pour relever les enjeux de conformité et de réglementation dans le secteur de la santé.\n\nVoici quelques-uns de mes projets qui démontrent mes capacités à concevoir et à développer des solutions d'ingénierie logicielle native IA pour répondre à des problématiques métiers spécifiques :\n* Analyse décisionnelle de la transition énergétique en Europe : j'ai utilisé Python, Pandas, NumPy, Plotly et Streamlit pour concevoir un outil d'intelligence décisionnelle qui analyse la transition énergétique en Europe et évalue la performance des pays. Ce projet a impliqué l'utilisation de techniques de Clustering et de Time Series pour identifier les tendances et les correlations entre les différents indicateurs énergétiques. La Data Visualisation a également joué un rôle clé pour présenter les résultats de manière claire et concise.\n* VentiRE-RAG : j'ai conçu un moteur RAG hybride multi-segments pour automatiser l'analyse de conformité des systèmes de ventilation en utilisant Python, LlamaIndex et FastEmbed. Ce projet a nécessité la mise en place d'une architecture de traitement de données efficace pour gérer les grandes quantités de données et la mise en œuvre d'algorithmes de traitement du langage naturel pour analyser les exigences de conformité.\n\nCes réalisations répondent concrètement aux défis décrits dans l'offre, car elles démontrent ma capacité à concevoir et à développer des solutions d'ingénierie logicielle native IA pour répondre à des problématiques métiers spécifiques. Mon expérience dans l'utilisation de techniques de Machine Learning et de Data Science pour analyser et interpréter les données peut être appliquée pour améliorer la prise de décision dans le domaine de la santé. De plus, ma compréhension des enjeux de conformité et de réglementation dans le secteur de la santé me permet de développer des solutions qui répondent aux exigences strictes de l'industrie.\n\nJe serais ravi de discuter de ma candidature et de mes projets en détail lors d'un entretien. Je vous remercie de l'attention que vous porterez à ma candidature et je reste à votre disposition pour tout complément d'information. Cordialement."
     }
   }
 ]
