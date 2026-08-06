@@ -1,4 +1,4 @@
-name: Job Agent Automation
+name: MatchCraft AI Automation
 
 on:
   schedule:
@@ -9,7 +9,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: job-agent-cron
+  group: MatchCraft-AI-cron
   cancel-in-progress: false
 
 jobs:
@@ -38,7 +38,7 @@ jobs:
 
       - name: Sauvegarder les résultats dans le dépôt
         run: |
-          git config --global user.name 'Job-Agent-Bot'
+          git config --global user.name 'MatchCraft-AI-Bot'
           git config --global user.email 'bot@github.com'
           
           # 1. On indexe les fichiers générés dans data/
