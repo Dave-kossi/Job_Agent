@@ -41,7 +41,7 @@ Le tout tourne automatiquement plusieurs fois par jour via un cron GitHub Action
 ## Architecture du projet
 
 ```
-Job_Agent/
+MatchCraft-AI/
 ├── .github/
 │   └── workflows/
 │       └── agent_cron.yml       # Automatisation (cron GitHub Actions)
@@ -69,8 +69,8 @@ Job_Agent/
 Prérequis : **Python 3.10**.
 
 ```bash
-git clone https://github.com/<ton-compte>/Job_Agent.git
-cd Job_Agent
+git clone https://github.com/<ton-compte>/MatchCraft-AI.git
+cd MatchCraft-AI
 python -m venv venv
 source venv/bin/activate      # Windows : venv\Scripts\activate
 pip install -r requirements.txt
