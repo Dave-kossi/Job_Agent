@@ -9,7 +9,7 @@ from src.historique import (
 )
 
 st.set_page_config(
-    page_title="Job Agent AI",
+    page_title="MatchCraft AI",
     page_icon="💼",
     layout="wide"
 )
@@ -19,7 +19,7 @@ st.set_page_config(
 # ==========================================
 offres_brutes = charger_historique()
 
-st.title("💼 Job Agent AI — Tableau de bord")
+st.title("💼 MatchCraft AI— Tableau de bord")
 st.markdown("Explore et gère tes opportunités qualifiées par l'IA (stages & alternances Data Science, Analytics, ML, LLM, AI Engineering).")
 
 # --- CONTROLES DE RECHERCHE ET TRI ---
