@@ -1369,83 +1369,6 @@
     }
   },
   {
-    "id": "https://fr.indeed.com/viewjob?jk=90a2eb0f09319e2c",
-    "title": "Data Scientist F/H",
-    "company": "Dalkia",
-    "url": "https://fr.indeed.com/viewjob?jk=90a2eb0f09319e2c",
-    "source": "Indeed",
-    "date_ajout": "2026-08-04T15:57:18.608250",
-    "analyse": {
-      "score_adequation": 85,
-      "besoin_cle_entreprise": "Compétence en Data Science et Intelligence Artificielle pour la transition énergétique",
-      "preuve_technique_citee": "Projet VentiRE-RAG sur GitHub",
-      "points_forts": [
-        "Compétences solides en Data Science et Intelligence Artificielle",
-        "Expérience avec Python, SQL et les environnements Cloud",
-        "Capacité à concevoir des solutions d'analyse de données et de Machine Learning"
-      ],
-      "lettre_motivation": "\n   Je me permets de vous adresser ma candidature pour le poste de Data Scientist au sein de votre équipe, car je suis convaincu que mes compétences et expériences en Data Science et Intelligence Artificielle pourraient être un atout pour votre entreprise. \n\n   En tant qu'étudiant en Master 2 Ingénierie Mathématique et Data Science, j'ai développé des compétences solides en analyse de données et en Machine Learning, que j'ai appliquées à différents projets, notamment dans le domaine de la transition énergétique. Mon projet Europa Énergie, par exemple, a consisté à concevoir un outil d’intelligence décisionnelle pour analyser la transition énergétique en Europe, en évaluant la performance des pays et en simulant des scénarios prospectifs à horizon 2050.\n\n   J'ai également travaillé sur des projets qui nécessitaient l'utilisation de Python, SQL et des environnements Cloud, tels que mon projet VentiRE-RAG sur GitHub, qui consiste à concevoir un moteur RAG hybride multi-segments pour automatiser l'analyse de conformité des systèmes de ventilation. Ce projet a nécessité l'utilisation de LlamaIndex, FastEmbed et Streamlit, et a permis d'automatiser l'analyse de conformité multi-réglementaire et d'éliminer les risques d'erreur d'interprétation des débits.\n\n   En tant que Data Scientist, je suis convaincu que je pourrais apporter une valeur ajoutée à votre équipe en concevant des solutions d'analyse de données et de Machine Learning pour répondre aux besoins de votre entreprise. Je suis également convaincu que mes compétences en Intelligence Artificielle pourraient être un atout pour votre équipe, notamment dans le domaine de la transition énergétique.\n\n   Je suis une personne autonome, rigoureuse et organisée, capable de travailler en équipe et de communiquer efficacement avec les autres. Je suis également ouvert à l'apprentissage et à la formation continue, et je suis convaincu que je pourrais évoluer rapidement dans votre équipe.\n\n   Je vous remercie de l'attention que vous porterez à ma candidature. Je serais ravi de discuter plus en détail de mes compétences et expériences, et de savoir comment je pourrais contribuer à votre équipe. \n\n   Cordialement,\n   Kossi Noumagno"
-    }
-  },
-  {
-    "id": "https://fr.indeed.com/viewjob?jk=5dd87520f08c0528",
-    "title": "Stage – Data Analyst",
-    "company": "Seedext",
-    "url": "https://fr.indeed.com/viewjob?jk=5dd87520f08c0528",
-    "source": "Indeed",
-    "date_ajout": "2026-08-04T15:57:21.713022",
-    "analyse": {
-      "score_adequation": 85,
-      "besoin_cle_entreprise": "Compétence en analyse de données et connaissance des outils de marketing",
-      "preuve_technique_citee": "Projet Europa Énergie",
-      "points_forts": [
-        "Compétence en analyse de données",
-        "Connaissance des outils de marketing",
-        "Expérience avec les technologies d'IA",
-        "Maîtrise de la création de contenus marketing",
-        "Capacité à structurer et organiser de l'information"
-      ],
-      "lettre_motivation": "\n   Je me permets de postuler pour le stage de Data Analyst chez Seedext, car je suis convaincu que mes compétences en analyse de données et en marketing digital pourraient être un atout pour votre équipe. \n   \n   En tant qu'étudiant en Master 2 Ingénierie Mathématique & Data Science, j'ai développé des compétences solides en analyse de données et en machine learning. J'ai travaillé sur plusieurs projets, notamment l'analyse décisionnelle de la transition énergétique en Europe (Europa Énergie), où j'ai conçu un outil d’intelligence décisionnelle pour analyser la transition énergétique en Europe et simuler des scénarios prospectifs à horizon 2050.\n   \n   J'ai également une bonne compréhension des outils de marketing tels que Notion, HubSpot et Slack. J'ai utilisé ces outils pour créer des contenus marketing et des supports commerciaux pour mes projets personnels. Par exemple, j'ai créé un moteur RAG hybride multi-segments pour automatiser l'analyse de conformité des systèmes de ventilation (VentiRE).\n   \n   En termes d'expérience avec les technologies d'IA, j'ai travaillé sur plusieurs projets, notamment la détection de fraude bancaire et le scoring de risque. J'ai utilisé des algorithmes de machine learning tels que les réseaux de neurones et les arbres de décision pour développer des modèles prédictifs.\n   \n   Je suis également capable de créer des contenus marketing efficaces. J'ai créé des présentations, des guides et des supports clients pour mes projets personnels. J'ai également une bonne compréhension des personas et des use cases, ce qui me permet de créer des contenus marketing ciblés et pertinents.\n   \n   Enfin, je suis capable de structurer et d'organiser de l'information de manière efficace. J'ai créé des bases de connaissances et des documentations pour mes projets personnels, ce qui me permet de partager mes connaissances et mes expériences avec les autres.\n   \n   Je suis convaincu que mes compétences et mes expériences pourraient être un atout pour votre équipe. Je suis prêt à apprendre et à grandir avec votre entreprise. Je suis impatient de discuter de mes qualifications et de mes expériences avec vous.\n   \n   Cordialement,\n   Kossi Noumagno"
-    }
-  },
-  {
-    "id": "https://www.linkedin.com/jobs/view/4390810974",
-    "title": "Product Data Scientist Intern",
-    "company": "Criteo",
-    "url": "https://www.linkedin.com/jobs/view/4390810974",
-    "source": "Linkedin",
-    "date_ajout": "2026-08-04T18:12:50.546383",
-    "analyse": {
-      "score_adequation": 80,
-      "besoin_cle_entreprise": "Développer des solutions d'analyse de données et de Machine Learning pour améliorer la publicité en ligne et la technologie de recommandation",
-      "preuve_technique_citee": "Projet VentiRE-RAG",
-      "points_forts": [
-        "Compétences en Data Science et Machine Learning",
-        "Expérience dans le développement de projets d'analyse de données et d'IA générative"
-      ],
-      "lettre_motivation": "Je me permets de postuler pour le poste de Product Data Scientist Intern chez Criteo, car je suis convaincu que mes compétences en Data Science et Machine Learning pourraient être un atout pour votre équipe. En tant qu'étudiant en Master 2 Ingénierie Mathématique et Data Science, j'ai développé des solutions d'analyse de données et de Machine Learning pour répondre à des problématiques métiers. Mon projet VentiRE-RAG, par exemple, a permis d'automatiser l'analyse de conformité des systèmes de ventilation, en éliminant les risques d'erreur d'interprétation des débits et en renforçant la fiabilité des audits techniques et l'efficacité opérationnelle. J'ai également travaillé sur d'autres projets, tels que l'analyse décisionnelle de la transition énergétique en Europe, où j'ai conçu un outil d'intelligence décisionnelle pour analyser la transition énergétique en Europe et simuler des scénarios prospectifs à horizon 2050. En tant que Data Scientist, je suis convaincu que je pourrais apporter une valeur ajoutée à votre équipe en développant des solutions d'analyse de données et de Machine Learning pour améliorer la publicité en ligne et la technologie de recommandation. Je suis particulièrement intéressé par l'opportunité de travailler chez Criteo, car je suis convaincu que l'entreprise est à la pointe de la technologie de recommandation et que je pourrais apprendre énormément de l'expérience et des compétences de l'équipe. Je suis disponible pour discuter de ma candidature et de mes compétences en détail. Je vous remercie de l'attention que vous porterez à ma candidature. Cordialement, Kossi Noumagno"
-    }
-  },
-  {
-    "id": "https://www.linkedin.com/jobs/view/4448856580",
-    "title": "stage 6 mois – data science et développement",
-    "company": "Sanofi",
-    "url": "https://www.linkedin.com/jobs/view/4448856580",
-    "source": "Linkedin",
-    "date_ajout": "2026-08-04T18:12:53.263836",
-    "analyse": {
-      "score_adequation": 85,
-      "besoin_cle_entreprise": "Amélioration des processus et prise de décision basée sur les données dans le secteur pharmaceutique",
-      "preuve_technique_citee": "Projet VentiRE-RAG",
-      "points_forts": [
-        "Compétences en Data Science et Machine Learning",
-        "Expérience dans le développement de solutions d'analyse de données et d'IA",
-        "Capacité à concevoir des outils d'intelligence décisionnelle pour améliorer les processus"
-      ],
-      "lettre_motivation": "Je me permets de vous adresser ma candidature pour le stage de 6 mois en Data Science et Développement chez Sanofi, car je suis convaincu que mes compétences et mon expérience dans le domaine de la science des données et du développement peuvent contribuer à améliorer les processus et la prise de décision basée sur les données au sein de votre entreprise. \n\nEn tant qu'étudiant en Master 2 Ingénierie Mathématique et Data Science à l'Université de Haute-Alsace, j'ai développé des compétences solides en Data Science et Machine Learning, avec une expérience pratique dans le développement de solutions d'analyse de données et d'IA. Mon projet VentiRE-RAG, par exemple, a démontré mon capacité à concevoir un moteur RAG hybride multi-segments pour automatiser l'analyse de conformité des systèmes de ventilation, ce qui a abouti à une automatisation de l'analyse de conformité multi-réglementaire et à l'élimination des risques d'erreur d'interprétation des débits.\n\nJe suis également fier de mon projet EU_energy_consomption, où j'ai utilisé des outils tels que Python, Pandas, NumPy, Plotly, Streamlit et SciPy pour concevoir un outil d’intelligence décisionnelle pour analyser la transition énergétique en Europe. Ce projet a nécessité une analyse approfondie des données et la mise en œuvre de techniques de clustering, de série chronologique et de visualisation de données pour évaluer la performance des pays et simuler des scénarios prospectifs à horizon 2050.\n\nEn tant que Data Scientist et AI Engineer, je suis convaincu que mes compétences et mon expérience peuvent être un atout pour Sanofi. Je suis impatient de contribuer à l'amélioration des processus et à la prise de décision basée sur les données au sein de votre entreprise. Je suis disponible pour discuter de ma candidature et de la manière dont je peux contribuer à Sanofi. \n\nJe vous remercie de l'attention que vous porterez à ma candidature. Je suis à votre disposition pour tout complément d'information et je me réjouis de la possibilité de discuter de ma candidature avec vous. \n\nCordialement, \nKossi Noumagno"
-    }
-  },
-  {
     "id": "https://fr.indeed.com/viewjob?jk=8bb4831288d0051f",
     "title": "Donor Relation and Data Intern",
     "company": "United Nations High Commissioner For Refugees (UNHCR)",
@@ -2018,6 +1941,61 @@
         "Compétences en développement de modèles de détection de fraude"
       ],
       "lettre_motivation": "Objet : Candidature pour le poste d'Agentic AI engineer intern en stage de 6 mois\n\nEn tant que spécialiste en intelligence artificielle et machine learning, je suis particulièrement attiré par les défis de cybersécurité que rencontre CybelAngel dans la détection et la prévention des menaces visant les données sensibles. Mon parcours universitaire en Data Science et IA, combiné à mes expériences pratiques dans le développement de modèles de détection de menaces, me permet de comprendre l'importance de l'intégration de l'intelligence artificielle dans la protection des données.\n\nLes projets que j'ai menés à bien démontrent ma capacité à développer des solutions innovantes pour la détection et la prévention des menaces :\n• VentiRE-RAG : J'ai développé un assistant RAG intelligent et local utilisant Python, LlamaIndex, FastEmbed et Streamlit pour analyser la réglementation RE2020 et les protocoles de contrôle de la ventilation. Ce projet a nécessité la mise en place d'une architecture de traitement de langage naturel pour extraire des informations pertinentes et prendre des décisions éclairées.\n• bank-transaction-fraud-detection : J'ai créé un modèle de détection de fraude bancaire à l'aide de Jupyter Notebook et de LightGBM, atteignant une précision de 99,7%. Ce projet a impliqué l'analyse de grands volumes de données transactionnelles pour identifier les modèles de fraude et développer un modèle prédictif performant.\n\nCes réalisations répondent concrètement aux défis de cybersécurité décrits dans l'offre, car elles démontrent ma capacité à développer des modèles de détection de menaces précis et efficaces. L'intégration de l'intelligence artificielle et du machine learning dans ces projets permet une analyse approfondie des données et une détection précoce des menaces potentielles, ce qui est essentiel pour la protection des données sensibles.\n\nJe suis convaincu que mes compétences et expériences en intelligence artificielle et machine learning seraient un excellent atout pour l'équipe d'Agentic AI engineer de CybelAngel. Je serais ravi de discuter plus en détail de ma candidature et de mes projets lors d'un entretien. Je vous remercie de l'attention que vous porterez à ma candidature et je reste à votre disposition pour tout complément d'information.\n\nCordialement,\n[Votre nom]"
+    }
+  },
+  {
+    "id": "https://fr.indeed.com/viewjob?jk=b43d139459d9420a",
+    "title": "Data Scientist - (h/f) (IT) / Freelance",
+    "company": "Emagine Consulting",
+    "url": "https://fr.indeed.com/viewjob?jk=b43d139459d9420a",
+    "source": "Indeed",
+    "date_ajout": "2026-08-06T19:36:37.914923",
+    "analyse": {
+      "score_adequation": 85,
+      "besoin_cle_entreprise": "Développer et améliorer les moteurs de prédiction utilisés pour anticiper la demande, la capacité et la volonté de payer dans le secteur de la gestion des recettes.",
+      "preuve_technique_citee": "Analyse décisionnelle de la transition énergétique en Europe, VentiRE-RAG",
+      "points_forts": [
+        "Compétences en Machine Learning",
+        "Expérience en analyse décisionnelle",
+        "Connaissance de l'environnement cloud"
+      ],
+      "lettre_motivation": "Objet : Candidature pour le poste de Data Scientist - (h/f) (IT) / Freelance\n\nJe me permets de vous contacter suite à l'annonce publiée sur LinkedIn, et je suis ravi de postuler pour le poste de Data Scientist au sein de l'équipe de 8 personnes travaillant sur la gestion des recettes au département Data, RO & IA. Mon intérêt pour ce poste est directement lié à l'enjeu principal identifié, qui consiste à développer et améliorer les moteurs de prédiction utilisés pour anticiper la demande, la capacité et la volonté de payer dans le secteur de la gestion des recettes.\n\nAu cours de mon parcours, j'ai développé des compétences techniques et fonctionnelles qui correspondent aux exigences du poste. En particulier, j'ai une solide maîtrise du Machine Learning, notamment appliqué aux séries temporelles (Time Series), ainsi qu'un fort intérêt pour la modélisation mathématique et les statistiques bayésiennes. Je maîtrise également Python et j'ai une bonne compréhension d'un environnement cloud, idéalement GCP.\n\nVoici quelques-uns de mes projets qui démontrent mes compétences :\n* Analyse décisionnelle de la transition énergétique en Europe : j'ai utilisé Python, Pandas, NumPy, Plotly, Streamlit, SciPy pour réaliser une analyse décisionnelle de la transition énergétique en Europe. Ce projet a nécessité l'utilisation de techniques de clustering, de séries temporelles et de visualisation de données pour fournir des insights pertinents.\n* VentiRE-RAG : j'ai travaillé sur un projet utilisant Python, LlamaIndex, FastEmbed, Streamlit pour développer une application de réglementation. Ce projet a nécessité l'utilisation de techniques d'Intelligence Artificielle et de réglementation pour fournir des résultats concrets.\n\nCes réalisations répondent concrètement aux défis décrits dans l'offre, car elles démontrent ma capacité à développer et à améliorer des modèles de prédiction pour anticiper la demande, la capacité et la volonté de payer. De plus, mon expérience dans l'analyse décisionnelle et la visualisation de données me permettra de communiquer efficacement les résultats aux équipes business.\n\nJe suis convaincu que mes compétences techniques et fonctionnelles, combinées à mes capacités de communication et d'apprentissage, me permettront de réussir dans ce poste. Je suis prêt à relever le défi de m'approprier un nouveau domaine métier (la gestion des recettes) et à transformer cette compréhension en modèles de prédiction concrets et exploitables par les équipes business.\n\nJe vous remercie de l'attention que vous porterez à ma candidature. Je serais ravi de discuter plus en détail de mes qualifications et de mes expériences lors d'un entretien. N'hésitez pas à me contacter via LinkedIn pour fixer un rendez-vous.\n\nCordialement,\n[Votre nom]"
+    }
+  },
+  {
+    "id": "https://www.linkedin.com/jobs/view/4448856580",
+    "title": "stage 6 mois – data science et développement",
+    "company": "Sanofi",
+    "url": "https://www.linkedin.com/jobs/view/4448856580",
+    "source": "Linkedin",
+    "date_ajout": "2026-08-06T19:37:08.486404",
+    "analyse": {
+      "score_adequation": 85,
+      "besoin_cle_entreprise": "L'entreprise Sanofi recherche un stagiaire en Data Science et développement pour travailler sur des projets liés à la transition énergétique, l'analyse de conformité réglementaire et la détection de fraude.",
+      "preuve_technique_citee": "Analyse décisionnelle de la transition énergétique en Europe, VentiRE-RAG",
+      "points_forts": [
+        "Compétences en Python et en analyse de données",
+        "Expérience en apprentissage automatique et en analyse de conformité réglementaire"
+      ],
+      "lettre_motivation": "Objet : Candidature pour le stage 6 mois – Data Science et développement chez Sanofi\n\nJe me permets de vous adresser ma candidature pour le stage 6 mois – Data Science et développement au sein de l'entreprise Sanofi, où je pourrais mettre à profit mes compétences en intelligence artificielle, apprentissage automatique et analyse de données pour contribuer aux projets liés à la transition énergétique, l'analyse de conformité réglementaire et la détection de fraude.\n\nMa formation en Data Science et mes expériences professionnelles m'ont permis de développer une solide expertise dans l'analyse de données et le développement de modèles prédictifs, ce qui me permet de comprendre les enjeux précis de Sanofi en matière de transition énergétique et d'analyse de conformité réglementaire. Les projets sur lesquels j'ai travaillé ont démontré ma capacité à collecter, analyser et interpréter de grandes quantités de données pour prendre des décisions éclairées.\n\nVoici quelques-uns des projets qui démontrent mes compétences dans le domaine :\n* Analyse décisionnelle de la transition énergétique en Europe : j'ai utilisé Python, Pandas, NumPy et Plotly pour collecter et analyser des données sur la consommation d'énergie en Europe, puis j'ai appliqué des techniques de clustering et d'analyse de séries temporelles pour identifier les tendances et les patterns. J'ai également utilisé Streamlit pour créer une application web interactive pour visualiser les résultats.\n* VentiRE-RAG : j'ai développé un modèle de détection de fraude utilisant Python, LlamaIndex et FastEmbed, puis j'ai intégré le modèle dans une application web utilisant Streamlit pour permettre aux utilisateurs de télécharger leurs données et de visualiser les résultats.\n\nCes réalisations répondent concrètement aux défis décrits dans l'offre, car elles démontrent ma capacité à collecter, analyser et interpréter de grandes quantités de données pour prendre des décisions éclairées, ainsi que ma capacité à développer des modèles prédictifs pour détecter les fraudes et améliorer la conformité réglementaire. Je suis convaincu que mes compétences et mes expériences pourraient être un atout pour l'équipe de Sanofi.\n\nJe serais ravi de discuter de ma candidature et de mes projets avec vous en détail. Je vous remercie de l'attention que vous porterez à ma candidature. Je vous prie de croire en ma sincère considération.\n\nCordialement,\n[Votre nom]"
+    }
+  },
+  {
+    "id": "https://fr.indeed.com/viewjob?jk=fc5b52601dd3e53a",
+    "title": "Stage Data Enrichment & Master Data Assistant H/F",
+    "company": "Bonduelle",
+    "url": "https://fr.indeed.com/viewjob?jk=fc5b52601dd3e53a",
+    "source": "Indeed",
+    "date_ajout": "2026-08-06T19:37:57.671714",
+    "analyse": {
+      "score_adequation": 85,
+      "besoin_cle_entreprise": "L'enjeu principal de l'entreprise est la gestion et l'amélioration continue des données produits pour contribuer à la transition vers l'alimentation végétale et à la préservation de la planète.",
+      "preuve_technique_citee": "Analyse décisionnelle de la transition énergétique en Europe, VentiRE-RAG",
+      "points_forts": [
+        "Compétences en analyse de données et visualisation de données",
+        "Expérience en développement de solutions de Machine Learning et d'IA générative"
+      ],
+      "lettre_motivation": "Objet : Candidature pour le poste de Data Enrichment & Master Data Assistant H/F en stage de 4 à 6 mois\n\nL'entreprise Bonduelle, leader dans la fourniture de légumes à plus de 100 pays, se positionne comme un acteur clé dans la transition vers l'alimentation végétale et la préservation de la planète. La gestion et l'amélioration continue des données produits sont essentielles pour atteindre ces objectifs. Mon parcours et mes compétences en Data Science et Intelligence Artificielle me permettent de comprendre l'importance de la qualité des données pour prendre des décisions éclairées et améliorer les processus métier.\n\nVoici quelques-uns de mes projets qui démontrent mes compétences dans le domaine du Data Enrichment et de la gestion des données :\n* Analyse décisionnelle de la transition énergétique en Europe : j'ai utilisé Python, Pandas, NumPy et Plotly pour analyser et visualiser des données complexes sur la transition énergétique en Europe. J'ai également appliqué des techniques de clustering et d'analyse de séries temporelles pour identifier des tendances et des patterns dans les données. Ce projet a nécessité une forte capacité d'analyse et de synthèse, ainsi que la maîtrise d'outils de data visualisation tels que Streamlit.\n* VentiRE-RAG : j'ai développé une solution de Machine Learning et d'IA générative utilisant Python, LlamaIndex et FastEmbed pour résoudre des problèmes métier complexes. J'ai également utilisé Streamlit pour créer une interface utilisateur conviviale pour la visualisation et l'interaction avec les données. Ce projet a démontré ma capacité à développer des solutions innovantes pour résoudre des problèmes métier complexes.\n\nCes réalisations répondent concrètement aux défis décrits dans l'offre de stage, notamment en termes d'enrichissement et de fiabilisation des données, de support aux équipes métiers, de reporting et de pilotage, ainsi que d'amélioration continue. Je suis capable de contribuer à l'amélioration de la qualité des données, de soutenir les équipes métiers dans la saisie des informations et de produire des indicateurs de qualité de données pour évaluer les performances.\n\nJe suis particulièrement attiré par ce stage chez Bonduelle car il me permettra de mettre en pratique mes compétences en Data Science et Intelligence Artificielle pour contribuer à la transition vers l'alimentation végétale et à la préservation de la planète. Je suis convaincu que mes compétences et mon expérience seront un atout pour l'équipe de Bonduelle et je suis impatient de discuter de cette opportunité plus en détail.\n\nJe vous remercie de l'attention que vous porterez à ma candidature. Je serais ravi de discuter de ce poste et de mes qualifications avec vous. N'hésitez pas à me contacter pour fixer un entretien. Je vous souhaite une bonne journée et je reste à votre disposition pour tout complément d'information."
     }
   }
 ]
