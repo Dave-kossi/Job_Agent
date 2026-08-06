@@ -1,4 +1,4 @@
-# 💼 Job Agent AI
+# 💼 MatchCraft AI
 
 Un agent autonome qui scanne automatiquement le web à la recherche de **stages et alternances** en **Data Science, Analytics, Machine Learning, LLM et AI Engineering**, puis rédige pour chaque offre pertinente une **lettre de motivation personnalisée**, ancrée dans ton CV, ton portfolio et tes projets GitHub.
 
