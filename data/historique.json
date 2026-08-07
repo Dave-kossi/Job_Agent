@@ -2268,5 +2268,42 @@
       ],
       "lettre_motivation": "Objet : Candidature pour le poste de Donor Relation and Data Intern au sein de l'équipe Private Sector Partnerships de l'UNHCR à Paris, pour une durée de 6 à 8 mois.\n\nJe me permets de postuler pour le poste de Donor Relation and Data Intern au sein de l'équipe Private Sector Partnerships de l'UNHCR à Paris, en raison de mon intérêt pour l'analyse de données et le développement de solutions de Machine Learning pour améliorer les relations avec les donateurs et optimiser les processus de collecte de fonds. Mon parcours en Data Science et Intelligence Artificielle, ainsi que mes expériences dans l'analyse et la visualisation de données, me permettent de comprendre les défis liés à la gestion des données et à la prise de décision dans le contexte de la collecte de fonds pour les réfugiés.\n\nVoici quelques-uns de mes projets qui démontrent mes compétences dans ce domaine :\n* Analyse et détection de fraude bancaire : j'ai développé un modèle de détection de fraude à l'aide de l'algorithme LightGBM, en utilisant des données bancaires pour identifier les transactions suspectes. Ce projet a été réalisé en Python, en utilisant Jupyter Notebook pour la visualisation et l'analyse des résultats.\n* Conception d'un outil d'intelligence décisionnelle pour analyser la transition énergétique en Europe : j'ai créé un outil de visualisation de données en utilisant Python, Pandas, NumPy, Plotly et Streamlit, pour analyser les tendances et les correlations entre les différentes sources d'énergie en Europe. Cet outil permet de prendre des décisions éclairées pour la transition énergétique.\n\nCes réalisations répondent concrètement aux défis décrits dans l'offre, car elles démontrent ma capacité à analyser et à visualiser des données pour prendre des décisions éclairées, ainsi que ma compréhension des enjeux liés à la gestion des données et à la détection de fraude. Je suis convaincu que mes compétences en Data Science et Intelligence Artificielle pourraient être utiles pour améliorer les processus de collecte de fonds et de gestion des données au sein de l'UNHCR.\n\nJe serais ravi de discuter de ma candidature et de mes compétences avec vous. Je vous remercie de l'attention que vous porterez à ma demande. Je suis à votre disposition pour un entretien et je vous prie de bien vouloir me contacter pour fixer un rendez-vous. \n\nCordialement,\n[Votre nom]"
     }
+  },
+  {
+    "id": "https://fr.indeed.com/viewjob?jk=618054948db156dd",
+    "title": "Stage - Data Engineer H/F",
+    "company": "BNP Paribas",
+    "url": "https://fr.indeed.com/viewjob?jk=618054948db156dd",
+    "source": "Indeed",
+    "date_ajout": "2026-08-07T14:46:56.790114",
+    "analyse": {
+      "score_adequation": 85,
+      "besoin_cle_entreprise": "Détection de problèmes de data-quality et automatisation de la résolution de ces problèmes dans le domaine des marchés financiers",
+      "preuve_technique_citee": "VentiRE-RAG, bank-transaction-fraud-detection",
+      "points_forts": [
+        "Expérience en développement de systèmes d'intelligence artificielle",
+        "Connaissance de Python et de Jupyter Notebook"
+      ],
+      "lettre_motivation": "Objet : Candidature pour le stage de Data Engineer H/F - Détection de problèmes de data-quality et automatisation de la résolution\n\nJe me permets de vous adresser ma candidature pour le stage de Data Engineer H/F au sein de l'équipe ODIN de BNP Paribas, dont l'objectif est de mettre en place un agent IA dédié à la détection de problèmes de data-quality et à l'automatisation de la résolution de ces problèmes dans le domaine des marchés financiers. \n\nMon parcours universitaire en Data Science et Intelligence Artificielle, ainsi que mes expériences professionnelles, m'ont permis de développer des compétences solides en analyse de données, développement de modèles de machine learning et mise en place de systèmes d'intelligence artificielle. Je suis convaincu que mes compétences et mes expériences seront un atout pour votre équipe.\n\nVoici quelques-uns de mes projets qui démontrent mes compétences en data engineering et intelligence artificielle :\n* VentiRE-RAG : j'ai développé un système RAG intelligent et local pour analyser la réglementation RE2020 et les protocoles de contrôle de la ventilation, en utilisant des technologies telles que Python, LlamaIndex, FastEmbed et Streamlit. Ce projet a nécessité la mise en place d'un système d'intelligence artificielle pour résoudre des problèmes de data-quality.\n* bank-transaction-fraud-detection : j'ai développé un modèle de détection de fraude bancaire en utilisant des technologies telles que Python, Jupyter Notebook et LightGBM. Ce projet a nécessité la mise en place d'un système d'intelligence artificielle pour résoudre des problèmes de data-quality et d'automatisation.\n\nCes réalisations répondent concrètement aux défis décrits dans l'offre, notamment la détection de problèmes de data-quality et l'automatisation de la résolution de ces problèmes. Je suis capable de développer des systèmes d'intelligence artificielle pour résoudre des problèmes de data-quality et d'automatisation, ce qui est essentiel pour le poste de Data Engineer.\n\nJe suis impatient de discuter de ma candidature et de mes compétences avec vous. Je vous remercie de l'attention que vous porterez à ma demande. Je suis à votre disposition pour un entretien et je vous prie de croire en l'assurance de ma considération distinguée."
+    }
+  },
+  {
+    "id": "https://fr.indeed.com/viewjob?jk=6234ba578d116703",
+    "title": "Intern – Data Engineer for automatic selection of radio networks",
+    "company": "Hitachi Energy",
+    "url": "https://fr.indeed.com/viewjob?jk=6234ba578d116703",
+    "source": "Indeed",
+    "date_ajout": "2026-08-07T14:47:27.190967",
+    "analyse": {
+      "score_adequation": 85,
+      "besoin_cle_entreprise": "Développement de solutions de Data Engineering pour l'automatisation de la sélection de réseaux de radio",
+      "preuve_technique_citee": "VentiRE-RAG, bank-transaction-fraud-detection",
+      "points_forts": [
+        "Expérience en Data Engineering",
+        "Connaissance de Python et de ses bibliothèques",
+        "Capacité à développer des solutions d'automatisation"
+      ],
+      "lettre_motivation": "Objet : Candidature pour le poste d'Intern – Data Engineer for automatic selection of radio networks (stage 6 mois)\n\nJe me permets de postuler pour le poste d'Intern – Data Engineer for automatic selection of radio networks au sein de Hitachi Energy, car mon parcours académique et professionnel en Data Science et Intelligence Artificielle me permet de comprendre les enjeux liés au développement de solutions de Data Engineering pour l'automatisation de la sélection de réseaux de radio. Les défis posés par l'automatisation de la sélection de réseaux de radio, tels que l'optimisation des performances et la réduction des coûts, sont directement liés à mes compétences en matière de développement de solutions de Data Engineering et de Machine Learning.\n\nVoici quelques-uns de mes projets qui démontrent mes compétences dans ce domaine :\n* VentiRE-RAG : j'ai développé une solution de Data Engineering utilisant Python, LlamaIndex, FastEmbed et Streamlit pour l'automatisation de l'analyse de conformité réglementaire. Ce projet a permis de réduire les coûts et les délais de traitement des données, tout en améliorant la précision des résultats.\n* bank-transaction-fraud-detection : j'ai développé une solution de Machine Learning utilisant Python, Jupyter Notebook et LightGBM pour la détection de fraude dans les transactions bancaires. Ce projet a permis de réduire les taux de fausses alertes et d'améliorer la précision de la détection de fraude.\n\nCes réalisations répondent concrètement aux défis décrits dans l'offre, car elles démontrent ma capacité à développer des solutions de Data Engineering et de Machine Learning pour l'automatisation de la sélection de réseaux de radio. Je suis convaincu que mes compétences et mes expériences pourraient être un atout pour votre équipe.\n\nJe serais ravi de discuter de ma candidature et de mes projets avec vous. Je vous remercie de l'attention que vous porterez à ma demande et je vous prie de bien vouloir me contacter pour un entretien. Je me réjouis à l'idée de rejoindre votre équipe et de contribuer au développement de solutions innovantes pour Hitachi Energy.\n\nCordialement,\n[Votre nom]"
+    }
   }
 ]
