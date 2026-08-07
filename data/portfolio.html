@@ -3,508 +3,190 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kossi Noumagno — Data Scientist & AI Engineer</title>
-<meta name="description" content="Portfolio de Kossi Noumagno, Data Scientist Junior & AI Engineer — Machine Learning, RAG/LLM, Finance & Énergie.">
+<title>Kossi Noumagno — Data Scientist & ML Engineer</title>
+<meta name="description" content="Portfolio de Kossi Noumagno, Data Scientist & ML Engineer — Machine Learning, RAG/LLM, Finance, Industrie & Énergie.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root{
-    --bg: #FAFAF8;
-    --bg-raised: #F2F0E9;
-    --ink: #16241F;
-    --ink-soft: #3C4A41;
-    --support: #6B6F6A;
-    --line: #DAD8CC;
-    --accent: #2D5A4A;
-    --accent-soft: #E4ECE6;
-    --copper: #B5663B;
-    --copper-soft: #F3E4D8;
-
-    --display: 'Fraunces', serif;
-    --body: 'Inter', sans-serif;
-    --mono: 'IBM Plex Mono', monospace;
-
-    --max: 1080px;
+    --bg:#FFFFFF; --bg-raised:#F5F6F9; --ink:#0E1116; --ink-soft:#454B54;
+    --support:#868C97; --line:#E4E6EA;
+    --accent:#2451E0; --accent-soft:#E9EEFC;
+    --violet:#6C4CC4; --violet-soft:#F0EAFA;
+    --dark:#0B0D10; --dark-line:rgba(245,246,249,0.12);
+    --display:'Space Grotesk',sans-serif; --body:'Inter',sans-serif; --mono:'IBM Plex Mono',monospace;
+    --max:1080px;
   }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;}
+  a{color:inherit;text-decoration:none;}
+  img{max-width:100%;display:block;}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 32px;}
+  :focus-visible{outline:2px solid var(--accent);outline-offset:2px;}
 
-  *{ margin:0; padding:0; box-sizing:border-box; }
-
-  html{ scroll-behavior:smooth; }
-
-  body{
-    background:var(--bg);
-    color:var(--ink);
-    font-family:var(--body);
-    font-size:16px;
-    line-height:1.6;
-    -webkit-font-smoothing:antialiased;
+  /* MOTION */
+  @media(prefers-reduced-motion:no-preference){
+    .js-ready .reveal{opacity:0;transform:translateY(14px);}
+    .js-ready .reveal.in-view{animation:revealUp 0.6s cubic-bezier(.22,.61,.36,1) forwards;}
+    @keyframes revealUp{to{opacity:1;transform:translateY(0);}}
   }
 
-  a{ color:inherit; text-decoration:none; }
+  /* NAV */
+  header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,0.9);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);}
+  nav{display:flex;align-items:center;justify-content:space-between;padding:18px 32px;max-width:var(--max);margin:0 auto;}
+  .logo{font-family:var(--mono);font-weight:600;font-size:0.95rem;letter-spacing:-0.01em;}
+  .logo span{color:var(--accent);}
+  .navlinks{display:flex;gap:32px;font-size:0.88rem;font-weight:500;}
+  .navlinks a{color:var(--ink-soft);position:relative;padding-bottom:4px;}
+  .navlinks a:hover{color:var(--ink);}
+  .navlinks a::after{content:'';position:absolute;left:0;bottom:0;width:0;height:1px;background:var(--accent);transition:width 0.25s ease;}
+  .navlinks a:hover::after{width:100%;}
+  .nav-cta{font-size:0.82rem;font-weight:600;font-family:var(--mono);border:1px solid var(--ink);padding:8px 16px;border-radius:2px;}
+  .nav-cta:hover{background:var(--ink);color:var(--bg);}
+  @media(max-width:760px){.navlinks{display:none;}nav{padding:16px 20px;}}
 
-  img{ max-width:100%; display:block; }
+  /* HERO */
+  .hero{padding:48px 0 0;border-bottom:1px solid var(--line);}
+  @media(min-width:761px){.hero{padding-top:88px;}}
+  .hero-grid{display:grid;grid-template-columns:1.3fr 0.7fr;gap:56px;align-items:start;padding-bottom:56px;}
+  @media(max-width:820px){.hero-grid{grid-template-columns:1fr;gap:32px;}.hero-portrait{max-width:260px;aspect-ratio:1/1;}}
+  .eyebrow{font-family:var(--mono);font-size:0.76rem;letter-spacing:0.04em;color:var(--accent);display:inline-flex;align-items:center;gap:8px;margin-bottom:22px;border:1px solid var(--accent-soft);background:var(--accent-soft);padding:5px 10px;border-radius:3px;}
+  .eyebrow::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--accent);}
+  h1{font-family:var(--display);font-weight:600;font-size:clamp(2.3rem,4.4vw,3.5rem);line-height:1.1;letter-spacing:-0.02em;color:var(--ink);}
+  h1 em{font-style:normal;color:var(--accent);}
+  .hero-sub{margin-top:24px;font-size:1.08rem;color:var(--ink-soft);max-width:540px;line-height:1.65;}
+  .hero-actions{margin-top:34px;display:flex;gap:14px;flex-wrap:wrap;}
+  .btn{font-family:var(--mono);font-size:0.82rem;font-weight:500;padding:13px 22px;border-radius:2px;display:inline-flex;align-items:center;gap:8px;transition:all 0.2s ease;}
+  .btn-primary{background:var(--ink);color:var(--bg);}
+  .btn-primary:hover{background:var(--accent);}
+  .btn-ghost{border:1px solid var(--line);color:var(--ink);}
+  .btn-ghost:hover{border-color:var(--ink);}
+  .hero-portrait{aspect-ratio:4/5;background:var(--bg-raised);border:1px solid var(--line);border-radius:2px;display:flex;flex-direction:column;align-items:center;justify-content:center;overflow:hidden;position:relative;}
+  .hero-portrait img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0;}
 
-  .wrap{
-    max-width:var(--max);
-    margin:0 auto;
-    padding:0 32px;
-  }
+  /* TICKER */
+  .ticker-strip{border-top:1px solid var(--line);background:var(--dark);color:#F5F6F9;overflow:hidden;}
+  .ticker-track{display:flex;width:max-content;animation:tickerScroll 40s linear infinite;}
+  @media(prefers-reduced-motion:reduce){.ticker-track{animation:none;overflow-x:auto;}}
+  @keyframes tickerScroll{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+  .ticker-item{display:flex;align-items:baseline;gap:10px;padding:18px 40px;white-space:nowrap;border-right:1px solid var(--dark-line);}
+  .ticker-num{font-family:var(--mono);font-size:1.25rem;font-weight:600;color:#7FA0FF;}
+  .ticker-label{font-size:0.8rem;color:rgba(245,246,249,0.62);}
 
-  /* ============ MOTION ============ */
-  @media (prefers-reduced-motion: no-preference){
-    .js-ready .reveal{
-      opacity:0;
-      transform:translateY(14px);
-    }
-    .js-ready .reveal.in-view{
-      animation:revealUp 0.7s cubic-bezier(.22,.61,.36,1) forwards;
-    }
-    @keyframes revealUp{ to{ opacity:1; transform:translateY(0); } }
-  }
+  /* SECTION */
+  section{padding:84px 0;}
+  .section-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:48px;border-bottom:1px solid var(--line);padding-bottom:20px;gap:24px;}
+  .section-num{font-family:var(--mono);font-size:0.76rem;color:var(--support);}
+  h2{font-family:var(--display);font-weight:600;font-size:clamp(1.6rem,2.8vw,2.15rem);letter-spacing:-0.015em;}
+  .section-note{font-size:0.88rem;color:var(--support);max-width:280px;text-align:right;}
+  @media(max-width:700px){.section-head{flex-direction:column;align-items:flex-start;gap:10px;}.section-note{text-align:left;}}
 
-  /* ============ HEADER / NAV ============ */
-  header{
-    position:sticky; top:0; z-index:50;
-    background:rgba(250,250,248,0.92);
-    backdrop-filter:blur(8px);
-    border-bottom:1px solid var(--line);
-  }
-  nav{
-    display:flex; align-items:center; justify-content:space-between;
-    padding:18px 32px;
-    max-width:var(--max); margin:0 auto;
-  }
-  .logo{
-    font-family:var(--display);
-    font-weight:600;
-    font-size:1.15rem;
-    letter-spacing:-0.01em;
-  }
-  .logo span{ color:var(--accent); }
-  .navlinks{ display:flex; gap:32px; font-size:0.92rem; font-weight:500; }
-  .navlinks a{ color:var(--ink-soft); position:relative; padding-bottom:4px; }
-  .navlinks a:hover{ color:var(--ink); }
-  .navlinks a::after{
-    content:''; position:absolute; left:0; bottom:0; width:0; height:1px;
-    background:var(--accent); transition:width 0.25s ease;
-  }
-  .navlinks a:hover::after{ width:100%; }
-  .navlinks a:focus-visible, .btn:focus-visible, .case a:focus-visible{
-    outline:2px solid var(--accent); outline-offset:3px;
-  }
-  .nav-cta{
-    font-size:0.85rem; font-weight:600; font-family:var(--mono);
-    border:1px solid var(--ink); padding:8px 16px; border-radius:2px;
-  }
-  .nav-cta:hover{ background:var(--ink); color:var(--bg); }
-  .navlinks-mobile{ display:none; }
+  /* ABOUT */
+  .about-grid{display:grid;grid-template-columns:2fr 1fr;gap:56px;}
+  .about-text p{font-size:1.02rem;color:var(--ink-soft);margin-bottom:18px;max-width:620px;}
+  .about-text strong{color:var(--ink);font-weight:600;}
+  .skill-cols{display:grid;grid-template-columns:1fr 1fr;gap:28px;}
+  .skill-block h4{font-family:var(--mono);font-size:0.74rem;text-transform:uppercase;letter-spacing:0.05em;color:var(--accent);margin-bottom:12px;}
+  .skill-block ul{list-style:none;}
+  .skill-block li{font-size:0.9rem;padding:6px 0;border-bottom:1px solid var(--line);color:var(--ink-soft);}
+  @media(max-width:760px){.about-grid{grid-template-columns:1fr;}}
 
-  @media (max-width:760px){
-    .navlinks{ display:none; }
-    nav{ padding:16px 20px; }
-  }
+  /* PROJECTS — traité comme un index de "figures" de recherche */
+  .case{display:grid;grid-template-columns:80px 1fr 1fr;gap:32px;padding:36px 0;border-bottom:1px solid var(--line);}
+  .case:first-of-type{border-top:1px solid var(--line);}
+  .case-index{font-family:var(--mono);font-size:0.78rem;color:var(--support);padding-top:4px;}
+  .case-index .fig-label{display:block;font-size:0.68rem;letter-spacing:0.04em;color:var(--support);margin-bottom:2px;}
+  .case-tag{display:inline-block;font-family:var(--mono);font-size:0.68rem;letter-spacing:0.03em;text-transform:uppercase;color:var(--accent);background:var(--accent-soft);padding:4px 9px;border-radius:2px;margin-bottom:14px;}
+  .case-tag.energy{color:var(--violet);background:var(--violet-soft);}
+  .case h3{font-family:var(--display);font-weight:600;font-size:1.32rem;margin-bottom:10px;letter-spacing:-0.01em;}
+  .case-desc{color:var(--ink-soft);font-size:0.94rem;margin-bottom:16px;}
+  .case-stack{font-family:var(--mono);font-size:0.76rem;color:var(--support);margin-bottom:16px;}
+  .case-links{display:flex;gap:10px;flex-wrap:wrap;}
+  .case-links a{font-family:var(--mono);font-size:0.78rem;font-weight:500;color:var(--ink);border:1px solid var(--line);padding:7px 12px;border-radius:2px;display:inline-flex;align-items:center;gap:6px;transition:all 0.15s ease;}
+  .case-links a:hover{border-color:var(--accent);color:var(--accent);background:var(--accent-soft);}
+  .case-links a.demo{border-color:var(--ink);}
+  .case-links a.demo:hover{border-color:var(--accent);}
+  .case-stats{display:flex;flex-direction:column;gap:14px;justify-content:center;}
+  .stat-row{display:flex;align-items:baseline;gap:14px;padding:10px 16px;background:var(--bg-raised);border-left:2px solid var(--accent);}
+  .stat-row .num{font-family:var(--mono);font-size:1.22rem;font-weight:600;color:var(--ink);min-width:78px;}
+  .stat-row .desc{font-size:0.82rem;color:var(--ink-soft);}
+  .case.energy .stat-row{border-left-color:var(--violet);}
+  .case-impact{grid-column:1 / -1;margin-top:6px;padding:18px 20px;background:var(--accent-soft);border-radius:2px;display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:start;}
+  .case.energy .case-impact{background:var(--violet-soft);}
+  .impact-label{font-family:var(--mono);font-size:0.7rem;text-transform:uppercase;letter-spacing:0.04em;color:var(--accent);white-space:nowrap;padding-top:2px;}
+  .case.energy .impact-label{color:var(--violet);}
+  .impact-text{font-size:0.9rem;color:var(--ink-soft);line-height:1.55;}
+  .impact-text strong{color:var(--ink);font-weight:600;}
+  @media(max-width:600px){.case-impact{grid-template-columns:1fr;gap:6px;}}
+  @media(max-width:880px){.case{grid-template-columns:1fr;gap:16px;}.case-index{padding-top:0;}}
 
-  /* ============ HERO ============ */
-  .hero{
-    padding:48px 0 0;
-    border-bottom:1px solid var(--line);
-  }
-  @media (min-width:761px){
-    .hero{ padding-top:88px; }
-  }
-  .hero-grid{
-    display:grid;
-    grid-template-columns:1.3fr 0.7fr;
-    gap:56px;
-    align-items:start;
-    padding-bottom:56px;
-  }
-  @media (max-width:820px){
-    .hero-grid{ grid-template-columns:1fr; gap:32px; }
-    .hero-portrait{ max-width:260px; aspect-ratio:1/1; }
-  }
-  .eyebrow{
-    font-family:var(--mono);
-    font-size:0.78rem;
-    letter-spacing:0.08em;
-    text-transform:uppercase;
-    color:var(--accent);
-    display:flex; align-items:center; gap:10px;
-    margin-bottom:22px;
-  }
-  .eyebrow::before{
-    content:''; width:7px; height:7px; border-radius:50%;
-    background:var(--copper);
-    box-shadow:0 0 0 3px var(--copper-soft);
-  }
-  h1{
-    font-family:var(--display);
-    font-weight:600;
-    font-size:clamp(2.4rem, 4.6vw, 3.7rem);
-    line-height:1.08;
-    letter-spacing:-0.015em;
-    color:var(--ink);
-  }
-  h1 em{
-    font-style:italic;
-    color:var(--accent);
-    font-weight:500;
-  }
-  .hero-sub{
-    margin-top:24px;
-    font-size:1.12rem;
-    color:var(--ink-soft);
-    max-width:540px;
-    line-height:1.65;
-  }
-  .hero-actions{
-    margin-top:34px;
-    display:flex;
-    gap:14px;
-    flex-wrap:wrap;
-  }
-  .btn{
-    font-family:var(--mono);
-    font-size:0.85rem;
-    font-weight:500;
-    padding:13px 22px;
-    border-radius:2px;
-    display:inline-flex; align-items:center; gap:8px;
-    transition:all 0.2s ease;
-  }
-  .btn-primary{
-    background:var(--ink);
-    color:var(--bg);
-  }
-  .btn-primary:hover{ background:var(--accent); }
-  .btn-ghost{
-    border:1px solid var(--line);
-    color:var(--ink);
-  }
-  .btn-ghost:hover{ border-color:var(--ink); }
+  /* RAG SHOWCASE */
+  .rag-showcase{margin-top:28px;border:1px solid var(--line);border-radius:4px;overflow:hidden;grid-column:1 / -1;}
+  .rag-tabs{display:flex;border-bottom:1px solid var(--line);background:var(--bg-raised);}
+  .rag-tab{font-family:var(--mono);font-size:0.73rem;padding:10px 18px;cursor:pointer;color:var(--support);border-right:1px solid var(--line);border-bottom:2px solid transparent;transition:all 0.15s;background:none;border-top:none;border-left:none;}
+  .rag-tab.active{color:var(--ink);border-bottom:2px solid var(--accent);background:var(--bg);}
+  .rag-panel{display:none;padding:20px 24px;}
+  .rag-panel.active{display:block;}
+  .rag-qa{margin-bottom:16px;}
+  .rag-q{font-family:var(--mono);font-size:0.8rem;color:var(--support);margin-bottom:8px;display:flex;align-items:baseline;gap:8px;}
+  .rag-q::before{content:'Q →';color:var(--accent);font-weight:600;}
+  .rag-a{font-size:0.88rem;color:var(--ink-soft);background:var(--bg-raised);padding:12px 16px;border-left:2px solid var(--accent);line-height:1.6;}
+  .rag-a.refuse{border-left-color:var(--violet);background:var(--violet-soft);}
+  .rag-source{display:flex;align-items:center;gap:8px;margin-top:8px;font-family:var(--mono);font-size:0.7rem;color:var(--support);}
+  .rag-source::before{content:'↳ Source :';color:var(--accent);}
+  .rag-badge{font-family:var(--mono);font-size:0.66rem;padding:2px 6px;border-radius:2px;background:var(--accent-soft);color:var(--accent);}
+  .rag-badge.erp{background:var(--violet-soft);color:var(--violet);}
+  .bug-list{list-style:none;display:flex;flex-direction:column;gap:10px;}
+  .bug-item{display:grid;grid-template-columns:auto 1fr;gap:12px;padding:12px 16px;background:var(--bg-raised);border-radius:2px;align-items:start;}
+  .bug-num{font-family:var(--mono);font-size:0.73rem;color:var(--violet);font-weight:600;padding-top:1px;}
+  .bug-title{font-size:0.88rem;font-weight:600;color:var(--ink);margin-bottom:3px;}
+  .bug-fix{font-size:0.82rem;color:var(--ink-soft);}
+  .bug-fix span{color:var(--accent);font-weight:500;}
 
-  .hero-portrait{
-    aspect-ratio:4/5;
-    background:var(--bg-raised);
-    border:1px solid var(--line);
-    border-radius:2px;
-    display:flex; flex-direction:column; align-items:center; justify-content:center;
-    gap:10px;
-    color:var(--support);
-    font-family:var(--mono);
-    font-size:0.78rem;
-    text-align:center;
-    padding:24px;
-    overflow:hidden;
-    position:relative;
-  }
-  .hero-portrait img{
-    width:100%; height:100%; object-fit:cover;
-    position:absolute; inset:0;
-  }
-  .portrait-placeholder-icon{
-    width:36px; height:36px; opacity:0.5;
-  }
+  /* PIPELINE */
+  .pipeline{display:flex;align-items:center;gap:0;flex-wrap:wrap;margin:20px 0;grid-column:1 / -1;}
+  .pipe-step{font-family:var(--mono);font-size:0.73rem;padding:8px 14px;background:var(--bg-raised);border:1px solid var(--line);color:var(--ink-soft);white-space:nowrap;}
+  .pipe-arrow{font-size:0.73rem;color:var(--accent);padding:0 4px;}
+  .pipe-step.highlight{background:var(--ink);color:var(--bg);border-color:var(--ink);}
 
-  /* ============ TICKER STRIP (signature element) ============ */
-  .ticker-strip{
-    border-top:1px solid var(--line);
-    background:var(--ink);
-    color:var(--bg);
-    overflow:hidden;
-    position:relative;
-  }
-  .ticker-track{
-    display:flex;
-    width:max-content;
-    animation:tickerScroll 38s linear infinite;
-  }
-  @media (prefers-reduced-motion: reduce){
-    .ticker-track{ animation:none; overflow-x:auto; }
-  }
-  @keyframes tickerScroll{
-    from{ transform:translateX(0); }
-    to{ transform:translateX(-50%); }
-  }
-  .ticker-item{
-    display:flex; align-items:baseline; gap:10px;
-    padding:18px 40px;
-    white-space:nowrap;
-    border-right:1px solid rgba(250,250,248,0.14);
-  }
-  .ticker-num{
-    font-family:var(--mono);
-    font-size:1.3rem;
-    font-weight:600;
-    color:#E8C9A8;
-  }
-  .ticker-label{
-    font-size:0.82rem;
-    color:rgba(250,250,248,0.72);
-  }
+  /* EXPERIENCE */
+  .timeline-item{display:grid;grid-template-columns:160px 1fr;gap:32px;padding:28px 0;border-bottom:1px solid var(--line);}
+  .timeline-item:first-child{border-top:1px solid var(--line);}
+  .tl-date{font-family:var(--mono);font-size:0.8rem;color:var(--support);}
+  .tl-role{font-weight:600;font-size:1rem;margin-bottom:4px;}
+  .tl-org{font-size:0.88rem;color:var(--accent);margin-bottom:12px;}
+  .tl-points{list-style:none;}
+  .tl-points li{font-size:0.9rem;color:var(--ink-soft);padding-left:16px;position:relative;margin-bottom:6px;}
+  .tl-points li::before{content:'—';position:absolute;left:0;color:var(--accent);}
+  @media(max-width:700px){.timeline-item{grid-template-columns:1fr;gap:8px;}}
 
-  /* ============ SECTION SHELL ============ */
-  section{ padding:84px 0; }
-  .section-head{
-    display:flex; justify-content:space-between; align-items:baseline;
-    margin-bottom:48px;
-    border-bottom:1px solid var(--line);
-    padding-bottom:20px;
-    gap:24px;
-  }
-  .section-num{
-    font-family:var(--mono);
-    font-size:0.78rem;
-    color:var(--support);
-  }
-  h2{
-    font-family:var(--display);
-    font-weight:600;
-    font-size:clamp(1.7rem, 3vw, 2.3rem);
-    letter-spacing:-0.01em;
-  }
-  .section-note{
-    font-size:0.92rem;
-    color:var(--support);
-    max-width:280px;
-    text-align:right;
-  }
-  @media (max-width:700px){
-    .section-head{ flex-direction:column; align-items:flex-start; gap:10px; }
-    .section-note{ text-align:left; }
-  }
+  /* EDUCATION */
+  .edu-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;}
+  .edu-list{list-style:none;}
+  .edu-list li{padding:16px 0;border-bottom:1px solid var(--line);}
+  .edu-degree{font-weight:600;font-size:0.94rem;}
+  .edu-school{font-size:0.86rem;color:var(--support);font-family:var(--mono);margin-top:2px;}
+  .tag-cloud{display:flex;flex-wrap:wrap;gap:8px;}
+  .tag{font-family:var(--mono);font-size:0.76rem;border:1px solid var(--line);padding:6px 12px;border-radius:2px;color:var(--ink-soft);}
+  @media(max-width:700px){.edu-grid{grid-template-columns:1fr;gap:32px;}}
 
-  /* ============ ABOUT ============ */
-  .about-grid{
-    display:grid;
-    grid-template-columns:2fr 1fr;
-    gap:56px;
-  }
-  .about-text p{
-    font-size:1.05rem;
-    color:var(--ink-soft);
-    margin-bottom:18px;
-    max-width:620px;
-  }
-  .about-text strong{ color:var(--ink); font-weight:600; }
-  .skill-cols{
-    display:grid; grid-template-columns:1fr 1fr; gap:28px;
-  }
-  .skill-block h4{
-    font-family:var(--mono);
-    font-size:0.78rem;
-    text-transform:uppercase;
-    letter-spacing:0.06em;
-    color:var(--copper);
-    margin-bottom:12px;
-  }
-  .skill-block ul{ list-style:none; }
-  .skill-block li{
-    font-size:0.92rem;
-    padding:6px 0;
-    border-bottom:1px solid var(--line);
-    color:var(--ink-soft);
-  }
-  @media (max-width:760px){
-    .about-grid{ grid-template-columns:1fr; }
-    .skill-cols{ grid-template-columns:1fr 1fr; }
-  }
+  /* CONTACT */
+  .contact{background:var(--dark);color:#F5F6F9;}
+  .contact h2{color:#F5F6F9;}
+  .contact .section-head{border-color:var(--dark-line);}
+  .contact-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:48px;align-items:end;}
+  .contact-lead{font-family:var(--display);font-size:clamp(1.45rem,2.4vw,1.9rem);font-weight:500;line-height:1.3;max-width:560px;}
+  .contact-lead em{font-style:normal;color:#7FA0FF;}
+  .contact-list{list-style:none;}
+  .contact-list li{margin-bottom:14px;}
+  .contact-list a{font-family:var(--mono);font-size:0.92rem;color:#F5F6F9;border-bottom:1px solid rgba(245,246,249,0.3);padding-bottom:3px;}
+  .contact-list a:hover{border-color:#7FA0FF;color:#7FA0FF;}
+  @media(max-width:760px){.contact-grid{grid-template-columns:1fr;gap:32px;}}
 
-  /* ============ PROJECTS ============ */
-  .case{
-    display:grid;
-    grid-template-columns:80px 1fr 1fr;
-    gap:32px;
-    padding:36px 0;
-    border-bottom:1px solid var(--line);
-  }
-  .case:first-of-type{ border-top:1px solid var(--line); }
-  .case-index{
-    font-family:var(--mono);
-    font-size:0.85rem;
-    color:var(--support);
-    padding-top:4px;
-  }
-  .case-tag{
-    display:inline-block;
-    font-family:var(--mono);
-    font-size:0.7rem;
-    letter-spacing:0.04em;
-    text-transform:uppercase;
-    color:var(--accent);
-    background:var(--accent-soft);
-    padding:4px 9px;
-    border-radius:2px;
-    margin-bottom:14px;
-  }
-  .case-tag.energy{ color:var(--copper); background:var(--copper-soft); }
-  .case h3{
-    font-family:var(--display);
-    font-weight:600;
-    font-size:1.4rem;
-    margin-bottom:10px;
-    letter-spacing:-0.01em;
-  }
-  .case-desc{
-    color:var(--ink-soft);
-    font-size:0.96rem;
-    margin-bottom:16px;
-  }
-  .case-stack{
-    font-family:var(--mono);
-    font-size:0.78rem;
-    color:var(--support);
-    margin-bottom:16px;
-  }
-  .case-links{ display:flex; gap:18px; }
-  .case-links a{
-    font-size:0.85rem; font-weight:600; color:var(--ink);
-    border-bottom:1px solid var(--ink);
-    padding-bottom:2px;
-  }
-  .case-links a:hover{ color:var(--accent); border-color:var(--accent); }
-  .case-stats{
-    display:flex; flex-direction:column; gap:14px;
-    justify-content:center;
-  }
-  .stat-row{
-    display:flex; align-items:baseline; gap:14px;
-    padding:10px 16px;
-    background:var(--bg-raised);
-    border-left:2px solid var(--accent);
-  }
-  .stat-row .num{
-    font-family:var(--mono);
-    font-size:1.3rem;
-    font-weight:600;
-    color:var(--ink);
-    min-width:78px;
-  }
-  .stat-row .desc{ font-size:0.84rem; color:var(--ink-soft); }
-  .case.energy .stat-row{ border-left-color:var(--copper); }
-
-  .case-impact{
-    grid-column:1 / -1;
-    margin-top:6px;
-    padding:18px 20px;
-    background:var(--accent-soft);
-    border-radius:2px;
-    display:grid;
-    grid-template-columns:auto 1fr;
-    gap:14px;
-    align-items:start;
-  }
-  .case.energy .case-impact{ background:var(--copper-soft); }
-  .impact-label{
-    font-family:var(--mono);
-    font-size:0.72rem;
-    text-transform:uppercase;
-    letter-spacing:0.05em;
-    color:var(--accent);
-    white-space:nowrap;
-    padding-top:2px;
-  }
-  .case.energy .impact-label{ color:var(--copper); }
-  .impact-text{
-    font-size:0.92rem;
-    color:var(--ink-soft);
-    line-height:1.55;
-  }
-  .impact-text strong{ color:var(--ink); font-weight:600; }
-  @media (max-width:600px){
-    .case-impact{ grid-template-columns:1fr; gap:6px; }
-  }
-
-  @media (max-width:880px){
-    .case{ grid-template-columns:1fr; gap:16px; }
-    .case-index{ padding-top:0; }
-  }
-
-  /* ============ EXPERIENCE ============ */
-  .timeline-item{
-    display:grid;
-    grid-template-columns:160px 1fr;
-    gap:32px;
-    padding:28px 0;
-    border-bottom:1px solid var(--line);
-  }
-  .timeline-item:first-child{ border-top:1px solid var(--line); }
-  .tl-date{
-    font-family:var(--mono);
-    font-size:0.82rem;
-    color:var(--support);
-  }
-  .tl-role{ font-weight:600; font-size:1.02rem; margin-bottom:4px; }
-  .tl-org{ font-size:0.9rem; color:var(--accent); margin-bottom:12px; }
-  .tl-points{ list-style:none; }
-  .tl-points li{
-    font-size:0.92rem; color:var(--ink-soft);
-    padding-left:16px; position:relative; margin-bottom:6px;
-  }
-  .tl-points li::before{
-    content:'—'; position:absolute; left:0; color:var(--copper);
-  }
-  @media (max-width:700px){
-    .timeline-item{ grid-template-columns:1fr; gap:8px; }
-  }
-
-  /* ============ EDUCATION / CERTS ============ */
-  .edu-grid{ display:grid; grid-template-columns:1fr 1fr; gap:48px; }
-  .edu-list{ list-style:none; }
-  .edu-list li{
-    padding:16px 0; border-bottom:1px solid var(--line);
-  }
-  .edu-degree{ font-weight:600; font-size:0.96rem; }
-  .edu-school{ font-size:0.88rem; color:var(--support); font-family:var(--mono); margin-top:2px; }
-  .tag-cloud{ display:flex; flex-wrap:wrap; gap:8px; }
-  .tag{
-    font-family:var(--mono); font-size:0.78rem;
-    border:1px solid var(--line); padding:6px 12px; border-radius:2px;
-    color:var(--ink-soft);
-  }
-  @media (max-width:700px){ .edu-grid{ grid-template-columns:1fr; gap:32px; } }
-
-  /* ============ CONTACT ============ */
-  .contact{
-    background:var(--ink);
-    color:var(--bg);
-  }
-  .contact h2{ color:var(--bg); }
-  .contact .section-head{ border-color:rgba(250,250,248,0.18); }
-  .contact-grid{
-    display:grid; grid-template-columns:1.4fr 1fr; gap:48px; align-items:end;
-  }
-  .contact-lead{
-    font-family:var(--display);
-    font-size:clamp(1.5rem, 2.6vw, 2rem);
-    font-weight:500;
-    line-height:1.3;
-    max-width:560px;
-  }
-  .contact-lead em{ color:#E8C9A8; font-style:italic; }
-  .contact-list{ list-style:none; }
-  .contact-list li{ margin-bottom:14px; }
-  .contact-list a{
-    font-family:var(--mono); font-size:0.95rem;
-    color:var(--bg); border-bottom:1px solid rgba(250,250,248,0.3);
-    padding-bottom:3px;
-  }
-  .contact-list a:hover{ border-color:#E8C9A8; color:#E8C9A8; }
-  @media (max-width:760px){ .contact-grid{ grid-template-columns:1fr; gap:32px; } }
-
-  footer{
-    padding:28px 0 40px;
-    background:var(--ink);
-    color:rgba(250,250,248,0.5);
-    font-size:0.8rem;
-    font-family:var(--mono);
-    border-top:1px solid rgba(250,250,248,0.12);
-  }
-  footer .wrap{
-    display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px;
-  }
-  @media (max-width:600px){ footer .wrap{ flex-direction:column; } }
+  footer{padding:28px 0 40px;background:var(--dark);color:rgba(245,246,249,0.5);font-size:0.78rem;font-family:var(--mono);border-top:1px solid var(--dark-line);}
+  footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;}
 </style>
 </head>
 <body>
@@ -528,7 +210,7 @@
       <div class="eyebrow">Disponible pour un stage — mars 2027</div>
       <h1>Je transforme la donnée complexe en <em>décisions fiables</em>, pour la finance et l'énergie.</h1>
       <p class="hero-sub">
-        Data Scientist Junior &amp; AI Engineer en Master 2 Ingénierie Mathématique &amp; Data Science
+        Data Scientist Junior &amp; ML Engineer en Master 2 Ingénierie Mathématique &amp; Data Science
         à l'Université de Haute-Alsace. Machine Learning, systèmes RAG/LLM et modélisation statistique
         appliqués à la détection de fraude, au scoring de risque et à la transition énergétique.
       </p>
@@ -544,19 +226,21 @@
 
   <div class="ticker-strip">
     <div class="ticker-track">
-      <div class="ticker-item"><span class="ticker-num">99.7%</span><span class="ticker-label">précision — détection de fraude bancaire</span></div>
+      <div class="ticker-item"><span class="ticker-num">99.7%</span><span class="ticker-label">précision détection de fraude bancaire</span></div>
       <div class="ticker-item"><span class="ticker-num">−62%</span><span class="ticker-label">pertes financières simulées</span></div>
-      <div class="ticker-item"><span class="ticker-num">3,8×</span><span class="ticker-label">facteur de risque — scoring assurance</span></div>
-      <div class="ticker-item"><span class="ticker-num">95%</span><span class="ticker-label">intervalle de confiance — projections énergie 2050</span></div>
-      <div class="ticker-item"><span class="ticker-num">500k+</span><span class="ticker-label">lignes — segmentation RFM e-commerce</span></div>
-      <div class="ticker-item"><span class="ticker-num">−42%</span><span class="ticker-label">erreur L2 — PINNs système de Lorenz</span></div>
-      <!-- duplicate for seamless loop -->
-      <div class="ticker-item"><span class="ticker-num">99.7%</span><span class="ticker-label">précision — détection de fraude bancaire</span></div>
+      <div class="ticker-item"><span class="ticker-num">3.8×</span><span class="ticker-label">facteur de risque scoring assurance</span></div>
+      <div class="ticker-item"><span class="ticker-num">95%</span><span class="ticker-label">intervalle de confiance projections énergie 2050</span></div>
+      <div class="ticker-item"><span class="ticker-num">763</span><span class="ticker-label">chunks indexés corpus VentiRE</span></div>
+      <div class="ticker-item"><span class="ticker-num">4×/jour</span><span class="ticker-label">veille automatisée MatchCraft AI</span></div>
+      <div class="ticker-item"><span class="ticker-num">−42%</span><span class="ticker-label">erreur L2 PINNs système de Lorenz</span></div>
+      <!-- duplicate pour le défilement continu -->
+      <div class="ticker-item"><span class="ticker-num">99.7%</span><span class="ticker-label">précision détection de fraude bancaire</span></div>
       <div class="ticker-item"><span class="ticker-num">−62%</span><span class="ticker-label">pertes financières simulées</span></div>
-      <div class="ticker-item"><span class="ticker-num">3,8×</span><span class="ticker-label">facteur de risque — scoring assurance</span></div>
-      <div class="ticker-item"><span class="ticker-num">95%</span><span class="ticker-label">intervalle de confiance — projections énergie 2050</span></div>
-      <div class="ticker-item"><span class="ticker-num">500k+</span><span class="ticker-label">lignes — segmentation RFM e-commerce</span></div>
-      <div class="ticker-item"><span class="ticker-num">−42%</span><span class="ticker-label">erreur L2 — PINNs système de Lorenz</span></div>
+      <div class="ticker-item"><span class="ticker-num">3.8×</span><span class="ticker-label">facteur de risque scoring assurance</span></div>
+      <div class="ticker-item"><span class="ticker-num">95%</span><span class="ticker-label">intervalle de confiance projections énergie 2050</span></div>
+      <div class="ticker-item"><span class="ticker-num">763</span><span class="ticker-label">chunks indexés corpus VentiRE</span></div>
+      <div class="ticker-item"><span class="ticker-num">4×/jour</span><span class="ticker-label">veille automatisée MatchCraft AI</span></div>
+      <div class="ticker-item"><span class="ticker-num">−42%</span><span class="ticker-label">erreur L2 PINNs système de Lorenz</span></div>
     </div>
   </div>
 </section>
@@ -568,7 +252,7 @@
         <div class="section-num">01 — Profil</div>
         <h2>Mathématicien de formation, data scientist par vocation</h2>
       </div>
-      <div class="section-note">À l'interface entre la rigueur de la modélisation statistique et l'IA générative appliquée.</div>
+      <div class="section-note">À l'interface entre la rigueur de la modélisation mathématique et l'IA appliquée.</div>
     </div>
     <div class="about-grid">
       <div class="about-text reveal">
@@ -578,14 +262,13 @@
           détection de fraude bancaire, scoring de risque, systèmes RAG/LLM et transition énergétique.
         </p>
         <p>
-          Mon parcours en mathématiques appliquées (chaînes de Markov, équations différentielles, réseaux de neurones informés
-          par la physique) me donne une base théorique solide que j'applique systématiquement à des cas d'usage concrets —
-          de la prédiction de pannes industrielles à la tarification actuarielle, en passant par la conception de systèmes
-          de question-réponse sur des documents réglementaires complexes.
+          Mon parcours en mathématiques appliquées chaînes de Markov, équations différentielles, réseaux de neurones
+          informés par la physique et d`autres me donne une base théorique que j'applique systématiquement à des cas d'usage concrets.
+          Je mesure ce que je construis plutôt que de supposer que ça marche.
         </p>
         <p>
-          Je recherche un <strong>stage Data Scientist / AI Engineer à partir de mars 2027</strong>, dans les secteurs
-          Finance, Banque ou Énergie.
+          Je recherche un <strong>stage Data Scientist / ML Engineer à partir de mars 2027</strong>, dans les secteurs
+          Finance, Industrie et Énergie.
         </p>
       </div>
       <div class="skill-cols reveal">
@@ -601,10 +284,10 @@
         <div class="skill-block">
           <h4>IA générative</h4>
           <ul>
-            <li>RAG · LangChain</li>
-            <li>Hugging Face</li>
-            <li>Recherche sémantique</li>
-            <li>LLM appliqués</li>
+            <li>RAG · LlamaIndex</li>
+            <li>Hugging Face · Ollama</li>
+            <li>Recherche hybride</li>
+            <li>LLM locaux (Mistral)</li>
           </ul>
         </div>
         <div class="skill-block">
@@ -620,7 +303,7 @@
           <h4>Restitution</h4>
           <ul>
             <li>Power BI · Plotly</li>
-            <li>Streamlit</li>
+            <li>Streamlit · fpdf2</li>
             <li>Data storytelling</li>
             <li>Business Intelligence</li>
           </ul>
@@ -630,27 +313,23 @@
   </div>
 </section>
 
-<section id="projects" style="background:var(--bg-raised); border-top:1px solid var(--line); border-bottom:1px solid var(--line);">
+<section id="projects" style="background:var(--bg-raised);border-top:1px solid var(--line);border-bottom:1px solid var(--line);">
   <div class="wrap">
     <div class="section-head">
       <div>
         <div class="section-num">02 — Projets</div>
         <h2>De la recherche académique à l'impact métier</h2>
       </div>
-      <div class="section-note">Six projets, deux fils conducteurs : finance &amp; risque, énergie &amp; industrie.</div>
+      <div class="section-note">Neuf projets, trois fils conducteurs : finance &amp; risque, énergie &amp; industrie, data engineering &amp; agents IA.</div>
     </div>
 
+    <!-- PROJET 01 -->
     <div class="case finance">
-      <div class="case-index reveal">01</div>
+      <div class="case-index reveal"><span class="fig-label">Fig.</span>01</div>
       <div class="reveal">
         <span class="case-tag">Finance · Risque</span>
         <h3>Détection de fraude bancaire optimisée</h3>
-        <p class="case-desc">
-          Architecture de Machine Learning pour détecter les transactions frauduleuses omnicanales en temps réel,
-          minimisant les pertes financières tout en préservant l'expérience client. Benchmarking de Logistic Regression,
-          Random Forest, XGBoost et LightGBM, validation par 5-fold cross-validation, interprétabilité via XAI
-          (ratio montant/solde, déviation hebdomadaire, incohérence géographique).
-        </p>
+        <p class="case-desc">Architecture ML pour détecter les transactions frauduleuses omnicanales en temps réel, minimisant les pertes financières sans pénaliser l'expérience client. Benchmarking Logistic Regression, Random Forest, XGBoost, LightGBM — validation 5-fold cross-validation, interprétabilité XAI.</p>
         <div class="case-stack">Python · LightGBM · XGBoost · Scikit-learn · XAI</div>
         <div class="case-links">
           <a href="https://github.com/Dave-kossi/bank-transaction-fraud-detection" target="_blank" rel="noopener">Code GitHub →</a>
@@ -663,23 +342,20 @@
       </div>
       <div class="case-impact reveal">
         <span class="impact-label">Lecture décideur</span>
-        <p class="impact-text">Pour une banque, chaque fraude bloquée à tort est un client mécontent, et chaque fraude non détectée est une perte sèche. Ce modèle <strong>réduit les pertes financières sans pénaliser l'expérience client</strong> — un arbitrage directement transposable à un système de surveillance des transactions en production.</p>
+        <p class="impact-text">Chaque fraude bloquée à tort est un client mécontent, chaque fraude non détectée est une perte sèche. Ce modèle <strong>réduit les pertes sans pénaliser l'expérience client</strong> — transposable directement à un système de surveillance en production.</p>
       </div>
     </div>
 
+    <!-- PROJET 02 -->
     <div class="case finance">
-      <div class="case-index reveal">02</div>
+      <div class="case-index reveal"><span class="fig-label">Fig.</span>02</div>
       <div class="reveal">
         <span class="case-tag">Finance · Assurance</span>
         <h3>Insurance Risk Intelligence &amp; Predictive Pricing</h3>
-        <p class="case-desc">
-          Plateforme de tarification dynamique transformant données démographiques et comportementales en
-          stratégie de pricing actuariel. Régression linéaire multiple avec validation croisée, et conception
-          d'un score de risque propriétaire ("Risk-Pulse") formalisant l'impact non-linéaire des facteurs combinés.
-        </p>
+        <p class="case-desc">Plateforme de tarification dynamique transformant données démographiques et comportementales en stratégie de pricing actuariel. Score de risque propriétaire "Risk-Pulse" formalisant l'impact non-linéaire des facteurs combinés.</p>
         <div class="case-stack">Python · Scikit-learn · Streamlit · Scoring actuariel</div>
         <div class="case-links">
-          <a href="https://predictive-analysis-g7zjxrbuf79tfb3aolobma.streamlit.app/" target="_blank" rel="noopener">Démo live →</a>
+          <a href="https://predictive-analysis-g7zjxrbuf79tfb3aolobma.streamlit.app/" target="_blank" rel="noopener" class="demo">Démo live →</a>
           <a href="https://github.com/Dave-kossi/healthcare-cost-analysis" target="_blank" rel="noopener">Code GitHub →</a>
         </div>
       </div>
@@ -690,48 +366,144 @@
       </div>
       <div class="case-impact reveal">
         <span class="impact-label">Lecture décideur</span>
-        <p class="impact-text">Un assureur qui tarife mal ses contrats perd de l'argent sur les profils à risque et perd des clients sur les profils sains, faute de leur proposer un tarif attractif. Ce moteur de scoring <strong>ajuste la prime au risque réel de chaque assuré</strong>, ce qui améliore directement le ratio de sinistralité tout en restant compétitif sur les bons profils.</p>
+        <p class="impact-text">Un assureur qui tarife mal perd sur les profils risqués et perd des clients sur les profils sains. Ce moteur <strong>ajuste la prime au risque réel de chaque assuré</strong>, améliorant le ratio de sinistralité tout en restant compétitif.</p>
       </div>
     </div>
 
+    <!-- PROJET 03 — VentiRE -->
     <div class="case energy">
-      <div class="case-index reveal">03</div>
+      <div class="case-index reveal"><span class="fig-label">Fig.</span>03</div>
       <div class="reveal">
-        <span class="case-tag energy">Énergie · IA générative</span>
-        <h3>Système RAG — Réglementation énergétique (RE2020)</h3>
+        <span class="case-tag energy">Énergie · IA réglementaire</span>
+        <h3>VentiRE — Copilote RAG pour la réglementation ventilation</h3>
         <p class="case-desc">
-          Projet en cours. Système de Retrieval-Augmented Generation permettant d'interroger en langage naturel
-          des documents réglementaires complexes du secteur de l'énergie, tels que la RE2020 — combinant recherche
-          sémantique et architecture LLM pour fiabiliser l'accès à une information technique dense.
+          Système RAG 100% local permettant d'interroger en langage naturel six documents réglementaires
+          du secteur du bâtiment en France RE2020, arrêtés ventilation résidentiel et ERP, réglementation
+          qualité de l'air intérieur. Pipeline complet : parsing PDF structuré, indexation hybride,
+          reranking sémantique, génération augmentée, export PDF de session.
+          <strong>Cinq bugs réels identifiés et corrigés</strong> : un argument de maturité technique
+          directement démontrable en entretien.
         </p>
-        <div class="case-stack">Python · RAG · LangChain · Hugging Face</div>
+        <div class="case-stack">Python · LlamaIndex · Ollama · Mistral · FastEmbed · BM25 · Cohere Rerank · Streamlit · pymupdf4llm · fpdf2</div>
         <div class="case-links">
-          <span style="font-family:var(--mono); font-size:0.85rem; color:var(--copper);">● en cours de développement</span>
+          <a href="https://github.com/Dave-kossi/VentiRE-RAG" target="_blank" rel="noopener">Code GitHub →</a>
         </div>
       </div>
       <div class="case-stats reveal">
-        <div class="stat-row"><span class="num">RAG</span><span class="desc">recherche sémantique + génération augmentée</span></div>
-        <div class="stat-row"><span class="num">RE2020</span><span class="desc">corpus réglementaire énergétique</span></div>
+        <div class="stat-row"><span class="num">6 docs</span><span class="desc">corpus réglementaire multi-segments indexé</span></div>
+        <div class="stat-row"><span class="num">763</span><span class="desc">chunks valides après filtrage micro-chunks</span></div>
+        <div class="stat-row"><span class="num">5 bugs</span><span class="desc">identifiés, corrigés, documentés</span></div>
       </div>
+
+      <div class="pipeline reveal">
+        <div class="pipe-step">PDF</div><div class="pipe-arrow">→</div>
+        <div class="pipe-step">pymupdf4llm</div><div class="pipe-arrow">→</div>
+        <div class="pipe-step highlight">Chunking hybride</div><div class="pipe-arrow">→</div>
+        <div class="pipe-step highlight">Dense + BM25</div><div class="pipe-arrow">→</div>
+        <div class="pipe-step highlight">Cohere Rerank</div><div class="pipe-arrow">→</div>
+        <div class="pipe-step">Filtre score</div><div class="pipe-arrow">→</div>
+        <div class="pipe-step">Mistral local</div><div class="pipe-arrow">→</div>
+        <div class="pipe-step">Export PDF</div>
+      </div>
+
+      <div class="rag-showcase reveal">
+        <div class="rag-tabs">
+          <button class="rag-tab active" onclick="showTab('demo')">Démo questions</button>
+          <button class="rag-tab" onclick="showTab('bugs')">5 bugs corrigés</button>
+          <button class="rag-tab" onclick="showTab('usage')">Utilité professionnelle</button>
+        </div>
+
+        <div id="tab-demo" class="rag-panel active">
+          <div class="rag-qa">
+            <div class="rag-q">Quel est le débit minimal en cuisine pour un T3 neuf RE2020 vs un T3 existant ?</div>
+            <div class="rag-a">Pour un T3 <strong>neuf RE2020</strong> (3 pièces principales) : 45 m³/h selon l'arrêté du 24 mars 1982. Pour un T3 <strong>existant</strong> : le décret de décence 2002 impose la présence d'un dispositif de ventilation conforme mais n'exprime pas de débit minimal chiffré à l'identique la réglementation applicable dépend du type de logement et de sa date de construction.</div>
+            <div class="rag-source">Arrêté du 24 mars 1982 · Décret n°2002-120 du 31 janvier 2002 <span class="rag-badge">residentiel_neuf</span></div>
+          </div>
+          <div class="rag-qa">
+            <div class="rag-q">Dans une crèche, quels polluants doit-on surveiller ?</div>
+            <div class="rag-a">Les établissements accueillant des enfants (crèches, écoles) sont soumis à une surveillance obligatoire de la qualité de l'air intérieur. Les campagnes de mesure portent sur le <strong>formaldéhyde</strong>, le <strong>benzène</strong> et le <strong>CO₂</strong> selon les arrêtés de 2011-2012 modifiés en 2022. Les mesures doivent être réalisées par un organisme accrédité.</div>
+            <div class="rag-source">Arrêté du 1er juin 2016 modifié · Art. R. 221-30 code de l'environnement <span class="rag-badge erp">ERP</span></div>
+          </div>
+          <div class="rag-qa">
+            <div class="rag-q">Quelles aides MaPrimeRénov pour une VMC double flux ?</div>
+            <div class="rag-a refuse">❓ Cette question est hors du périmètre documentaire de VentiRE. Mon corpus couvre la réglementation technique de la ventilation (débits, contrôles, qualité de l'air), pas les dispositifs d'aide financière. Pour les aides disponibles, consultez le site de l'ANAH ou de l'ADEME.</div>
+          </div>
+        </div>
+
+        <div id="tab-bugs" class="rag-panel">
+          <ul class="bug-list">
+            <li class="bug-item">
+              <span class="bug-num">Bug 1</span>
+              <div class="bug-content">
+                <div class="bug-title">Embedding model anglais sur corpus français</div>
+                <div class="bug-fix">BAAI/bge-large-en-v1.5 dégradait silencieusement le retrieval dense. → <span>Migration vers paraphrase-multilingual-MiniLM-L12-v2</span></div>
+              </div>
+            </li>
+            <li class="bug-item">
+              <span class="bug-num">Bug 2</span>
+              <div class="bug-content">
+                <div class="bug-title">Arrêté sur les animaux domestiques classé "bâtiment existant"</div>
+                <div class="bug-fix">Le hook de classification basé sur l'année capturait tout fichier contenant "2006". → <span>Ordre des conditions réécrit du plus spécifique au plus générique</span></div>
+              </div>
+            </li>
+            <li class="bug-item">
+              <span class="bug-num">Bug 3</span>
+              <div class="bug-content">
+                <div class="bug-title">564 micro-chunks pour un seul document</div>
+                <div class="bug-fix">Titres de 2 mots et lignes vides généraient du bruit, causant un timeout Mistral. → <span>Filtre MIN_CHUNK_CHARS=100 + fallback SentenceSplitter</span></div>
+              </div>
+            </li>
+            <li class="bug-item">
+              <span class="bug-num">Bug 4</span>
+              <div class="bug-content">
+                <div class="bug-title">Export PDF 0 byte sans erreur visible</div>
+                <div class="bug-fix">fpdf2 retourne un bytearray — st.download_button attend des bytes. → <span>Conversion explicite bytes() + gestion différenciée des types</span></div>
+              </div>
+            </li>
+            <li class="bug-item">
+              <span class="bug-num">Bug 5</span>
+              <div class="bug-content">
+                <div class="bug-title">Hallucination de source réglementaire</div>
+                <div class="bug-fix">Mistral citait un arrêté lu en mention dans un autre texte, absent du corpus. → <span>SimilarityPostprocessor (seuil 0.05) + prompt d'arbitrage renforcé</span></div>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <div id="tab-usage" class="rag-panel">
+          <div class="rag-qa">
+            <div class="rag-q" style="display:block;margin-bottom:8px;">Pour qui est utile VentiRE ?</div>
+            <div class="rag-a" style="border-left-color:var(--violet);">
+              <strong style="display:block;margin-bottom:10px;">Bureaux d'études thermiques (BET)</strong>
+              Un ingénieur BET consulte plusieurs textes pour vérifier la conformité d'une installation VMC. VentiRE centralise RE2020, arrêté 1982, réglementation ERP et répond à une question en quelques secondes — avec la source exacte et le numéro de page citables dans un rapport.
+              <br><br>
+              <strong style="display:block;margin-bottom:10px;">Bureaux de contrôle (Socotec, Bureau Veritas, Qualiconsult)</strong>
+              Vérifier les obligations légales d'un bâtiment existant vs neuf sans ouvrir quatre PDF différents. VentiRE discrimine automatiquement le segment applicable (résidentiel neuf / existant / ERP) selon le contexte de la question.
+              <br><br>
+              <strong style="display:block;margin-bottom:10px;">Entreprises du bâtiment et promoteurs</strong>
+              Réponse immédiate sur les exigences de ventilation avant dépôt de permis, avec export PDF de la session pour archivage et traçabilité de la décision technique.
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div class="case-impact reveal">
         <span class="impact-label">Lecture décideur</span>
-        <p class="impact-text">Un bureau d'études ou un énergéticien perd un temps considérable à chercher la bonne clause dans des centaines de pages de réglementation technique. Ce système permet de <strong>poser une question en langage courant et obtenir une réponse sourcée</strong> dans le texte réglementaire — un gain de temps direct pour les équipes techniques et conformité.</p>
+        <p class="impact-text">Un bureau d'études passe un temps considérable à chercher la bonne clause dans des centaines de pages réglementaires. VentiRE <strong>réduit ce temps à quelques secondes</strong>, avec une réponse sourcée, exportable en PDF et fiable — parce que le système sait aussi dire qu'il ne sait pas, ce que la plupart des chatbots ne font pas.</p>
       </div>
     </div>
 
+    <!-- PROJET 04 -->
     <div class="case energy">
-      <div class="case-index reveal">04</div>
+      <div class="case-index reveal"><span class="fig-label">Fig.</span>04</div>
       <div class="reveal">
         <span class="case-tag energy">Énergie · Prospective</span>
         <h3>Europa Énergie — Intelligence décisionnelle</h3>
-        <p class="case-desc">
-          Outil d'analyse de la transition énergétique en Europe : clustering K-Means/hiérarchique des pays
-          (intensité carbone, part EnR, dépendance fossile), modélisation des trajectoires depuis 2010 et
-          projections à horizon 2050 avec calcul du TCAC pour le solaire et l'éolien.
-        </p>
+        <p class="case-desc">Analyse de la transition énergétique en Europe : clustering K-Means/hiérarchique des pays (intensité carbone, part EnR, dépendance fossile), projections à horizon 2050 avec calcul du TCAC pour le solaire et l'éolien.</p>
         <div class="case-stack">Python · Plotly · Streamlit · SciPy · Clustering</div>
         <div class="case-links">
-          <a href="https://euenergyconsomption-dmjfgddsphmd4ydjqlscgk.streamlit.app/" target="_blank" rel="noopener">Démo live →</a>
+          <a href="https://euenergyconsomption-dmjfgddsphmd4ydjqlscgk.streamlit.app/" target="_blank" rel="noopener" class="demo">Démo live →</a>
+          <a href="https://github.com/Dave-kossi/EU_energy_consomption" target="_blank" rel="noopener">Code GitHub →</a>
         </div>
       </div>
       <div class="case-stats reveal">
@@ -740,22 +512,20 @@
       </div>
       <div class="case-impact reveal">
         <span class="impact-label">Lecture décideur</span>
-        <p class="impact-text">Pour orienter l'allocation de fonds de transition énergétique, un décideur public ou un investisseur a besoin de savoir quels pays progressent réellement et lesquels stagnent. Cet outil <strong>transforme des données brutes en score d'ambition comparable</strong>, avec des recommandations d'allocation directement exploitables.</p>
+        <p class="impact-text">Pour orienter l'allocation de fonds de transition, un décideur a besoin de savoir quels pays progressent réellement. Cet outil <strong>transforme des données brutes en score d'ambition comparable</strong> avec des recommandations d'allocation directement exploitables.</p>
       </div>
     </div>
 
+    <!-- PROJET 05 -->
     <div class="case energy">
-      <div class="case-index reveal">05</div>
+      <div class="case-index reveal"><span class="fig-label">Fig.</span>05</div>
       <div class="reveal">
         <span class="case-tag energy">Industrie · Maintenance</span>
         <h3>Maintenance prédictive &amp; analyse de survie</h3>
-        <p class="case-desc">
-          Estimation de la probabilité de panne de machines en production via l'estimateur non-paramétrique
-          de Kaplan-Meier. Calcul des taux de défaillance instantanés pour estimer la durée de vie résiduelle
-          utile (RUL) et planifier les interventions avant la phase critique d'usure.
-        </p>
+        <p class="case-desc">Estimation de la probabilité de panne via l'estimateur Kaplan-Meier. Calcul des taux de défaillance instantanés pour estimer la durée de vie résiduelle (RUL) et planifier les interventions avant la phase critique d'usure.</p>
         <div class="case-stack">Python · Lifelines · Plotly · Streamlit</div>
         <div class="case-links">
+          <a href="https://predictive-maintenance-in-industry-ci7wzatf9nlcghomctgbtx.streamlit.app/" target="_blank" rel="noopener" class="demo">Démo live →</a>
           <a href="https://github.com/Dave-kossi/Predictive-Maintenance-in-industry" target="_blank" rel="noopener">Code GitHub →</a>
         </div>
       </div>
@@ -765,20 +535,102 @@
       </div>
       <div class="case-impact reveal">
         <span class="impact-label">Lecture décideur</span>
-        <p class="impact-text">Un arrêt de production non planifié coûte bien plus cher qu'une maintenance anticipée. Ce modèle permet de <strong>passer d'une maintenance corrective ou systématique à une maintenance prédictive</strong>, ciblée juste avant la panne — moins d'arrêts non planifiés, moins de pièces changées trop tôt.</p>
+        <p class="impact-text">Un arrêt non planifié coûte bien plus qu'une maintenance anticipée. Ce modèle permet de <strong>passer d'une maintenance corrective à une maintenance prédictive</strong> — ciblée juste avant la panne, moins d'arrêts, moins de pièces changées trop tôt.</p>
       </div>
     </div>
 
-    <div class="case research">
-      <div class="case-index reveal">06</div>
+    <!-- PROJET 06 -->
+    <div class="case">
+      <div class="case-index reveal"><span class="fig-label">Fig.</span>06</div>
+      <div class="reveal">
+        <span class="case-tag">Data Engineering · Temps réel</span>
+        <h3>VeloTrack Mulhouse — Collecte de données temps réel</h3>
+        <p class="case-desc">Collecteur automatique de données pour le réseau Vélostation de l'agglomération mulhousienne : capture en temps réel de l'état de toutes les stations via l'API GBFS de Nextbike, score de tension par station, archivage horodaté pour jeu de données ML.</p>
+        <div class="case-stack">Python · Streamlit · API GBFS · Pandas · Time Series</div>
+        <div class="case-links">
+          <a href="https://biketrack-jq9uepdtfbywzdccc5tvim.streamlit.app/" target="_blank" rel="noopener" class="demo">Démo live →</a>
+          <a href="https://github.com/Dave-kossi/Bike_Track" target="_blank" rel="noopener">Code GitHub →</a>
+        </div>
+      </div>
+      <div class="case-stats reveal">
+        <div class="stat-row"><span class="num">100%</span><span class="desc">stations de l'agglomération couvertes</span></div>
+        <div class="stat-row"><span class="num">3 niveaux</span><span class="desc">score de tension (urgence / tension / ok)</span></div>
+      </div>
+      <div class="case-impact reveal">
+        <span class="impact-label">Lecture décideur</span>
+        <p class="impact-text">Une station vide est un usager perdu. Ce pipeline <strong>identifie en temps réel les stations critiques</strong> et constitue l'historique nécessaire pour prédire les besoins de régulation — base d'un système de réallocation proactive.</p>
+      </div>
+    </div>
+
+    <!-- PROJET 07 -->
+    <div class="case">
+      <div class="case-index reveal"><span class="fig-label">Fig.</span>07</div>
+      <div class="reveal">
+        <span class="case-tag">Data Engineering · IA générative</span>
+        <h3>Axiom — Data Quality &amp; Audit intelligent</h3>
+        <p class="case-desc">
+          Application Web de qualité de données combinant un pipeline de nettoyage
+          automatisé et un assistant IA contextuel. Détection automatique du domaine métier
+          (Finance, CRM, RH, Santé, Logistique), profiling dynamique avant/après nettoyage,
+          optimisation mémoire par downcasting et conversion en types catégoriels.
+          Assistant Llama 3 adaptatif dont le comportement change selon la nature des données
+          (numérique, catégoriel, temporel).
+        </p>
+        <div class="case-stack">Python · Streamlit · Pandas · NumPy · ydata-profiling · OpenRouter API · Llama 3.2</div>
+        <div class="case-links">
+          <a href="https://data-quality-audit-and-cleaning-pipeline-btijscehnpfxa8grjj2ui.streamlit.app/" target="_blank" rel="noopener" class="demo">Démo live →</a>
+          <a href="https://github.com/Dave-kossi/Data-Quality-Audit-and-Cleaning-Pipeline-App" target="_blank" rel="noopener">Code GitHub →</a>
+        </div>
+      </div>
+      <div class="case-stats reveal">
+        <div class="stat-row"><span class="num">500 Mo</span><span class="desc">fichiers volumineux supportés</span></div>
+        <div class="stat-row"><span class="num">7 étapes</span><span class="desc">pipeline de nettoyage automatisé</span></div>
+        <div class="stat-row"><span class="num">3 profils</span><span class="desc">IA adaptive selon le type de données</span></div>
+      </div>
+      <div class="case-impact reveal">
+        <span class="impact-label">Lecture décideur</span>
+        <p class="impact-text">Un Data Scientist passe jusqu'à 80% de son temps à préparer et nettoyer les données. Axiom <strong>automatise ce pipeline tout en guidant l'analyste avec un assistant IA ancré dans le contexte métier exact de ses données</strong> — le LLM ne répond pas de façon générique, il connaît la structure, les anomalies et le domaine du dataset chargé.</p>
+      </div>
+    </div>
+
+    <!-- PROJET 08 — MatchCraft AI (nouveau) -->
+    <div class="case">
+      <div class="case-index reveal"><span class="fig-label">Fig.</span>08</div>
+      <div class="reveal">
+        <span class="case-tag">Automatisation · Agents IA</span>
+        <h3>MatchCraft AI — Agent autonome de veille & candidature</h3>
+        <p class="case-desc">
+          Agent qui scanne en continu plusieurs plateformes (jobboards, portails carrière de grands groupes)
+          à la recherche de stages et d'alternances en Data Science, Analytics, ML, LLM et AI Engineering,
+          puis rédige pour chaque offre pertinente une lettre de motivation personnalisée — ancrée dans le
+          CV, le portfolio et les projets GitHub du candidat, jamais générique. Pipeline en trois étapes
+          (extraction des besoins de l'entreprise, rédaction, auto-critique avec regénération ciblée),
+          automatisé via GitHub Actions et restitué dans un tableau de bord Streamlit.
+        </p>
+        <div class="case-stack">Python · Groq (LLM) · JobSpy · BeautifulSoup · Pandas · Streamlit · GitHub Actions</div>
+        <div class="case-links">
+          <a href="https://jobagent-pac826pfkjjno5tubszwmc.streamlit.app/" target="_blank" rel="noopener" class="demo">Démo live →</a>
+          <a href="https://github.com/Dave-kossi/Job_Agent" target="_blank" rel="noopener">Code GitHub →</a>
+        </div>
+      </div>
+      <div class="case-stats reveal">
+        <div class="stat-row"><span class="num">10</span><span class="desc">sources agrégées (jobboards + grands groupes)</span></div>
+        <div class="stat-row"><span class="num">3 étapes</span><span class="desc">extraction des besoins → rédaction → auto-critique</span></div>
+        <div class="stat-row"><span class="num">4×/jour</span><span class="desc">veille automatisée via cron GitHub Actions</span></div>
+      </div>
+      <div class="case-impact reveal">
+        <span class="impact-label">Lecture décideur</span>
+        <p class="impact-text">Chercher un stage prend des heures : parcourir plusieurs sites, puis réécrire une lettre pour chaque entreprise. MatchCraft AI <strong>automatise la veille et ne rédige que sur preuve</strong> — chaque affirmation de la lettre doit être vérifiable dans les documents du candidat, jamais inventée.</p>
+      </div>
+    </div>
+
+    <!-- PROJET 09 -->
+    <div class="case">
+      <div class="case-index reveal"><span class="fig-label">Fig.</span>09</div>
       <div class="reveal">
         <span class="case-tag">Recherche · Deep Learning</span>
         <h3>PINNs pour systèmes dynamiques chaotiques</h3>
-        <p class="case-desc">
-          Résolution et reconstruction du système chaotique de Lorenz par réseaux de neurones informés par la
-          physique. Architecture MLP améliorée par plongements de Fourier pour atténuer le biais spectral,
-          entraînement par curriculum learning en trois étapes et raffinement L-BFGS.
-        </p>
+        <p class="case-desc">Résolution du système de Lorenz par réseaux de neurones informés par la physique. Architecture MLP améliorée par plongements de Fourier pour atténuer le biais spectral, entraînement par curriculum learning en trois étapes, raffinement L-BFGS.</p>
         <div class="case-stack">Python · PyTorch · PINNs · Optimisation L-BFGS</div>
         <div class="case-links">
           <a href="https://github.com/Dave-kossi/PINNs-for-chaotic-system" target="_blank" rel="noopener">Code GitHub →</a>
@@ -790,7 +642,7 @@
       </div>
       <div class="case-impact reveal">
         <span class="impact-label">Lecture décideur</span>
-        <p class="impact-text">Au-delà de la recherche pure, cette approche s'applique à des systèmes industriels difficiles à instrumenter : <strong>reconstruire l'état complet d'un système à partir d'un seul capteur</strong>, ce qui réduit le nombre de capteurs physiques nécessaires en surveillance industrielle ou en jumeau numérique.</p>
+        <p class="impact-text">Cette approche s'applique à des systèmes industriels difficiles à instrumenter : <strong>reconstruire l'état complet d'un système à partir d'un seul capteur</strong>, réduisant le nombre de capteurs nécessaires en surveillance ou jumeau numérique.</p>
       </div>
     </div>
 
@@ -805,20 +657,18 @@
         <h2>Du terrain associatif au support technique</h2>
       </div>
     </div>
-
     <div class="timeline-item reveal">
       <div class="tl-date">02/2026 — Aujourd'hui</div>
       <div>
         <div class="tl-role">Optimisation et administration logistique (bénévolat)</div>
-        <div class="tl-org">Secours Populaire Français du Haut-Rhin · Mulhouse, France</div>
+        <div class="tl-org">Secours Populaire Français du Haut-Rhin · Mulhouse</div>
         <ul class="tl-points">
-          <li>Analyse des flux d'entrées et de sorties de stock, modélisation de la rotation</li>
+          <li>Analyse des flux d'entrées et sorties de stock, modélisation de la rotation</li>
           <li>Conception d'outils de pilotage décisionnels pour la distribution et l'allocation des ressources</li>
           <li>Traitement des anomalies de saisie de données</li>
         </ul>
       </div>
     </div>
-
     <div class="timeline-item reveal">
       <div class="tl-date">2022 — 2024</div>
       <div>
@@ -834,7 +684,7 @@
   </div>
 </section>
 
-<section id="education" style="background:var(--bg-raised); border-top:1px solid var(--line);">
+<section id="education" style="background:var(--bg-raised);border-top:1px solid var(--line);">
   <div class="wrap">
     <div class="section-head">
       <div>
@@ -863,7 +713,7 @@
         <div class="skill-block" style="margin-bottom:28px;">
           <h4>Certifications</h4>
           <div class="tag-cloud">
-            <span class="tag">ML Specialization — DeepLearning.AI &amp; Stanford</span>
+            <span class="tag">ML Specialization DeepLearning.AI &amp; Stanford</span>
             <span class="tag">Google Data Analytics Certificate</span>
             <span class="tag">AI in Fraud Detection</span>
           </div>
@@ -883,47 +733,49 @@
 <section id="contact" class="contact">
   <div class="wrap">
     <div class="section-head">
-      <div class="section-num" style="color:rgba(250,250,248,0.5);">05 — Contact</div>
+      <div class="section-num" style="color:rgba(245,246,249,0.5);">05 — Contact</div>
     </div>
     <div class="contact-grid">
       <div class="contact-lead reveal">
-        Disponible pour un stage <em>Data Scientist / AI Engineer</em> à partir de mars 2027,
-        dans les secteurs Finance, Banque ou Énergie.
+        Disponible pour un stage <em>Data Scientist / ML Engineer</em> à partir de mars 2027,
+        dans les secteurs Finance, Industrie et Énergie.
       </div>
       <ul class="contact-list reveal">
         <li><a href="mailto:noumagnokossi0@gmail.com">noumagnokossi0@gmail.com</a></li>
         <li><a href="tel:+33745974382">+33 7 45 97 43 82</a></li>
-        <li><a href="https://www.linkedin.com/in/kossi-noumagno" target="_blank" rel="noopener">LinkedIn — in/kossi-noumagno</a></li>
-        <li><a href="https://github.com/Dave-kossi" target="_blank" rel="noopener">GitHub — Dave-kossi</a></li>
+        <li><a href="https://www.linkedin.com/in/kossi-noumagno" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="https://github.com/Dave-kossi" target="_blank" rel="noopener">GitHub</a></li>
       </ul>
     </div>
   </div>
 </section>
 
 <footer>
-  <div class="wrap" style="display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px;">
+  <div class="wrap">
     <span>Kossi Noumagno — Brunstatt-Didenheim, France</span>
-    <span>Mis à jour 2026</span>
+    <span>Mis à jour août 2026</span>
   </div>
 </footer>
 
 <script>
-  // Reveal-on-scroll for elements with .reveal
   document.documentElement.classList.add('js-ready');
-  if ('IntersectionObserver' in window) {
-    const obs = new IntersectionObserver((entries) => {
-      entries.forEach(e => {
-        if (e.isIntersecting) {
-          e.target.classList.add('in-view');
-          obs.unobserve(e.target);
-        }
+  if('IntersectionObserver' in window){
+    const obs = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{
+        if(e.isIntersecting){e.target.classList.add('in-view');obs.unobserve(e.target);}
       });
-    }, { threshold: 0.05, rootMargin: '0px 0px -40px 0px' });
-    document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+    },{threshold:0.05,rootMargin:'0px 0px -40px 0px'});
+    document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
   } else {
-    document.querySelectorAll('.reveal').forEach(el => el.classList.add('in-view'));
+    document.querySelectorAll('.reveal').forEach(el=>el.classList.add('in-view'));
+  }
+
+  function showTab(id){
+    document.querySelectorAll('.rag-panel').forEach(p=>p.classList.remove('active'));
+    document.querySelectorAll('.rag-tab').forEach(t=>t.classList.remove('active'));
+    document.getElementById('tab-'+id).classList.add('active');
+    event.target.classList.add('active');
   }
 </script>
-
 </body>
 </html>
