@@ -1369,44 +1369,6 @@
     }
   },
   {
-    "id": "https://fr.indeed.com/viewjob?jk=8bb4831288d0051f",
-    "title": "Donor Relation and Data Intern",
-    "company": "United Nations High Commissioner For Refugees (UNHCR)",
-    "url": "https://fr.indeed.com/viewjob?jk=8bb4831288d0051f",
-    "source": "Indeed",
-    "date_ajout": "2026-08-05T12:21:36.566639",
-    "analyse": {
-      "score_adequation": 75,
-      "besoin_cle_entreprise": "Recherche d'un stagiaire pour soutenir les activités de collecte de fonds et de gestion de données pour les réfugiés",
-      "preuve_technique_citee": "Projet VentiRE-RAG sur GitHub",
-      "points_forts": [
-        "Compétences en analyse de données et en machine learning",
-        "Expérience avec les outils de CRM et de gestion de données",
-        "Capacité à travailler de manière autonome et en équipe"
-      ],
-      "lettre_motivation": "\n   Je me permets de vous adresser ma candidature pour le poste de Donor Relation and Data Intern au sein de l'équipe Private Sector Partnerships de l'UNHCR à Paris. En tant qu'étudiant en Master 2 Ingénierie Mathématique et Data Science, je suis convaincu que mes compétences et mon expérience seront un atout pour votre équipe.\n\n   Avec une solide formation en analyse de données et en machine learning, j'ai développé des compétences qui me permettent de collecter, d'analyser et de présenter des données de manière efficace. Mon expérience avec les outils de CRM et de gestion de données me permet de comprendre l'importance de la gestion des données pour les activités de collecte de fonds. Je suis également capable de travailler de manière autonome et en équipe, ce qui me permet de m'intégrer facilement dans votre équipe.\n\n   J'ai été particulièrement impressionné par le projet VentiRE-RAG que j'ai développé sur GitHub, qui utilise les techniques de machine learning pour analyser les données de conformité des systèmes de ventilation. Ce projet m'a permis de développer mes compétences en analyse de données et en machine learning, et je suis convaincu que ces compétences seront un atout pour votre équipe. De plus, mon expérience avec les outils de CRM et de gestion de données me permet de comprendre l'importance de la gestion des données pour les activités de collecte de fonds.\n\n   En tant que stagiaire, je suis prêt à apprendre et à contribuer aux activités de l'équipe. Je suis particulièrement intéressé par les activités de collecte de fonds et de gestion de données pour les réfugiés, et je suis convaincu que mon expérience et mes compétences seront un atout pour votre équipe. Je suis disponible pour commencer mon stage en mars 2027 et je suis prêt à travailler de manière autonome et en équipe pour atteindre les objectifs de l'équipe.\n\n   Je vous remercie de l'attention que vous porterez à ma candidature. Je suis convaincu que mes compétences et mon expérience seront un atout pour votre équipe, et je suis impatient de discuter de ma candidature avec vous. Je vous prie de bien vouloir me contacter à l'adresse suivante : noumagnokossi0@gmail.com. Je vous remercie de votre temps et de votre considération.\n   "
-    }
-  },
-  {
-    "id": "https://www.linkedin.com/jobs/view/4390046794",
-    "title": "Stage - 6 mois - IA Data Analyst F/H",
-    "company": "Natixis Corporate & Investment Banking",
-    "url": "https://www.linkedin.com/jobs/view/4390046794",
-    "source": "Linkedin",
-    "date_ajout": "2026-08-05T12:21:43.747818",
-    "analyse": {
-      "score_adequation": 85,
-      "besoin_cle_entreprise": "Analyse de données et développement d'IA pour la banque d'investissement Natixis",
-      "preuve_technique_citee": "Projet VentiRE-RAG et projet bank-transaction-fraud-detection",
-      "points_forts": [
-        "Compétences en analyse de données et développement d'IA",
-        "Expérience avec des outils tels que Python, Pandas, NumPy, Plotly, Streamlit, SciPy",
-        "Capacité à concevoir des solutions d'analyse de données et de Machine Learning pour répondre à des problématiques métiers"
-      ],
-      "lettre_motivation": "\n   Je me permets de vous adresser ma candidature pour le stage de 6 mois en tant que Data Analyst IA chez Natixis Corporate & Investment Banking. En tant qu'étudiant en Master 2 Ingénierie Mathématique & Data Science à l'Université de Haute-Alsace, je suis convaincu que mes compétences et mon expérience seront un atout pour votre équipe.\n\n   Avec une solide formation en mathématiques et en data science, j'ai développé des compétences en analyse de données, en Machine Learning et en IA. J'ai travaillé sur plusieurs projets, notamment le projet VentiRE-RAG, qui consiste à concevoir un moteur RAG hybride multi-segments pour automatiser l'analyse de conformité des systèmes de ventilation. J'ai également travaillé sur le projet bank-transaction-fraud-detection, qui vise à détecter les transactions frauduleuses à l'aide de techniques de Machine Learning.\n\n   Je suis particulièrement attiré par ce stage chez Natixis car il me permettra de mettre en pratique mes compétences en analyse de données et en IA dans un contexte de banque d'investissement. Je suis convaincu que mon expérience et mes compétences seront un atout pour votre équipe et que je pourrai contribuer à développer des solutions innovantes pour répondre aux besoins de l'entreprise.\n\n   En conclusion, je suis impatient de discuter de ma candidature et de mes compétences avec vous. Je suis disponible pour un entretien et je suis convaincu que je serais un excellent candidat pour ce stage. Je vous remercie de l'attention que vous porterez à ma candidature. Cordialement, Kossi Noumagno."
-    }
-  },
-  {
     "id": "https://www.linkedin.com/jobs/view/4449112957",
     "title": "Stage – Data Analyst",
     "company": "Seedext",
@@ -2195,6 +2157,116 @@
         "Connaissance de techniques de GenAI"
       ],
       "lettre_motivation": "Objet : Candidature pour le poste d'AI Engineer Intern, GenAI Internal Automation (GAIA) - Stage 6 mois\n\nEn tant que candidat titulaire d'un Master 2 en Data Science et Intelligence Artificielle, je me positionne directement sur les besoins d'Equativ en matière d'automatisation de processus internes via des techniques de génie artificiel (GenAI) et des algorithmes de machine learning. Mon parcours académique et mes expériences professionnelles m'ont permis de développer des compétences solides en intelligence artificielle, en apprentissage automatique et en data science, qui correspondent parfaitement aux enjeux de l'entreprise.\n\nLes projets que j'ai menés à bien démontrent ma capacité à concevoir et à mettre en œuvre des solutions d'intelligence artificielle pour résoudre des problèmes complexes. Parmi ces projets, je souhaite mettre en avant :\n* VentiRE-RAG : Ce projet a consisté à développer un assistant RAG intelligent et local pour analyser la réglementation RE2020 et les protocoles de contrôle de la ventilation. J'ai utilisé Python, LlamaIndex, FastEmbed et Streamlit pour créer une interface utilisateur intuitive et une analyse approfondie de la réglementation. Ce projet démontre ma capacité à développer des solutions d'automatisation basées sur des techniques de GenAI.\n* bank-transaction-fraud-detection : Dans ce projet, j'ai développé un modèle de machine learning pour détecter les fraudes bancaires en utilisant Jupyter Notebook et LightGBM. J'ai atteint une précision élevée dans la détection des transactions frauduleuses, démontrant ainsi ma capacité à utiliser des algorithmes de machine learning pour automatiser des processus internes.\n\nCes réalisations répondent concrètement aux défis décrits dans l'offre d'emploi. En effet, mon expérience dans le développement de solutions d'intelligence artificielle et d'apprentissage automatique me permet de comprendre les besoins d'Equativ en matière d'automatisation de processus internes. Je suis convaincu que mes compétences et mes expériences professionnelles me permettent de contribuer de manière significative à l'équipe de GenAI Internal Automation (GAIA) et de participer à l'élaboration de solutions innovantes pour l'entreprise.\n\nJe serais ravi de discuter plus en détail de ma candidature et de mes expériences professionnelles lors d'un entretien. Je vous remercie de l'attention que vous porterez à ma candidature et je reste à votre disposition pour tout complément d'information. Cordialement."
+    }
+  },
+  {
+    "id": "https://fr.indeed.com/viewjob?jk=c368b27754294967",
+    "title": "Intern – Data Engineer for automatic selection of radio networks",
+    "company": "Hitachi Rail",
+    "url": "https://fr.indeed.com/viewjob?jk=c368b27754294967",
+    "source": "Indeed",
+    "date_ajout": "2026-08-07T13:40:49.848475",
+    "analyse": {
+      "score_adequation": 85,
+      "besoin_cle_entreprise": "Développement de solutions de données pour l'automatisation de la sélection de réseaux de radio",
+      "preuve_technique_citee": "VentiRE-RAG, bank-transaction-fraud-detection",
+      "points_forts": [
+        "Expérience en ingénierie de données",
+        "Connaissance de Python et de ses bibliothèques",
+        "Capacité à concevoir des modèles de détection de fraude"
+      ],
+      "lettre_motivation": "Objet : Candidature pour le poste d'Intern – Data Engineer for automatic selection of radio networks (stage 6 mois)\n\nJe me permets de postuler pour le poste d'Intern – Data Engineer for automatic selection of radio networks au sein de Hitachi Rail, où je pourrais mettre à profit mes compétences en ingénierie de données pour développer des solutions d'automatisation de la sélection de réseaux de radio. Mon parcours académique en Data Science et mes expériences professionnelles dans le domaine de l'analyse de données et de la conception de modèles prédictifs me permettent de comprendre les enjeux liés à l'automatisation de la sélection de réseaux de radio et de proposer des solutions innovantes.\n\nVoici quelques-uns de mes projets qui démontrent mes compétences en ingénierie de données et en automatisation :\n* VentiRE-RAG : j'ai conçu un moteur RAG hybride multi-segments utilisant Python, LlamaIndex, FastEmbed et Streamlit pour automatiser l'analyse de conformité des systèmes de ventilation. Ce projet a nécessité la mise en œuvre d'algorithmes de traitement de langage naturel et de techniques de représentation d'informations pour extraire des connaissances à partir de données non structurées.\n* bank-transaction-fraud-detection : j'ai développé un modèle de détection de fraude bancaire utilisant Python, Jupyter Notebook et LightGBM, qui a atteint une précision de 99,7%. Ce projet a impliqué la collecte et le nettoyage de données, la sélection de caractéristiques pertinentes et la mise en œuvre d'un algorithme de classification pour prédire les transactions frauduleuses.\n\nCes réalisations répondent concrètement aux défis décrits dans l'offre, car elles démontrent ma capacité à concevoir et à mettre en œuvre des solutions d'automatisation de la sélection de réseaux de radio en utilisant des techniques d'ingénierie de données et de traitement de langage naturel. Je suis convaincu que mes compétences et mes expériences pourraient être utiles pour contribuer au développement de solutions innovantes pour Hitachi Rail.\n\nJe serais ravi de discuter de ma candidature et de mes projets avec vous en détail. Je vous remercie de l'attention que vous porterez à ma demande et je vous prie de bien vouloir me contacter pour un entretien. Je me réjouis à l'idée de rejoindre l'équipe de Hitachi Rail et de contribuer à la création de solutions innovantes pour l'automatisation de la sélection de réseaux de radio. \n\nCordialement, \n[Votre nom]"
+    }
+  },
+  {
+    "id": "https://fr.indeed.com/viewjob?jk=1bf6160c21222ea9",
+    "title": "Data Scientist/AI Engineer -(h/f) (IT) / Freelance",
+    "company": "Emagine Consulting",
+    "url": "https://fr.indeed.com/viewjob?jk=1bf6160c21222ea9",
+    "source": "Indeed",
+    "date_ajout": "2026-08-07T13:41:19.134191",
+    "analyse": {
+      "score_adequation": 85,
+      "besoin_cle_entreprise": "L'enjeu principal de l'entreprise est la tarification optimale des produits annexes en utilisant des modèles de machine learning.",
+      "preuve_technique_citee": "Analyse décisionnelle de la transition énergétique en Europe, VentiRE-RAG",
+      "points_forts": [
+        "Compétences en machine learning",
+        "Expérience en développement de systèmes RAG/LLM"
+      ],
+      "lettre_motivation": "Objet : Candidature pour le poste de Data Scientist/AI Engineer (h/f) - Mission longue durée\n\nJe me permets de répondre à l'offre de Data Scientist/AI Engineer au sein d'Emagine Consulting, où je pourrais mettre en œuvre mes compétences en machine learning pour optimiser la tarification des produits annexes. Mon parcours académique en Data Science et mon expérience dans le développement de modèles de machine learning me permettent de comprendre l'enjeu principal de votre entreprise, à savoir la tarification optimale des produits annexes en utilisant des modèles de machine learning.\n\nLes défis liés à la tarification des produits annexes tels que les sièges, les bagages et les surclassements nécessitent une approche méthodique et une analyse approfondie des données. Dans ce contexte, mes compétences en analyse décisionnelle et en visualisation de données, acquises à travers des projets tels que :\n* Analyse décisionnelle de la transition énergétique en Europe : j'ai utilisé Python, Pandas, NumPy, Plotly et Streamlit pour analyser et visualiser les données, appliquant des techniques de clustering et d'analyse de séries temporelles pour identifier les tendances et les modèles dans les données énergétiques européennes.\n* VentiRE-RAG : j'ai développé un système RAG/LLM en utilisant Python, LlamaIndex et FastEmbed, et j'ai créé une interface utilisateur avec Streamlit pour faciliter l'analyse croisée de la réglementation RE2020 et des protocoles de contrôle de la ventilation, démontrant ainsi ma capacité à développer des systèmes complexes et à les intégrer avec des outils de visualisation.\n\nCes réalisations répondent concrètement aux défis décrits dans l'offre, car elles démontrent ma capacité à développer des modèles de machine learning pour l'analyse de données et la tarification optimale. En outre, mon expérience avec les outils tels que BigQuery et VertexAI sur la plateforme Google Cloud Platform me permet de comprendre les exigences de l'entreprise en matière de technologie.\n\nJe suis convaincu que mes compétences en machine learning, en analyse de données et en développement de pipelines MLOps, ainsi que mon expérience avec les outils de la plateforme Google Cloud Platform, me permettent de contribuer de manière significative à l'optimisation de la tarification des produits annexes. Je suis impatient de discuter de ma candidature et de mes qualifications avec vous.\n\nJe vous remercie de l'attention que vous porterez à ma candidature. Je serais ravi de discuter plus en détail de mes qualifications et de la manière dont je peux contribuer à la réussite de votre équipe. N'hésitez pas à me contacter pour un entretien.\n\nCordialement,\n[Votre nom]"
+    }
+  },
+  {
+    "id": "https://fr.indeed.com/viewjob?jk=9879524368f89b68",
+    "title": "Data Analyste junior F/H",
+    "company": "AXA / France",
+    "url": "https://fr.indeed.com/viewjob?jk=9879524368f89b68",
+    "source": "Indeed",
+    "date_ajout": "2026-08-07T13:42:10.872028",
+    "analyse": {
+      "score_adequation": 85,
+      "besoin_cle_entreprise": "La détection de fraude et l'optimisation des processus de gouvernance de données",
+      "preuve_technique_citee": "bank-transaction-fraud-detection, VentiRE-RAG",
+      "points_forts": [
+        "Expérience pratique dans la détection de fraude bancaire",
+        "Compréhension des systèmes RAG/LLM et capacité à les appliquer à des problèmes réels"
+      ],
+      "lettre_motivation": "Objet : Candidature pour le poste de Data Analyste junior F/H (Référence AXAFR_2026080017) pour une durée indéterminée.\n\nJe me permets de vous adresser ma candidature pour le poste de Data Analyste junior F/H au sein du Data Management Office d'AXA France, où je pourrai mettre à profit mes compétences techniques et relationnelles pour contribuer à la mise en œuvre de la gouvernance de la donnée et au déploiement des pratiques de Data Management. Mon intérêt pour la détection de fraude et l'optimisation des processus de gouvernance de données, combiné à mon expérience dans l'analyse de données et le développement de solutions de détection de fraude, me permet de comprendre les enjeux clés de l'entreprise et de proposer des solutions concrètes.\n\nVoici quelques-uns de mes projets qui démontrent mes compétences et mon expérience dans le domaine :\n* **bank-transaction-fraud-detection** : Dans ce projet, j'ai utilisé Python, Jupyter Notebook et LightGBM pour développer un modèle de détection de fraude bancaire. J'ai travaillé sur un dataset de transactions bancaires pour identifier les transactions suspectes et évaluer les performances du modèle. Ce projet m'a permis de développer mes compétences en analyse de données, en machine learning et en détection de fraude.\n* **VentiRE-RAG** : Dans ce projet, j'ai utilisé Python, LlamaIndex, FastEmbed et Streamlit pour développer un système de recommandation basé sur les systèmes RAG/LLM. J'ai travaillé sur un dataset de textes pour évaluer les performances du système et identifier les améliorations possibles. Ce projet m'a permis de développer mes compétences en traitement du langage naturel, en apprentissage automatique et en développement de systèmes de recommandation.\n\nCes réalisations répondent concrètement aux défis décrits dans l'offre, notamment en termes de détection de fraude, d'optimisation des processus de gouvernance de données et d'amélioration continue. Je suis convaincu que mes compétences techniques et relationnelles, combinées à mon expérience dans l'analyse de données et le développement de solutions de détection de fraude, me permettent de contribuer de manière significative à l'équipe du Data Management Office.\n\nJe suis particulièrement attiré par ce poste car il me permettra de travailler sur des projets variés, de développer mes compétences en Data Management et de contribuer à l'amélioration continue des processus de gouvernance de données. Je suis également impressionné par la culture d'innovation et de collaboration d'AXA France et je suis impatient de rejoindre une équipe dynamique et motivée.\n\nJe vous remercie de l'attention que vous porterez à ma candidature. Je serais ravi de discuter de mes qualifications et de mes expériences avec vous lors d'un entretien. N'hésitez pas à me contacter pour obtenir plus d'informations sur mes projets et mes compétences.\n\nCordialement,\n[Votre nom]"
+    }
+  },
+  {
+    "id": "https://fr.indeed.com/viewjob?jk=60e8ce50cc838b34",
+    "title": "STAGE - Design Authority IA H/F",
+    "company": "Crédit Agricole",
+    "url": "https://fr.indeed.com/viewjob?jk=60e8ce50cc838b34",
+    "source": "Indeed",
+    "date_ajout": "2026-08-07T13:42:55.949060",
+    "analyse": {
+      "score_adequation": 85,
+      "besoin_cle_entreprise": "La transformation digitale et l'implémentation opérationnelle du Cadre Normatif IA du Groupe Crédit Agricole",
+      "preuve_technique_citee": "VentiRE-RAG, bank-transaction-fraud-detection",
+      "points_forts": [
+        "Connaissance de l'IA et de la gouvernance",
+        "Expérience en conception de modèles de Machine Learning"
+      ],
+      "lettre_motivation": "Objet : Candidature pour le stage de Design Authority IA (6 mois) au sein de l'AI Factory de Crédit Agricole Assurances\n\nEn tant que futur ingénieur en Data Science et Intelligence Artificielle, je suis particulièrement attiré par l'enjeu de transformation digitale et d'implémentation opérationnelle du Cadre Normatif IA du Groupe Crédit Agricole. La création d'une Design Authority IA (DA IA CAA) pour structurer la gouvernance IA au sein de Crédit Agricole Assurances représente une opportunité unique de contribuer à l'innovation et à la conformité réglementaire dans le secteur de l'assurance.\n\nLes projets que j'ai menés à bien démontrent ma capacité à concevoir et à développer des solutions IA pour répondre à des problèmes complexes :\n* VentiRE-RAG : J'ai conçu un moteur RAG hybride multi-segments pour automatiser l'analyse de conformité des systèmes de ventilation, en utilisant Python, LlamaIndex, FastEmbed et Streamlit. Ce projet a démontré ma capacité à intégrer des technologies IA pour améliorer la conformité et l'efficacité.\n* bank-transaction-fraud-detection : J'ai développé un modèle de détection de fraude bancaire avec une précision de 99,7%, en utilisant Python, Jupyter Notebook et LightGBM. Ce projet a mis en évidence ma capacité à analyser des données complexes et à concevoir des solutions IA pour prévenir les fraudes.\n\nCes réalisations répondent concrètement aux défis décrits dans l'offre, notamment en termes d'accompagnement et de conformité des projets IA, ainsi que de veille réglementaire et technologique. Je suis convaincu que mes compétences en Data Science et IA, combinées à mon expérience dans la conception de solutions pour la conformité et la détection de fraude, me permettront de contribuer de manière significative à la mission de la DA IA CAA.\n\nJe suis impatient de discuter de ma candidature et de la manière dont je peux contribuer à la transformation digitale de Crédit Agricole Assurances. Je vous remercie de l'attention que vous porterez à ma candidature et je vous prie de bien vouloir me contacter pour un entretien. Je suis à votre disposition pour fournir tout complément d'information nécessaire."
+    }
+  },
+  {
+    "id": "https://www.linkedin.com/jobs/view/4420144493",
+    "title": "CHARGE(E) DE MISSION IA - ALTERNANCE F/H",
+    "company": "DOCAPOSTE",
+    "url": "https://www.linkedin.com/jobs/view/4420144493",
+    "source": "Linkedin",
+    "date_ajout": "2026-08-07T13:43:30.626831",
+    "analyse": {
+      "score_adequation": 85,
+      "besoin_cle_entreprise": "L'enjeu principal de DOCAPOSTE est la détection de fraude et l'analyse de données pour améliorer ses processus métier.",
+      "preuve_technique_citee": "Analyse et détection de fraude bancaire, VentiRE-RAG",
+      "points_forts": [
+        "Compétences en apprentissage automatique et analyse de données",
+        "Connaissance de Python et de ses bibliothèques",
+        "Expérience en détection de fraude et analyse de données"
+      ],
+      "lettre_motivation": "Objet : Candidature pour le poste de Charge(e) de Mission IA - Alternance F/H pour une durée de 6 mois\n\nEn tant que futur diplômé en Data Science et Intelligence Artificielle, je me réjouis de l'opportunité de rejoindre DOCAPOSTE en tant que Charge(e) de Mission IA. Mon intérêt pour la détection de fraude et l'analyse de données pour améliorer les processus métier m'a conduit à me spécialiser dans l'apprentissage automatique et l'intelligence artificielle, compétences clés pour relever les défis de votre entreprise.\n\nLes projets que j'ai menés à bien démontrent ma capacité à appliquer ces compétences pour répondre aux enjeux de détection de fraude et d'analyse de données. Voici deux exemples notables :\n* Analyse et détection de fraude bancaire : j'ai utilisé LightGBM, un algorithme d'apprentissage automatique, pour développer un modèle capable de détecter les transactions frauduleuses. Ce projet, réalisé avec Python et Jupyter Notebook, a permis d'améliorer considérablement les performances de détection de fraude.\n* VentiRE-RAG : j'ai conçu un système RAG/LLM utilisant LlamaIndex et FastEmbed pour analyser des données réglementaires et automatiser les processus métier. Ce projet, développé avec Streamlit et Python, a démontré l'efficacité de l'intelligence artificielle pour traiter et analyser de grandes quantités de données.\n\nCes réalisations répondent concrètement aux défis de détection de fraude et d'analyse de données que DOCAPOSTE cherche à relever. En effet, mon expérience dans l'apprentissage automatique et l'intelligence artificielle me permet de comprendre les besoins de votre entreprise et de proposer des solutions efficaces pour améliorer vos processus métier. Je suis convaincu que mes compétences techniques, associées à ma capacité à travailler en équipe et à communiquer efficacement, me permettront de contribuer de manière significative à vos équipes.\n\nJe serais ravi de discuter plus en détail de ma candidature et de mes projets lors d'un entretien. Je vous remercie de l'attention que vous porterez à ma demande et je reste à votre disposition pour tout complément d'information. Cordialement."
+    }
+  },
+  {
+    "id": "https://fr.indeed.com/viewjob?jk=8bb4831288d0051f",
+    "title": "Donor Relation and Data Intern",
+    "company": "United Nations High Commissioner For Refugees (UNHCR)",
+    "url": "https://fr.indeed.com/viewjob?jk=8bb4831288d0051f",
+    "source": "Indeed",
+    "date_ajout": "2026-08-07T13:44:19.331532",
+    "analyse": {
+      "score_adequation": 85,
+      "besoin_cle_entreprise": "Développement de solutions de données et de Machine Learning pour répondre à des problématiques métiers dans le domaine de la finance et de l'énergie.",
+      "preuve_technique_citee": "Analyse et détection de fraude bancaire, Conception d'un outil d'intelligence décisionnelle pour analyser la transition énergétique en Europe",
+      "points_forts": [
+        "Compétences en Machine Learning pour la détection de fraude",
+        "Compétences en analyse décisionnelle et en visualisation de données"
+      ],
+      "lettre_motivation": "Objet : Candidature pour le poste de Donor Relation and Data Intern au sein de l'équipe Private Sector Partnerships de l'UNHCR à Paris, pour une durée de 6 à 8 mois.\n\nJe me permets de postuler pour le poste de Donor Relation and Data Intern au sein de l'équipe Private Sector Partnerships de l'UNHCR à Paris, en raison de mon intérêt pour l'analyse de données et le développement de solutions de Machine Learning pour améliorer les relations avec les donateurs et optimiser les processus de collecte de fonds. Mon parcours en Data Science et Intelligence Artificielle, ainsi que mes expériences dans l'analyse et la visualisation de données, me permettent de comprendre les défis liés à la gestion des données et à la prise de décision dans le contexte de la collecte de fonds pour les réfugiés.\n\nVoici quelques-uns de mes projets qui démontrent mes compétences dans ce domaine :\n* Analyse et détection de fraude bancaire : j'ai développé un modèle de détection de fraude à l'aide de l'algorithme LightGBM, en utilisant des données bancaires pour identifier les transactions suspectes. Ce projet a été réalisé en Python, en utilisant Jupyter Notebook pour la visualisation et l'analyse des résultats.\n* Conception d'un outil d'intelligence décisionnelle pour analyser la transition énergétique en Europe : j'ai créé un outil de visualisation de données en utilisant Python, Pandas, NumPy, Plotly et Streamlit, pour analyser les tendances et les correlations entre les différentes sources d'énergie en Europe. Cet outil permet de prendre des décisions éclairées pour la transition énergétique.\n\nCes réalisations répondent concrètement aux défis décrits dans l'offre, car elles démontrent ma capacité à analyser et à visualiser des données pour prendre des décisions éclairées, ainsi que ma compréhension des enjeux liés à la gestion des données et à la détection de fraude. Je suis convaincu que mes compétences en Data Science et Intelligence Artificielle pourraient être utiles pour améliorer les processus de collecte de fonds et de gestion des données au sein de l'UNHCR.\n\nJe serais ravi de discuter de ma candidature et de mes compétences avec vous. Je vous remercie de l'attention que vous porterez à ma demande. Je suis à votre disposition pour un entretien et je vous prie de bien vouloir me contacter pour fixer un rendez-vous. \n\nCordialement,\n[Votre nom]"
     }
   }
 ]
