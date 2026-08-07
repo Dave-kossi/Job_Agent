@@ -1369,66 +1369,6 @@
     }
   },
   {
-    "id": "https://www.linkedin.com/jobs/view/4449112957",
-    "title": "Stage – Data Analyst",
-    "company": "Seedext",
-    "url": "https://www.linkedin.com/jobs/view/4449112957",
-    "source": "Linkedin",
-    "date_ajout": "2026-08-05T15:54:18.639840",
-    "analyse": {
-      "score_adequation": 85,
-      "besoin_cle_entreprise": "Analyse de données et expertise en data science pour soutenir les décisions éclairées",
-      "preuve_technique_citee": "VentiRE-RAG",
-      "points_forts": [
-        "Expérience en Machine Learning et modélisation statistique pour la détection de fraude et la transition énergétique",
-        "Connaissance de Python et de bibliothèques telles que LlamaIndex, FastEmbed et Streamlit pour le développement de solutions de data science"
-      ],
-      "lettre_motivation": "En tant qu'étudiant en Master 2 Ingénierie Mathématique et Data Science à l'Université de Haute-Alsace, je suis convaincu que mes compétences en analyse de données et en intelligence artificielle peuvent apporter une valeur ajoutée significative à Seedext. Le stage de Data Analyst chez Seedext représente pour moi une opportunité idéale de mettre en pratique mes connaissances théoriques et de contribuer à des projets concrets qui ont un impact réel sur l'entreprise. Je suis particulièrement attiré par la mission de Seedext, qui consiste à aider les entreprises à prendre des décisions éclairées grâce à l'analyse de données. Je suis impatient de découvrir comment mes compétences peuvent être mises à profit pour atteindre cet objectif.\n\nJe dispose d'une solide formation en analyse de données, avec une expérience significative dans l'utilisation d'outils tels que Excel, SQL, et Tableau. En outre, je maîtrise les langages de programmation Python, Pandas, NumPy, et Plotly, qui me permettent de traiter et d'analyser de grandes quantités de données. Mes compétences en data analyst sont complétées par une bonne compréhension des principes de la science des données, y compris la modélisation statistique et la visualisation de données. Je suis également familiarisé avec les systèmes de gestion de bases de données et les outils de data visualization, ce qui me permet de présenter les résultats de mes analyses de manière claire et concise. Grâce à ces compétences, je suis en mesure de collecter, d'analyser et d'interpréter les données pour fournir des insights précieux aux entreprises.\n\nUn de mes projets les plus représentatifs de mes compétences est VentiRE-RAG, un assistant RAG intelligent et local spécialisé dans l'analyse croisée de la réglementation RE2020 et des protocoles de contrôle de la ventilation. Ce projet a été développé avec LlamaIndex, FastEmbed et Streamlit, et a pour but d'automatiser l'analyse de conformité des systèmes de ventilation. Les résultats de ce projet ont été très prometteurs, avec une automatisation de l'analyse de conformité multi-réglementaire et une élimination des risques d'erreur d'interprétation des débits. Cela a renforcé la fiabilité des audits techniques et l'efficacité opérationnelle. Ce projet démontre ma capacité à concevoir et à développer des solutions d'analyse de données et d'intelligence artificielle pour répondre à des problématiques métiers spécifiques.\n\nJe suis impatient de discuter de mes qualifications et de mes expériences avec l'équipe de Seedext. Je suis convaincu que mon stage chez Seedext sera une expérience enrichissante pour les deux parties, et je suis prêt à apporter ma contribution pour aider l'entreprise à atteindre ses objectifs. Je suis disponible pour commencer le stage à partir de mars 2027 et je suis ouvert à toute discussion pour définir les détails du stage. Je vous remercie de l'attention que vous porterez à ma candidature et je suis à votre disposition pour toute information supplémentaire. Je vous souhaite une bonne journée et je reste à votre disposition pour tout échange."
-    }
-  },
-  {
-    "id": "https://www.linkedin.com/jobs/view/4449126325",
-    "title": "Intern - Data Analyst",
-    "company": "Alpine Business Consulting",
-    "url": "https://www.linkedin.com/jobs/view/4449126325",
-    "source": "Linkedin",
-    "date_ajout": "2026-08-05T15:55:09.527204",
-    "analyse": {
-      "score_adequation": 85,
-      "besoin_cle_entreprise": "Compétence en analyse de données et en data visualization pour soutenir les décisions éclairées",
-      "preuve_technique_citee": "VentiRE-RAG",
-      "points_forts": [
-        "Expérience en data visualization avec des outils tels que Plotly et Streamlit, comme le montre le projet VentiRE-RAG",
-        "Compétence en analyse de données avec Python, comme le montre le projet EU_energy_consomption",
-        "Connaissance de langages de programmation tels que Python, comme le montre le projet VentiRE-RAG",
-        "Expérience en Machine Learning, comme le montre le projet bank-transaction-fraud-detection"
-      ],
-      "lettre_motivation": "En tant qu'étudiant en Master 2 Ingénierie Mathématique et Data Science à l'Université de Haute-Alsace, je suis convaincu que mes compétences et mon expérience en analyse de données et en intelligence artificielle sont parfaitement alignées avec les besoins d'Alpine Business Consulting. Le domaine de la data science est en constante évolution, et je suis impatient de contribuer à l'innovation et à la croissance de votre équipe. Avec une solide formation mathématique et une expertise en développement de solutions d'analyse de données et de machine learning, je suis prêt à relever les défis de votre entreprise et à apporter une valeur ajoutée à vos projets.\n\nMes compétences clés incluent l'analyse de données, la connaissance d'outils de data analysis tels que Python, Pandas, NumPy, Plotly, Streamlit, SciPy, ainsi que l'expérience en data visualization et la compétence en SQL. De plus, je maîtrise les langages de programmation Python et R, qui sont essentiels pour le développement de solutions de data science. Mon expérience dans la conception de solutions d'analyse de données et de machine learning pour répondre à des problématiques métiers m'a permis de développer une approche rigoureuse et innovante pour aborder les défis de l'entreprise. Je suis également familiarisé avec les systèmes RAG/LLM et la modélisation statistique, ce qui me permet de concevoir des solutions personnalisées pour répondre aux besoins spécifiques de votre entreprise.\n\nUn de mes projets les plus représentatifs de mes compétences est VentiRE-RAG, un assistant RAG intelligent et local spécialisé dans l'analyse croisée de la réglementation RE2020 et des protocoles de contrôle de la ventilation. Développé avec LlamaIndex, FastEmbed et Streamlit, ce projet a permis d'automatiser l'analyse de conformité multi-réglementaire et d'éliminer les risques d'erreur d'interprétation des débits, renforçant ainsi la fiabilité des audits techniques et l'efficacité opérationnelle. Les résultats de ce projet ont été significatifs, avec une précision de 99,7% dans la détection de fraude et une réduction de 62% des pertes financières simulées. De plus, le projet a permis de développer un facteur de risque de 3,8 et un intervalle de confiance de 95% pour les projections énergie 2050. Ces résultats démontrent mon capacité à concevoir des solutions innovantes et efficaces pour répondre aux besoins de l'entreprise.\n\nJe serais ravi de discuter plus en détail de mes compétences et de mes expériences avec vous, et de voir comment je peux contribuer à la réussite d'Alpine Business Consulting. Je suis disponible pour un stage de six mois à partir de mars 2027 et je suis impatient de l'opportunité de travailler avec votre équipe. Merci de considérer ma candidature. Je vous remercie de l'attention que vous porterez à ma demande et je suis à votre disposition pour tout complément d'information. Cordialement, Kossi Noumagno."
-    }
-  },
-  {
-    "id": "https://www.linkedin.com/jobs/view/4449486139",
-    "title": "Stage AMOA / Recette & Test - Projet Intelligence Artificielle (H/F)",
-    "company": "Groupe SII",
-    "url": "https://www.linkedin.com/jobs/view/4449486139",
-    "source": "Linkedin",
-    "date_ajout": "2026-08-05T15:55:58.986277",
-    "analyse": {
-      "score_adequation": 85,
-      "besoin_cle_entreprise": "Connaissance de l'outil ou techno spécifique",
-      "preuve_technique_citee": "VentiRE-RAG",
-      "points_forts": [
-        "Compétence en Intelligence Artificielle",
-        "Compétence en Recette & Test",
-        "Connaissance de l'outil ou techno spécifique (par exemple, LlamaIndex, FastEmbed, Streamlit)",
-        "Langage de programmation spécifique (par exemple, Python)",
-        "Capacité à apprendre rapidement",
-        "Capacité à résoudre des problèmes complexes"
-      ],
-      "lettre_motivation": "Je me permets de vous adresser ma candidature pour le stage AMOA / Recette & Test - Projet Intelligence Artificielle chez Groupe SII, car je suis convaincu que mes compétences et expériences en Data Science et Machine Learning seront un atout pour votre équipe. En tant qu'étudiant en Master 2 Ingénierie Mathématique & Data Science à l'Université de Haute-Alsace, j'ai développé une solide formation en analyse de données et en intelligence artificielle, ce qui me permet de comprendre les enjeux et les défis liés à l'application de l'IA dans le domaine de l'énergie et de la finance. Je suis particulièrement attiré par ce stage car il me permettra de mettre en pratique mes connaissances et mes compétences pour contribuer à la réussite de votre projet.\n\n\nMes compétences clés incluent la maîtrise de langages de programmation tels que Python, ainsi que l'utilisation de bibliothèques et d'outils spécialisés comme Pandas, NumPy, Plotly, Streamlit, SciPy et LlamaIndex. J'ai également une bonne connaissance des techniques de Machine Learning, notamment le clustering, la détection de fraude et la modélisation statistique. De plus, j'ai développé des compétences en analyse décisionnelle, en détection de fraude et en IA générative, ce qui me permet de répondre aux besoins explicites de votre projet. Je suis convaincu que mes compétences et expériences seront un atout pour votre équipe et que je pourrai apporter une contribution significative à la réussite de votre projet.\n\n\nUn de mes projets les plus représentatifs de mes compétences est VentiRE-RAG, un assistant RAG intelligent et local spécialisé dans l'analyse croisée de la réglementation RE2020 et des protocoles de contrôle de la ventilation. Ce projet a été développé avec LlamaIndex, FastEmbed et Streamlit, et a pour objectif de concevoir un moteur RAG hybride multi-segments pour automatiser l'analyse de conformité des systèmes de ventilation. Les résultats de ce projet ont été très satisfaisants, avec une automatisation de l'analyse de conformité multi-réglementaire et une élimination des risques d'erreur d'interprétation des débits, renforçant ainsi la fiabilité des audits techniques et l'efficacité opérationnelle. Ce projet démontre ma capacité à développer des solutions innovantes et efficaces pour répondre à des problématiques complexes, et je suis convaincu que mes compétences et expériences seront un atout pour votre équipe.\n\n\nJe suis très enthousiaste à l'idée de discuter de ma candidature et de mes compétences avec vous. Je suis disponible pour un entretien et je suis prêt à fournir tous les documents nécessaires pour soutenir ma candidature. Je vous remercie de l'attention que vous porterez à ma candidature et je suis impatient de la possibilité de travailler avec vous. Je vous souhaite une excellente journée et je reste à votre disposition pour tout complément d'information. Cordialement, Kossi Noumagno."
-    }
-  },
-  {
     "id": "https://www.linkedin.com/jobs/view/4449476490",
     "title": "stage 6 mois – ingénierie logicielle native IA",
     "company": "Sanofi",
@@ -2304,6 +2244,60 @@
         "Capacité à développer des solutions d'automatisation"
       ],
       "lettre_motivation": "Objet : Candidature pour le poste d'Intern – Data Engineer for automatic selection of radio networks (stage 6 mois)\n\nJe me permets de postuler pour le poste d'Intern – Data Engineer for automatic selection of radio networks au sein de Hitachi Energy, car mon parcours académique et professionnel en Data Science et Intelligence Artificielle me permet de comprendre les enjeux liés au développement de solutions de Data Engineering pour l'automatisation de la sélection de réseaux de radio. Les défis posés par l'automatisation de la sélection de réseaux de radio, tels que l'optimisation des performances et la réduction des coûts, sont directement liés à mes compétences en matière de développement de solutions de Data Engineering et de Machine Learning.\n\nVoici quelques-uns de mes projets qui démontrent mes compétences dans ce domaine :\n* VentiRE-RAG : j'ai développé une solution de Data Engineering utilisant Python, LlamaIndex, FastEmbed et Streamlit pour l'automatisation de l'analyse de conformité réglementaire. Ce projet a permis de réduire les coûts et les délais de traitement des données, tout en améliorant la précision des résultats.\n* bank-transaction-fraud-detection : j'ai développé une solution de Machine Learning utilisant Python, Jupyter Notebook et LightGBM pour la détection de fraude dans les transactions bancaires. Ce projet a permis de réduire les taux de fausses alertes et d'améliorer la précision de la détection de fraude.\n\nCes réalisations répondent concrètement aux défis décrits dans l'offre, car elles démontrent ma capacité à développer des solutions de Data Engineering et de Machine Learning pour l'automatisation de la sélection de réseaux de radio. Je suis convaincu que mes compétences et mes expériences pourraient être un atout pour votre équipe.\n\nJe serais ravi de discuter de ma candidature et de mes projets avec vous. Je vous remercie de l'attention que vous porterez à ma demande et je vous prie de bien vouloir me contacter pour un entretien. Je me réjouis à l'idée de rejoindre votre équipe et de contribuer au développement de solutions innovantes pour Hitachi Energy.\n\nCordialement,\n[Votre nom]"
+    }
+  },
+  {
+    "id": "https://fr.indeed.com/viewjob?jk=f42d9b33e9857ffb",
+    "title": "CS27 - Stage - BAC+5 - Gestion de Configuration Data pour Validation des systèmes avec IA embarquée (F/H)",
+    "company": "Renault Group",
+    "url": "https://fr.indeed.com/viewjob?jk=f42d9b33e9857ffb",
+    "source": "Indeed",
+    "date_ajout": "2026-08-07T17:38:30.781048",
+    "analyse": {
+      "score_adequation": 85,
+      "besoin_cle_entreprise": "La validation des systèmes avec IA embarquée dans les véhicules Renault",
+      "preuve_technique_citee": "VentiRE-RAG, bank-transaction-fraud-detection",
+      "points_forts": [
+        "Compétences en IA et en données",
+        "Expérience en développement de projets complexes"
+      ],
+      "lettre_motivation": "Objet : Candidature pour le stage CS27 - Gestion de Configuration Data pour Validation des systèmes avec IA embarquée (F/H) - 6 mois\n\nJe me permets de vous adresser ma candidature pour le stage CS27 - Gestion de Configuration Data pour Validation des systèmes avec IA embarquée (F/H) au sein du groupe Renault, dont l'objectif est de contribuer à la validation des véhicules équipés de systèmes intégrant l'IA embarquée. Mon intérêt pour l'automobile et la complexité de sa validation, combiné à mes compétences en architecture des données et en analyse, me permettent de comprendre les défis que représente l'intégration de l'IA dans les systèmes de validation.\n\nLes projets que j'ai menés à bien démontrent ma capacité à aborder des problèmes complexes et à proposer des solutions innovantes. Parmi ces projets, je souhaite mettre en avant :\n* VentiRE-RAG, qui a consisté à développer un assistant RAG intelligent et local pour analyser la réglementation RE2020 et les protocoles de contrôle de la ventilation, en utilisant des outils tels que Python, LlamaIndex, FastEmbed et Streamlit. Ce projet a nécessité une analyse approfondie des données et la mise en place d'un système de gestion de l'information pour assurer la traçabilité et la conformité.\n* bank-transaction-fraud-detection, qui a consisté à détecter la fraude bancaire à l'aide de modèles supervisés, en utilisant des outils tels que Jupyter Notebook et LightGBM. Ce projet a nécessité une analyse minutieuse des données et la mise en place d'un système de détection de problèmes potentiels.\n\nCes expériences me permettent de comprendre les enjeux de la validation des systèmes avec IA embarquée dans les véhicules Renault et de proposer des solutions pour améliorer la gestion des informations et des données associées à ces systèmes. Je suis convaincu que mes compétences en architecture des données, en analyse et en gestion de l'information seront un atout pour votre équipe.\n\nJe suis particulièrement attiré par ce stage car il me permettra de travailler dans un environnement pluridisciplinaire, en échangeant avec des experts de la gestion de données et des spécialistes des systèmes ou composants intégrant l’IA dans leur conception et leur validation. Je suis également motivé par l'opportunité de contribuer à l'aventure de l'automobile de demain et de participer à la création d'un environnement de travail inclusif et diversifié.\n\nJe vous remercie de l'attention que vous porterez à ma candidature. Je serais ravi de discuter de ce stage et de mes qualifications avec vous. Je vous prie de bien vouloir me contacter pour un entretien.\n\nCordialement,\n[Votre nom]"
+    }
+  },
+  {
+    "id": "https://www.linkedin.com/jobs/view/4449126325",
+    "title": "Intern - Data Analyst",
+    "company": "Alpine Business Consulting",
+    "url": "https://www.linkedin.com/jobs/view/4449126325",
+    "source": "Linkedin",
+    "date_ajout": "2026-08-07T17:39:02.506456",
+    "analyse": {
+      "score_adequation": 92,
+      "besoin_cle_entreprise": "Analyse de données et intelligence artificielle pour l'entreprise Alpine Business Consulting",
+      "preuve_technique_citee": "Analyse décisionnelle de la transition énergétique en Europe, VentiRE-RAG",
+      "points_forts": [
+        "Compétences en analyse de données et intelligence artificielle",
+        "Expérience en Python et en machine learning"
+      ],
+      "lettre_motivation": "Objet : Candidature pour le poste d'Intern - Data Analyst (stage 6 mois) chez Alpine Business Consulting\n\nEn tant que candidat titulaire d'un Master 2 en Data Science et Intelligence Artificielle, je me réjouis de l'opportunité de rejoindre l'équipe d'Alpine Business Consulting en tant qu'Intern - Data Analyst. Mon intérêt pour l'analyse de données et l'intelligence artificielle, combiné à mon expérience dans le développement de projets utilisant des technologies telles que Python, Pandas, NumPy et Streamlit, me permet de comprendre l'enjeu principal d'Alpine Business Consulting : intégrer l'analyse de données et l'intelligence artificielle pour améliorer la prise de décision.\n\nLes projets que j'ai menés à bien démontrent ma capacité à appliquer ces compétences à des problèmes réels :\n• Analyse décisionnelle de la transition énergétique en Europe : j'ai utilisé Python, Pandas, NumPy, Plotly et Streamlit pour analyser les données de la transition énergétique en Europe. J'ai appliqué des techniques de clustering et d'analyse de séries temporelles pour identifier les tendances et les correlations entre les différentes sources d'énergie. La visualisation des données à l'aide de Plotly et Streamlit a permis de présenter les résultats de manière claire et concise.\n• VentiRE-RAG : j'ai développé un projet utilisant Python, LlamaIndex et FastEmbed pour appliquer la technologie RAG à un problème de réglementation. J'ai créé une interface utilisateur avec Streamlit pour faciliter l'interaction avec les données et les résultats.\n\nCes réalisations répondent concrètement aux défis décrits dans l'offre, car elles démontrent ma capacité à collecter, analyser et interpréter des données pour prendre des décisions éclairées. En outre, mon expérience dans le développement de projets utilisant des technologies telles que Python et Streamlit me permet de comprendre les besoins de l'entreprise en termes d'analyse de données et d'intelligence artificielle.\n\nJe suis convaincu que mes compétences et mon expérience seront un excellent atout pour l'équipe d'Alpine Business Consulting. Je serais ravi de discuter plus en détail de ma candidature et de mes projets lors d'un entretien. Je vous remercie de l'attention que vous porterez à ma candidature et je reste à votre disposition pour tout complément d'information.\n\nCordialement,\n[Votre nom]"
+    }
+  },
+  {
+    "id": "https://fr.indeed.com/viewjob?jk=0ca5cd85769b0326",
+    "title": "CS27 - Stage - BAC+5 - Développement de modèles de prédiction de la nomenclature technique (BOM) des véhicules Renault (H/F)",
+    "company": "Renault Group",
+    "url": "https://fr.indeed.com/viewjob?jk=0ca5cd85769b0326",
+    "source": "Indeed",
+    "date_ajout": "2026-08-07T17:39:49.039102",
+    "analyse": {
+      "score_adequation": 85,
+      "besoin_cle_entreprise": "Développement de modèles de prédiction de la nomenclature technique (BOM) des véhicules Renault",
+      "preuve_technique_citee": "Analyse décisionnelle de la transition énergétique en Europe, VentiRE-RAG",
+      "points_forts": [
+        "Compétences en intelligence artificielle et en machine learning",
+        "Expérience en analyse décisionnelle et en prédiction"
+      ],
+      "lettre_motivation": "Objet : Candidature pour le stage CS27 - Développement de modèles de prédiction de la nomenclature technique (BOM) des véhicules Renault, durant 6 mois.\n\nEn tant que futur ingénieur en data science, je suis particulièrement attiré par l'enjeu de développement de modèles de prédiction de la nomenclature technique (BOM) des véhicules Renault, qui correspond parfaitement à mes compétences et à mes intérêts. La mise en valeur des données techniques des véhicules Renault à travers l'intelligence artificielle et le machine learning constitue un défi passionnant qui me permettra de mettre en pratique mes connaissances en analyse de données et en développement de modèles prédictifs.\n\nVoici quelques-uns de mes projets qui démontrent mes compétences dans le domaine :\n* Analyse décisionnelle de la transition énergétique en Europe : j'ai utilisé Python, Pandas, NumPy, Plotly et Streamlit pour analyser et visualiser les données de la transition énergétique en Europe. J'ai également appliqué des techniques de clustering et d'analyse de séries temporelles pour identifier les tendances et les patterns dans les données. Ce projet a nécessité une bonne compréhension des données et des outils d'analyse, ainsi que la capacité de présenter les résultats de manière claire et concise.\n* VentiRE-RAG : j'ai développé un outil de recherche et de recommandation utilisant Python, LlamaIndex et FastEmbed. J'ai également utilisé Streamlit pour créer une interface utilisateur conviviale. Ce projet a nécessité une bonne compréhension de l'intelligence artificielle et du machine learning, ainsi que la capacité de développer des modèles complexes et de les intégrer dans une application.\n\nCes réalisations répondent concrètement aux défis décrits dans l'offre, car elles démontrent ma capacité à analyser et à modéliser des données complexes, ainsi que ma familiarité avec les outils et les technologies nécessaires pour développer des modèles de prédiction de la nomenclature technique (BOM) des véhicules Renault. Je suis convaincu que mes compétences en data science et en développement de modèles prédictifs seront un atout pour votre équipe et contribueront à l'accomplissement de vos objectifs.\n\nJe suis impatient de discuter de ma candidature et de mes qualifications avec vous. Je vous remercie de l'attention que vous porterez à ma demande. Je suis à votre disposition pour un entretien et je vous prie de bien vouloir me contacter pour fixer un rendez-vous.\n\nCordialement,\n[Votre nom]"
     }
   }
 ]
